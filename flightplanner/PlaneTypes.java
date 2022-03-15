@@ -1,5 +1,13 @@
 package flightplanner;
+/**
+ * List of plane types
+ * @author Allen Kirby
+ */
 
-public class PlaneTypes {
-    
+public enum PlaneTypes {
+
+    SMALL, 
+    MEDIUM,
+    LARGE
+
 }
