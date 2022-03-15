@@ -1,1 +1,1 @@
-# flight-planner
+# CSCE247 Flight Planner System
