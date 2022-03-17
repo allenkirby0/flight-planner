@@ -17,64 +17,64 @@ public class Flight {
                         //TODO constructor
     }
 
-    public void setFlightDate(String newFlightDate) {
-        flightDate = newFlightDate;
+    public void setFlightDate(String flightDate) {
+        this.flightDate = flightDate;
     }
 
     public String getFlightDate() {
         return flightDate;
     }
 
-    public void setArriveTime(String newArriveTime) {
-        arriveTime = newArriveTime;
+    public void setArriveTime(String arriveTime) {
+        this.arriveTime = arriveTime;
     }
 
     public String getArriveTime() {
         return arriveTime;
     }
 
-    public void setDepartTime(String newDepartTime) {
-        departTime = newDepartTime;
+    public void setDepartTime(String departTime) {
+        this.departTime = departTime;
     }
 
     public String getDepartTime() {
         return departTime;
     }
 
-    public void setDepartAirport(HashMap<String, String> newDepartAirport) {
-        departAirport = newDepartAirport;
+    public void setDepartAirport(HashMap<String, String> departAirport) {
+        this.departAirport = departAirport;
     }
 
     public HashMap<String, String> getDepartAirport() {
         return departAirport;
     }
 
-    public void setDestAirport(HashMap<String, String> newDestAirport) {
-        destAirport = newDestAirport;
+    public void setDestAirport(HashMap<String, String> destAirport) {
+        this.destAirport = destAirport;
     }
 
     public HashMap<String, String> getDestAirport() {
         return destAirport;
     }
 
-    public void setLayover(boolean newLayover) {
-        layover = newLayover;
+    public void setLayover(boolean layover) {
+        this.layover = layover;
     }
 
     public boolean getLayover() {
         return layover;
     }
 
-    public void setFlightDuration(int newFlightDuration) {
-        flightDuration = newFlightDuration;
+    public void setFlightDuration(int flightDuration) {
+        this.flightDuration = flightDuration;
     }
 
     public int getFLightDuration() {
         return flightDuration;
     }
 
-    public void setSeatsRemaining(int newSeatsRemaining) {
-        seatsRemaining = newSeatsRemaining;
+    public void setSeatsRemaining(int seatsRemaining) {
+        this.seatsRemaining = seatsRemaining;
     }
 
     public int getSeatsRemaining() {

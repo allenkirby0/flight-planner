@@ -15,10 +15,10 @@ public class Room {
         return roomType;
     }
 
-    public void setRoomNum(){
-        //TODO
+    public void setRoomNum(int roomNum){
+        this.roomNum = roomNum;
     }
-    public void setRoomType(){
-        //TODO
+    public void setRoomType(String roomType){
+        this.roomType = roomType;
     }
 }
