@@ -19,7 +19,4 @@ public class GuestAccount {
 
     }
 
-    public void createAccount() {
-        
-    }
 }
