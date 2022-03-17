@@ -9,23 +9,27 @@ public class BookFlight{
         //TODO constructor
     }
 
-    public void setSeatNum(int newSeatNum) {
-        seatNum = newSeatNum;
+    public void setSeatNum(int seatNum) {
+        this.seatNum = seatNum;
     }
 
     public int getSeatNum() {
         return seatNum;
     }
 
-    public void setSeatAisle(String newSeatAisle) {
-        seatAisle = newSeatAisle;
+    public void setSeatAisle(String seatAisle) {
+        this.seatAisle = seatAisle;
     }
 
     public String getSeatAisle() {
         return seatAisle;
     }
 
-    public void setFlightNum(int newFlightNum) {
-        flightNum = newFlightNum;
+    public void setFlightNum(int flightNum) {
+        this.flightNum = flightNum;
+    }
+
+    public int getFlightNum() {
+        return flightNum;
     }
 }
