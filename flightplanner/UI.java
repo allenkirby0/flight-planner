@@ -3,8 +3,8 @@ import java.util.Scanner;;
 
 public class UI {
     String accountAns;
+    Scanner keyboard = new Scanner(System.in);
     public UI() {
-        Scanner keyboard = new Scanner(System.in);
         System.out.println("Hello and welcome to the Trip Planner!");
         // Need to think about structure of how things go
         while(accountAns.equals("y") == false || accountAns.equals("n") == false) {
@@ -65,10 +65,39 @@ public class UI {
             }
         }
         else {
-            System.out.println("Please enter either [Y] or [N]");
+            System.out.println("Error: Please enter a valid option");
         }
     }
+    boolean tripcheck = bookTrip();
+    if(tripcheck) {
+        //begin setting up flight
+        
+    }
+    else {
+        //either book hotel or quit program
+        System.out.println("Have a good day! Goodbye!");
+        System.exit(0);
+    }
+    }
 
-    // Add
+    // use for determining what user wants to do
+    public boolean bookTrip() {
+    boolean loopCheck = false;
+    while (loopCheck == false) {
+    System.out.println("Do you wish to book a flight? [Y] or [N]");
+    String bookAns = keyboard.nextLine().toLowerCase();
+    if(bookAns.equals("y")) {
+        loopCheck = true;
+        return true;
+    }
+    else if(bookAns.equals("n")) {
+        loopCheck = true;
+        return false;
+    }
+    else {
+        System.out.println("Error: Please enter a vaild option");
+    }
+    }
+    return false;
     }
 }
