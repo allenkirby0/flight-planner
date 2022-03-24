@@ -2,6 +2,7 @@ package flightplanner;
 import java.util.Scanner;;
 
 public class UI {
+    // Load information from JSON files
     String accountAns;
     Scanner keyboard = new Scanner(System.in);
     public UI() {
@@ -19,6 +20,7 @@ public class UI {
             String Password = keyboard.nextLine();
             //check with json files
             boolean acctCheck = false;
+            // If check works then set acctCheck to true
             if(acctCheck == false) {
                 System.out.println("I'm sorry this account doesn't exist");
             }
@@ -70,8 +72,17 @@ public class UI {
     }
     boolean tripcheck = bookTrip();
     if(tripcheck) {
-        //begin setting up flight
-        
+        System.out.println("Where do you wish to travel to?");
+        String travelDes = keyboard.nextLine(); //Possibly make this airport codes only
+        //Where all flights are loaded and displayed
+        System.out.println("Please choose a flight:"); //Possibly use ints for choices
+        int flightChoice = keyboard.nextInt();
+        //Check for amount of seats, what type of plane it is, and avaliable seats
+        //Show avaliable seats
+        //Display ticket and also write it to JSON file
+        //If we get to hotels leave if area & continue to booking hotel
+        //If hotels cut then end program here
+
     }
     else {
         //either book hotel or quit program
