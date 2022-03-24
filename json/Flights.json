@@ -1,0 +1,74 @@
+[{
+    "id": "ba5bf4e0-ab98-11ec-b909-0242ac120002", 
+    "flight_num": "0000",
+    "flightDate": "04/02/2022",
+    "arrTime": "6:30",
+    "deptTime": "16:45",
+    "dest": "CAE",
+    "dept": "SEA",
+    "stops": "none",
+    "duration": "570",
+    "seats": [{
+        "1a": false,
+        "13a": false,
+        "13b": false,
+        "13c": false,
+        "13d": false
+     }] 
+},
+{
+    "id": "aa9ad3cc-ab99-11ec-b909-0242ac120002", 
+    "flight_num": "0001",
+    "flightDate": "04/02/2022",
+    "arrTime": "6:30",
+    "deptTime": "17:45",
+    "dest": "CAE",
+    "dept": "SEA",
+    "stops": "ATL",
+    "duration": "630",
+    "seats": [{
+        "1a": false,
+        "13a": false,
+        "13b": false,
+        "13c": false,
+        "13d": false
+     }] 
+},
+{
+    "id": "4ea53b42-ab9a-11ec-b909-0242ac120002", 
+    "flight_num": "0001",
+    "flightDate": "04/02/2022",
+    "arrTime": "6:30",
+    "deptTime": "17:15",
+    "dest": "CAE",
+    "dept": "SEA",
+    "stops": "DEN",
+    "duration": "600",
+    "seats": [{
+        "1a": false,
+        "13a": false,
+        "13b": false,
+        "13c": false,
+        "13d": false
+     }] 
+},
+{
+    "id": "4ea53b42-ab9a-11ec-b909-0242ac120002", 
+    "flight_num": "0001",
+    "flightDate": "04/02/2022",
+    "arrTime": "6:30",
+    "deptTime": "18:15",
+    "dest": "CAE",
+    "dept": "SEA",
+    "stops": "ATL, DFW",
+    "duration": "660",
+    "seats": [{
+        "1a": false,
+        "13a": false,
+        "13b": false,
+        "13c": false,
+        "13d": false
+     }] 
+}
+]  
+  
