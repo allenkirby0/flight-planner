@@ -1,7 +1,7 @@
 package flightplanner;
 import java.util.Scanner;;
 
-public class UI {
+public class UI { //move stuff to outside constructor later on
     // Load information from JSON files
     String accountAns;
     Scanner keyboard = new Scanner(System.in);
