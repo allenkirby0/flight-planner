@@ -15,6 +15,8 @@ public class Account {
 
     public Account(String firstName, String lastName, int acctNum, String userName, String password, String DOB, int passportNum, String userEmail, String userPhone){
         //TODO
+        // Smaller Constructor with fewer parameters- instead initialize only a few things 
+        // and then in the driver file get user input and then use setters for the rest
     }
 
     public void getUserInfo(){

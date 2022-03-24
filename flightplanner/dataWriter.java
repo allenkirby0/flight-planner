@@ -1,6 +1,6 @@
 package flightplanner;
 
-public class dataWriter {
+public class DataWriter {
     public void saveAccount(){
         //TODO
     }

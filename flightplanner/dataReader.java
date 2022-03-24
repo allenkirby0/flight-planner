@@ -2,7 +2,7 @@ package flightplanner;
 
 import java.util.ArrayList;
 
-public class dataReader {
+public class DataReader {
     public ArrayList<Account> getAccount(){
         return null;
     }
