@@ -28,18 +28,18 @@ public class Hotel {
     }
 
     public void setName(String hotelName){
-        //TODO
+        this.hotelName = hotelName;
     }
 
     public void setRoom(Room hotelRoom){
-        //TODO
+        this.hotelRoom = hotelRoom;
     }
 
     public void setArrive(String arriveDate){
-        //TODO
+        this.arriveDate = arriveDate;
     }
     
     public void setDepart(String departDate){
-        
+        this.departDate = departDate;
     }
 }
