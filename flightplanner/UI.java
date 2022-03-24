@@ -6,9 +6,10 @@ public class UI {
     String accountAns;
     Scanner keyboard = new Scanner(System.in);
     public UI() {
+        boolean check = true;
         System.out.println("Hello and welcome to the Trip Planner!");
         // Need to think about structure of how things go
-        while(accountAns.equals("y") == false || accountAns.equals("n") == false) {
+        while(check) { //check used to continue loop
         System.out.println("Do you already have an Account? [Y] or [N]");
         accountAns = keyboard.nextLine().toLowerCase();
         if(accountAns.equals("y")) {
@@ -26,12 +27,14 @@ public class UI {
             }
             else {
                 System.out.println("Welcome "); //Include first name from database
+                check = false; // Only way to get out of loop currently (Possibily might change)
             }
         }
         else if(accountAns.equals("n")) {
             System.out.println("Do you want to create a [G]uest Account or [M]ember Account?");
             String typeAcct = keyboard.nextLine().toLowerCase();
             if(typeAcct.equals("g")) {
+                // Guest Account information that's necessary
                 System.out.println("Please enter your first name:");
                 String firstName = keyboard.nextLine();
                 System.out.println("Please enter your last name:");
@@ -47,6 +50,7 @@ public class UI {
                 // Write all of this into JSON file for guest
             }
             else if(typeAcct.equals("m")) {
+                // Similar to guest account but with username and password included
                 System.out.println("Please enter your first name:");
                 String firstName = keyboard.nextLine();
                 System.out.println("Please enter your last name:");
@@ -70,7 +74,7 @@ public class UI {
             System.out.println("Error: Please enter a valid option");
         }
     }
-    boolean tripcheck = bookTrip();
+    boolean tripcheck = bookTrip(); //checks if user wants to book a flight
     if(tripcheck) {
         System.out.println("Where do you wish to travel to?");
         String travelDes = keyboard.nextLine(); //Possibly make this airport codes only
@@ -87,13 +91,13 @@ public class UI {
     else {
         //either book hotel or quit program
         System.out.println("Have a good day! Goodbye!");
-        System.exit(0);
+        System.exit(0); //Currently will quit program (Subject to change)
     }
     }
 
     // use for determining what user wants to do
     public boolean bookTrip() {
-    boolean loopCheck = false;
+    boolean loopCheck = false; //used to check the loop
     while (loopCheck == false) {
     System.out.println("Do you wish to book a flight? [Y] or [N]");
     String bookAns = keyboard.nextLine().toLowerCase();
@@ -109,6 +113,6 @@ public class UI {
         System.out.println("Error: Please enter a vaild option");
     }
     }
-    return false;
+    return false; // failsafe
     }
 }
