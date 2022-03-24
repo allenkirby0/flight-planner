@@ -36,4 +36,12 @@ public class Ticket {
     public Account getAccount() {
         return passanger;
     }
+
+    
+
+    public void setPassenger (Account passenger) {
+        this.passanger = passenger;
+    }
+
+
 }

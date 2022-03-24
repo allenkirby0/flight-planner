@@ -58,7 +58,7 @@ public class Account {
     public void setAcctNum(int acctNum){
         this.acctNum = acctNum;
     }
-    public void setUserName(String userName)){
+    public void setUserName(String userName){
         this.userName = userName;
     }
     public void setPassword(String password){
