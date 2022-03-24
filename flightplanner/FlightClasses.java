@@ -1,5 +1,8 @@
 package flightplanner;
 
-public class FlightClasses {
+public enum FlightClasses {
     
+    FIRST,
+    BUSINESS,
+    ECONOMY
 }

@@ -1,0 +1,48 @@
+[{
+    "hotelName": "Hampton Inn",
+    "hotelPrice": 560,
+    "hotelRating": "4 Stars",
+    "amenities": [{
+        "doubleBed": true,
+        "pool": true,
+        "gym": false,
+        "breakfast": true
+    }]
+
+},
+{
+    "hotelName": "Quality Inn",
+    "hotelPrice": 430,
+    "hotelRating": "3 Stars",
+    "amenities": [{
+        "doubleBed": false,
+        "pool": true,
+        "gym": true,
+        "breakfast": true
+    }]
+
+},
+{
+    "hotelName": "Fanciest Hotel, Inc.",
+    "hotelPrice": 800,
+    "hotelRating": "5 Stars",
+    "amenities": [{
+        "doubleBed": true,
+        "pool": true,
+        "gym": true,
+        "breakfast": true
+    }]
+},
+{
+    "hotelName": "Seattle Motel",
+    "hotelPrice": 310,
+    "hotelRating": "2 Stars",
+    "amenities": [{
+        "doubleBed": true,
+        "pool": true,
+        "gym": false,
+        "breakfast": false
+    }]
+
+}
+]
