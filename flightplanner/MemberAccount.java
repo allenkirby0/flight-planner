@@ -1,6 +1,8 @@
 package flightplanner;
 
-public class MemberAccount {
+public class MemberAccount extends Account {
+
+    public MemberAccount (String )
     
     public void addUserinfo(ArrayList<userInfo> guest) {
 

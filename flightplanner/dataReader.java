@@ -16,18 +16,20 @@ public class DataReader {
 
             for (int i = 0; i < accountsJSON.size(); i++) {
                 JSONObject accountJSON = (JSONObject)accountsJSON.get(i);
-                String acctNum = (String)accountJSON.get("acctNum");
+                int acctNum = (int)accountJSON.get("acctNum");
                 String firstName = (String)accountJSON.get("firstName");
                 String lastName = (String)accountJSON.get("lastName");
                 String username = (String)accountJSON.get("username");
                 String password = (String)accountJSON.get("password");
                 String dob = (String)accountJSON.get("dob");
-                String passportNum = (String)accountJSON.get("passportNum");
+                int passportNum = (int)accountJSON.get("passportNum");
                 String userEmail = (String)accountJSON.get("userEmail");
                 String userPhone = (String)accountJSON.get("userPhone");
 
-                accounts.add(new Account (acctNum, firstName, lastName, username, password, dob, passportNum, userEmail, userPhone));
+                accounts.add(new MemberAccount (firstName, lastName, acctNum, username, password, dob, passportNum, userEmail, userPhone));
             }
+
+            return accounts;
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -35,7 +37,18 @@ public class DataReader {
         
     }
     public static ArrayList<Flight> loadFlight(){
-        return null;
+        ArrayList<Flight> flights = new ArrayList<Flight>();
+
+        try {
+            FileReader reader = new FileReader ("Flights.json");
+            JSONArray flightsJSON = (JSONArray)new JSONParser().parse(reader);
+
+            for (int i = 0; i < flightsJSON.size(); i++) {
+                JSONObject flightJSON = (JSONObject) flightsJSON.get(i);
+                String flightDate = (String) flightJSON.get("flightDate"), String arriveTime, String departTime, HashMap<String, String> departAirport,
+                    HashMap<String, String> destAirport, boolean layover, int flightDuration, int seatsRemaining)
+            }
+        }
     }
     public static ArrayList<Hotel> loadHotel(){
         return null;
