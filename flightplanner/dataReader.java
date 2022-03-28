@@ -54,6 +54,16 @@ public class DataReader {
         return null;
     }
     public static ArrayList<Ticket> loadTickets(){
-        return null;
+        ArrayList<Ticket> tickets = new ArrayList<Ticket>();
+
+        try {
+            FileReader reader = new FileReader("Tickets.json");
+            JSONArray ticketsJSON = (JSONArray)new JSONParser().parse(reader);
+
+            for (int i = 0; i < ticketsJSON.size(); i++) {
+                JSONObject ticketJSON = (JSONObject) ticketsJSON.get(i);
+                int ticketNum = (int)ticketJSON.get("")
+            }
+        }
     }
 }
