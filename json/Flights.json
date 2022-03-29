@@ -4,17 +4,18 @@
     "flightDate": "04/02/2022",
     "arrTime": "6:30",
     "deptTime": "16:45",
-    "dest": "CAE",
-    "dept": "SEA",
-    "stops": "none",
-    "duration": "570",
-    "seats": [{
-        "1a": false,
-        "13a": false,
-        "13b": false,
-        "13c": false,
-        "13d": false
-     }] 
+    "destCity": "Columbia",
+    "destCode": "CAE",
+    "deptCity": "Seattle",
+    "deptCode": "SEA",
+    "stops": false,
+    "duration": 570,
+    "seats": [
+        {"seatNum": "1a", "seatTaken": true},
+        {"seatNum": "1b", "seatTaken": true}
+
+        
+    ] 
 },
 {
     "id": "aa9ad3cc-ab99-11ec-b909-0242ac120002", 

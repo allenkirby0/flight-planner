@@ -5,7 +5,6 @@ import java.util.ArrayList;
 public class Account {
     private String firstName;
     private String lastName;
-    private int acctNum;
     private String DOB;
     private int passportNum;
     private String userEmail;
@@ -15,6 +14,23 @@ public class Account {
         //TODO
         // Smaller Constructor with fewer parameters- instead initialize only a few things 
         // and then in the driver file get user input and then use setters for the rest
+        // Better note- MAKE TWO DIFFERENT CONSTRUCTORS
+        // one for use in the datareader and another for use in the main function
+
+    }
+
+    /**
+     * Empty constructor that will be used during account creation. 
+     */
+    public Account() {
+
+        firstName = "";
+        lastName = "";
+        DOB = "";
+        passportNum = 0;
+        userEmail = "";
+        userPhone = "";
+
     }
 
     public void getUserInfo(){
@@ -30,7 +46,12 @@ public class Account {
     public int getAcctNum(){
         return acctNum;
     }
-    
+    public String getUserName(){
+        return userName;
+    }
+    public String getPassword(){
+        return password;
+    }
     public String getDOB(){
         return DOB;
     }
@@ -52,7 +73,13 @@ public class Account {
     }
     public void setAcctNum(int acctNum){
         this.acctNum = acctNum;
-    } 
+    }
+    public void setUserName(String userName){
+        this.userName = userName;
+    }
+    public void setPassword(String password){
+        this.password = password;
+    }
     public void setDOB(String DOB){
         this.DOB = DOB;
     }
