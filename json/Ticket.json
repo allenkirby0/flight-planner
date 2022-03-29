@@ -1,6 +1,8 @@
 [{
-    "id": "",
+    "ticketID": "",
     "flightID": "",
-    "uderID": "",
-    "seat": ""
+    "acctID": "",
+    "seatNum": "",
+    "firstName": "",
+    "lastName": ""
   }]                                                            

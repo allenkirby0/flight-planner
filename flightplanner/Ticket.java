@@ -5,12 +5,16 @@ public class Ticket {
     private String flightID;
     private String passengerID;
     private String seatNum;
+    private String firstName;
+    private String lastName;
 
-    public Ticket(int ticketNum, String flightID, String passengerID, String seatNum) {
+    public Ticket(int ticketNum, String flightID, String passengerID, String seatNum, String firstName, String lastName) {
         this.ticketNum = ticketNum;
         this.flightID = flightID;
         this.passengerID = passengerID;
         this.seatNum = seatNum;
+        this.firstName = firstName;
+        this.lastName = lastName;
     }
 
     //Access json file somewhere
@@ -30,6 +34,15 @@ public class Ticket {
     public String getSeatNum () {
         return seatNum;
     }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
     public void setTicketNum(int ticketNum) {
         this.ticketNum = ticketNum;
     }
@@ -44,6 +57,14 @@ public class Ticket {
 
     public void setSeatNum (String seatNum) {
         this.seatNum = seatNum;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
     }
 
 
