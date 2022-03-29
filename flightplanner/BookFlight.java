@@ -6,7 +6,9 @@ public class BookFlight{
     private int flightNum;
 
     public BookFlight(int seatNum, String seatAisle, int flightNum) {
-        //TODO constructor
+        this.seatNum = seatNum;
+        this.seatAisle = seatAisle;
+        this.flightNum = flightNum;
     }
 
     public void setSeatNum(int seatNum) {
