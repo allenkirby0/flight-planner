@@ -1,5 +1,5 @@
 package flightplanner;
-import java.util.Scanner;;
+import java.util.Scanner;
 
 public class UI { //move stuff to outside constructor later on
     // Load information from JSON files
@@ -82,10 +82,10 @@ public class UI { //move stuff to outside constructor later on
         System.out.println("Please choose a flight:"); //Possibly use ints for choices
         int flightChoice = keyboard.nextInt();
         //Check for amount of seats, what type of plane it is, and avaliable seats
-        //Show avaliable seats
+        System.out.println(); // find way to get seats remaining
         //Display ticket and also write it to JSON file
         //If we get to hotels leave if area & continue to booking hotel
-        //If hotels cut then end program here
+        System.exit(0);
 
     }
     else {
