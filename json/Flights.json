@@ -7,12 +7,11 @@
     "destCode": "CAE",
     "deptCity": "Seattle",
     "deptCode": "SEA",
-    "stops": false,
     "duration": 570,
     "seats": [
         {"seatNum": "1a", "seatTaken": true, "class": "first"},
         {"seatNum": "1b", "seatTaken": true, "class": "business"}] 
-        
+
 },
 {
     "id": "aa9ad3cc-ab99-11ec-b909-0242ac120002", 
