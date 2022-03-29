@@ -6,8 +6,6 @@ public class Account {
     private String firstName;
     private String lastName;
     private int acctNum;
-    private String userName;
-    private String password;
     private String DOB;
     private int passportNum;
     private String userEmail;
@@ -32,12 +30,7 @@ public class Account {
     public int getAcctNum(){
         return acctNum;
     }
-    public String getUserName(){
-        return userName;
-    }
-    public String getPassword(){
-        return password;
-    }
+    
     public String getDOB(){
         return DOB;
     }
@@ -59,13 +52,7 @@ public class Account {
     }
     public void setAcctNum(int acctNum){
         this.acctNum = acctNum;
-    }
-    public void setUserName(String userName){
-        this.userName = userName;
-    }
-    public void setPassword(String password){
-        this.password = password;
-    }
+    } 
     public void setDOB(String DOB){
         this.DOB = DOB;
     }

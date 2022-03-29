@@ -1,0 +1,8 @@
+{
+    "java.dependency.packagePresentation": "flat",
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "e:\\DefaultFileLocations\\Downloads\\json-simple-1.1.jar\\json-simple-1.1.jar",
+        "c:\\Users\\Matthew Jensen\\Downloads\\json simple jar\\json-simple-1.1.1.jar"
+    ]
+}
