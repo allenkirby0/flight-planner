@@ -1,6 +1,7 @@
 package flightplanner;
 
 import java.util.ArrayList;
+import java.util.UUID;
 
 public class Ticket {
     private int ticketNum;
@@ -54,7 +55,7 @@ public class Ticket {
     }
 
     public void setPassenger(String passengerID) {
-        this.passengerID = passengerID;
+        this.passengerID = generateID();
     }
 
     public void setSeatNum (String seatNum) {
@@ -69,5 +70,10 @@ public class Ticket {
         this.lastName = lastName;
     }
 
+    public String generateID() {
+        UUID uuid = UUID.randomUUID();
+        String id = uuid.toString();
 
+        return id;
+    }
 }

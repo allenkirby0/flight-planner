@@ -1,5 +1,6 @@
 package flightplanner;
 
+import java.util.UUID;
 import java.util.HashMap;
 
 public class Flight {
@@ -11,9 +12,10 @@ public class Flight {
     private boolean layover;
     private int flightDuration;
     private int seatsRemaining;
+    private String flightID;
 
     public Flight(String flightDate, String arriveTime, String departTime, HashMap<String, String> departAirport,
-                    HashMap<String, String> destAirport, boolean layover, int flightDuration, int seatsRemaining) {
+                    HashMap<String, String> destAirport, boolean layover, int flightDuration, int seatsRemaining, String flightID) {
                         //TODO constructor
     }
 
@@ -79,5 +81,20 @@ public class Flight {
 
     public int getSeatsRemaining() {
         return seatsRemaining;
+    }
+
+    public void setFlightID() {
+        this.flightID = generateID();
+    }
+
+    public String getFlightID() {
+        return flightID;
+    }
+
+    public String generateID() {
+        UUID uuid = UUID.randomUUID();
+        String id = uuid.toString();
+
+        return id;
     }
 }
