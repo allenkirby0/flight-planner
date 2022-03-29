@@ -1,9 +1,8 @@
 [{
     "id": "ba5bf4e0-ab98-11ec-b909-0242ac120002", 
     "flight_num": "0000",
-    "flightDate": "04/02/2022",
-    "arrTime": "6:30",
-    "deptTime": "16:45",
+    "arrTime": "6:30 2022-03-23",
+    "deptTime": "16:45 2022-03-23",
     "destCity": "Columbia",
     "destCode": "CAE",
     "deptCity": "Seattle",
@@ -11,11 +10,9 @@
     "stops": false,
     "duration": 570,
     "seats": [
-        {"seatNum": "1a", "seatTaken": true},
-        {"seatNum": "1b", "seatTaken": true}
-
+        {"seatNum": "1a", "seatTaken": true, "class": "first"},
+        {"seatNum": "1b", "seatTaken": true, "class": "business"}] 
         
-    ] 
 },
 {
     "id": "aa9ad3cc-ab99-11ec-b909-0242ac120002", 

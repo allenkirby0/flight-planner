@@ -1,16 +1,18 @@
 package flightplanner;
 
+import java.util.ArrayList;
+
 public class Ticket {
     private int ticketNum;
-    private String flightID;
+    private ArrayList<String> flightIDs;
     private String passengerID;
     private String seatNum;
     private String firstName;
     private String lastName;
 
-    public Ticket(int ticketNum, String flightID, String passengerID, String seatNum, String firstName, String lastName) {
+    public Ticket(int ticketNum, ArrayList<String> flightIDs, String passengerID, String seatNum, String firstName, String lastName) {
         this.ticketNum = ticketNum;
-        this.flightID = flightID;
+        this.flightIDs = flightIDs;
         this.passengerID = passengerID;
         this.seatNum = seatNum;
         this.firstName = firstName;
@@ -23,8 +25,8 @@ public class Ticket {
         return ticketNum;
     }
 
-    public String getFlight() {
-        return flightID;
+    public ArrayList<String> getFlights() {
+        return flightIDs;
     }
 
     public String getPassengerID() {
@@ -47,8 +49,8 @@ public class Ticket {
         this.ticketNum = ticketNum;
     }
 
-    public void setFlight(String flightID) {
-        this.flightID = flightID;
+    public void setFlight(ArrayList<String> flightIDs) {
+        this.flightIDs = flightIDs;
     }
 
     public void setPassenger(String passengerID) {
