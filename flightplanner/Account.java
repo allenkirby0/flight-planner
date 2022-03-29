@@ -6,17 +6,17 @@ public class Account {
     private String firstName;
     private String lastName;
     private String DOB;
-    private int passportNum;
+    private String passportNum;
     private String userEmail;
     private String userPhone;
 
-    public Account(String firstName, String lastName, int acctNum, String DOB, int passportNum, String userEmail, String userPhone){
-        //TODO
-        // Smaller Constructor with fewer parameters- instead initialize only a few things 
-        // and then in the driver file get user input and then use setters for the rest
-        // Better note- MAKE TWO DIFFERENT CONSTRUCTORS
-        // one for use in the datareader and another for use in the main function
-
+    public Account(String firstName, String lastName, String DOB, String passportNum, String userEmail, String userPhone){
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.DOB = DOB;
+        this.passportNum = passportNum;
+        this.userEmail = userEmail;
+        this.userPhone = userPhone;
     }
 
     /**
@@ -27,7 +27,7 @@ public class Account {
         firstName = "";
         lastName = "";
         DOB = "";
-        passportNum = 0;
+        passportNum = "";
         userEmail = "";
         userPhone = "";
 
