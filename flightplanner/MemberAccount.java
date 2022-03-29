@@ -2,6 +2,9 @@ package flightplanner;
 
 public class MemberAccount extends Account {
 
+    private String userName;
+    private String password;
+
     public MemberAccount (String )
     
     public void addUserinfo(ArrayList<userInfo> guest) {
@@ -19,4 +22,13 @@ public class MemberAccount extends Account {
     public void createAccount() {
         
     }
+    
+    public String getUserName(){
+        return userName;
+    }
+    public String getPassword(){
+        return password;
+    }
+
+    
 }

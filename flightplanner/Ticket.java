@@ -2,45 +2,48 @@ package flightplanner;
 
 public class Ticket {
     private int ticketNum;
-    private Flight flight;
-    private Account passanger;
+    private String flightID;
+    private String passengerID;
+    private String seatNum;
 
-    public Ticket(int ticketNum, Flight flight, Account passanger) {
+    public Ticket(int ticketNum, String flightID, String passengerID, String seatNum) {
         this.ticketNum = ticketNum;
-        this.flight = flight;
-        this.passanger = passanger;
+        this.flightID = flightID;
+        this.passengerID = passengerID;
+        this.seatNum = seatNum;
     }
 
     //Access json file somewhere
-
-    public void setTicketNum(int ticketNum) {
-        this.ticketNum = ticketNum;
-    }
 
     public int getTicketNum() {
         return ticketNum;
     }
 
-    public void setFlight(Flight flight) {
-        this.flight = flight;
+    public String getFlight() {
+        return flightID;
     }
 
-    public Flight getFlight() {
-        return flight;
+    public String getPassengerID() {
+        return passengerID;
     }
 
-    public void setPassanger(Account passanger) {
-        this.passanger = passanger;
+    public String getSeatNum () {
+        return seatNum;
+    }
+    public void setTicketNum(int ticketNum) {
+        this.ticketNum = ticketNum;
     }
 
-    public Account getAccount() {
-        return passanger;
+    public void setFlight(String flightID) {
+        this.flightID = flightID;
     }
 
-    
+    public void setPassenger(String passengerID) {
+        this.passengerID = passengerID;
+    }
 
-    public void setPassenger (Account passenger) {
-        this.passanger = passenger;
+    public void setSeatNum (String seatNum) {
+        this.seatNum = seatNum;
     }
 
 
