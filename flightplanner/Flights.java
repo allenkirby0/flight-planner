@@ -4,14 +4,14 @@ import java.util.ArrayList;
 
 public class Flights {
     
-    private Flights flights = null;
-    private ArrayList<Flight> flightList;
+    private static Flights flights = null;
+    private static ArrayList<Flight> flightList;
 
     private Flights() {
         flightList = DataReader.loadFlights();
     }
     
-    public Flights getInstance() {
+    public static Flights getInstance() {
 
         if (flights == null) {
             flights = new Flights();
@@ -27,6 +27,8 @@ public class Flights {
     public void addFlight (Flight flight) {
         flightList.add(flight);
     }
+
+    
     
 
 }
