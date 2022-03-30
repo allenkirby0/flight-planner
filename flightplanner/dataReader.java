@@ -9,8 +9,8 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
 public class DataReader {
-    public static ArrayList<Account> loadAccounts(){
-        ArrayList<Account> accounts = new ArrayList<Account>();
+    public static ArrayList<MemberAccount> loadAccounts(){
+        ArrayList<MemberAccount> accounts = new ArrayList<MemberAccount>();
 
         try {
             FileReader reader = new FileReader("Users.json");
