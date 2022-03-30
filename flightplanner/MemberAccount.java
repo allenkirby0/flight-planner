@@ -3,27 +3,39 @@ package flightplanner;
 public class MemberAccount extends Account {
 
     private String acctNum;
-    private String userName;
+    private String username;
     private String password;
 
-    public MemberAccount (String firstName, String lastName,int acctNum, String username, String password, String dob, int passportNum, String userEmail, String userPhone) {
+    public MemberAccount (String firstName, String lastName,String acctNum, String username, String password, String dob, String passportNum, String userEmail, String userPhone) {
         //Set all 
-        super()
+        super(firstName, lastName, dob, passportNum, userEmail, userPhone);
+        this.acctNum = acctNum;
+        this.username = username;
+        this.password = password;
+
+    }
+
+    public String getAcctNum () {
+        return acctNum;
+    }
+
+    public void setAcctNum (String acctNum) {
+        this.acctNum = acctNum;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getPassword() {
+        return password;
     }
     
-    public void addUserinfo(ArrayList<userInfo> guest) {
-
-    }
-
-    public void addPreferences(ArrayList<userPreferences> guestPref) {
-
-    }
-
-    public void removePreferences(ArrayList<userPreferences> guestPref) {
-
-    }
-
-    public void createAccount() {
-        
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

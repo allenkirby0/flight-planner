@@ -91,7 +91,7 @@ public class Flight {
         this.flightDuration = flightDuration;
     }
 
-    public int getFLightDuration() {
+    public int getFlightDuration() {
         return flightDuration;
     }
 
