@@ -8,7 +8,7 @@ public class Accounts {
     private ArrayList<MemberAccount> accountList;
 
     private Accounts() {
-        accountList = DataReader.loadAccounts();
+        accountList = dataReader.loadAccounts();
     }
     
     public Accounts getInstance() {
