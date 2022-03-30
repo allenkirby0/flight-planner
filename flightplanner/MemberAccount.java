@@ -2,7 +2,7 @@ package flightplanner;
 
 public class MemberAccount extends Account {
 
-    private int acctNum;
+    private String acctNum;
     private String userName;
     private String password;
 

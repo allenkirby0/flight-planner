@@ -5,6 +5,7 @@ import java.util.HashMap;
 
 public class Flight {
     private String flightID;
+    private String flightNum;
     private String arriveTime;
     private String departTime;
     private String deptCity;
@@ -15,8 +16,17 @@ public class Flight {
     private HashMap<String, Boolean> seats;
     
 
-    public Flight() {
-                        //TODO constructor
+    public Flight(String flightID, String flightNum, String arriveTime, String departTime, String deptCity, String deptAirport, String destCity, String destAirport, int flightDuration, HashMap<String, Boolean> seats) {
+        this.flightID = flightID;
+        this.flightNum = flightNum;
+        this.arriveTime = arriveTime;
+        this.departTime = departTime;
+        this.deptCity = deptCity;
+        this.deptAirport = deptAirport;
+        this.destCity = destCity;
+        this.destAirport = destAirport;
+        this.flightDuration = flightDuration;
+        this.seats = seats;
     }
 
 
@@ -27,6 +37,14 @@ public class Flight {
 
     public String getArriveTime() {
         return arriveTime;
+    }
+
+    public void setFlightNum(String flightNum) {
+        this.flightNum = flightNum;
+    }
+
+    public String getFlightNum(){
+        return flightNum;
     }
 
     public void setDepartTime(String departTime) {

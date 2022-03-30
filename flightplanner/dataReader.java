@@ -2,6 +2,8 @@ package flightplanner;
 
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.HashMap;
+
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -16,13 +18,13 @@ public class DataReader {
 
             for (int i = 0; i < accountsJSON.size(); i++) {
                 JSONObject accountJSON = (JSONObject)accountsJSON.get(i);
-                int acctNum = (int)accountJSON.get("acctNum");
+                String acctNum = (String)accountJSON.get("acctNum");
                 String firstName = (String)accountJSON.get("firstName");
                 String lastName = (String)accountJSON.get("lastName");
                 String username = (String)accountJSON.get("username");
                 String password = (String)accountJSON.get("password");
                 String dob = (String)accountJSON.get("dob");
-                int passportNum = (int)accountJSON.get("passportNum");
+                String passportNum = (String)accountJSON.get("passportNum");
                 String userEmail = (String)accountJSON.get("userEmail");
                 String userPhone = (String)accountJSON.get("userPhone");
 
@@ -43,7 +45,26 @@ public class DataReader {
             JSONArray flightsJSON = (JSONArray)new JSONParser().parse(reader);
 
             for (int i = 0; i < flightsJSON.size(); i++) {
-                JSONObject flightJSON = (JSONObject) flightsJSON.get(i);
+
+                JSONObject flightJSON = (JSONObject)flightsJSON.get(i);
+                String flightID = (String)flightJSON.get("id");
+                String flightNum = (String)flightJSON.get("flight_num");
+                String arriveTime = (String)flightJSON.get("arrTime");
+                String departTime = (String)flightJSON.get("deptTime");
+                String destCity = (String)flightJSON.get("destCity");
+                String destAirport = (String)flightJSON.get("destCode");
+                String deptCity = (String)flightJSON.get("deptCity");
+                String deptAirport = (String)flightJSON.get("deptCode");
+                int duration = (int)flightJSON.get("duration");
+                HashMap<String, Boolean> seats = new HashMap<String, Boolean>();
+                JSONArray seatList = (JSONArray)flightJSON.get("seats");
+
+                for (int j = 0; j < seatList.size(); j++) {
+                    JSONObject seat = (JSONObject)seatList.get(j);
+                    seats.put((String)seat.get("seatNum"), (Boolean)seat.get("seatEmpty"));
+                }
+
+                flights.add(new Flight(flightID, flightNum, arriveTime, departTime, deptCity, deptAirport, destCity, destAirport, flightDuration, seats));
                 
             }
         } catch (Exception e) {
