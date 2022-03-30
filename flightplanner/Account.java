@@ -2,6 +2,8 @@ package flightplanner;
 
 import java.util.ArrayList;
 
+import org.json.simple.JSONObject;
+
 public class Account {
     private String firstName;
     private String lastName;
@@ -81,7 +83,12 @@ public class Account {
         this.userEmail = userEmail;
     }
 
+    public String getUserPhone() {
+        return userPhone;
+    }
+    
     public void setUserPhone(String userPhone){
         this.userPhone = userPhone;
     }
+
 }
