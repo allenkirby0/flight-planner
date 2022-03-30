@@ -45,15 +45,6 @@ public class Account {
         return lastName;
     }
 
-    public int getAcctNum(){
-        return acctNum;
-    }
-    public String getUserName(){
-        return userName;
-    }
-    public String getPassword(){
-        return password;
-    }
     public String getDOB(){
         return DOB;
     }
@@ -78,9 +69,6 @@ public class Account {
         this.lastName = lastName;
     }
 
-    public void setAcctNum(int acctNum){
-        this.acctNum = acctNum;
-    }
     public void setDOB(String DOB){
         this.DOB = DOB;
     }

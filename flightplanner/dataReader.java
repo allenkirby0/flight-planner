@@ -48,22 +48,12 @@ public class DataReader {
                 String flightDate = (String) flightJSON.get("flightDate"), String arriveTime, String departTime, HashMap<String, String> departAirport,
                     HashMap<String, String> destAirport, boolean layover, int flightDuration, int seatsRemaining)
             }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
     public static ArrayList<Hotel> loadHotel(){
         return null;
     }
-    public static ArrayList<Ticket> loadTickets(){
-        ArrayList<Ticket> tickets = new ArrayList<Ticket>();
-
-        try {
-            FileReader reader = new FileReader("Tickets.json");
-            JSONArray ticketsJSON = (JSONArray)new JSONParser().parse(reader);
-
-            for (int i = 0; i < ticketsJSON.size(); i++) {
-                JSONObject ticketJSON = (JSONObject) ticketsJSON.get(i);
-                int ticketNum = (int)ticketJSON.get("")
-            }
-        }
-    }
+    
 }
