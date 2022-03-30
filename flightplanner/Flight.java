@@ -104,6 +104,7 @@ public class Flight {
     }
 
     public Boolean getSeatAvailability(String seatNum) {
+        
         return seats.get(seatNum);
     }
 
