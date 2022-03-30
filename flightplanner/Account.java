@@ -49,7 +49,7 @@ public class Account {
         return DOB;
     }
 
-    public int getPassportNum(){
+    public String getPassportNum(){
         return passportNum;
     }
 
@@ -73,7 +73,7 @@ public class Account {
         this.DOB = DOB;
     }
 
-    public void setPassportNum(int passportNum){
+    public void setPassportNum(String passportNum){
         this.passportNum = passportNum;
     }
 

@@ -4,28 +4,22 @@ import java.util.UUID;
 import java.util.HashMap;
 
 public class Flight {
-    private String flightDate;
+    private String flightID;
     private String arriveTime;
     private String departTime;
-    private HashMap<String, String> departAirport;
-    private HashMap<String, String> destAirport;
-    private boolean layover;
+    private String deptCity;
+    private String deptAirport;
+    private String destCity;
+    private String destAirport;
     private int flightDuration;
-    private int seatsRemaining;
-    private String flightID;
+    private HashMap<String, Boolean> seats;
+    
 
-    public Flight(String flightDate, String arriveTime, String departTime, HashMap<String, String> departAirport,
-                    HashMap<String, String> destAirport, boolean layover, int flightDuration, int seatsRemaining, String flightID) {
+    public Flight() {
                         //TODO constructor
     }
 
-    public void setFlightDate(String flightDate) {
-        this.flightDate = flightDate;
-    }
 
-    public String getFlightDate() {
-        return flightDate;
-    }
 
     public void setArriveTime(String arriveTime) {
         this.arriveTime = arriveTime;
@@ -43,28 +37,36 @@ public class Flight {
         return departTime;
     }
 
-    public void setDepartAirport(HashMap<String, String> departAirport) {
-        this.departAirport = departAirport;
+    public void setDepartAirport(String deptAirport) {
+        this.deptAirport = deptAirport;
     }
 
-    public HashMap<String, String> getDepartAirport() {
-        return departAirport;
+    public String getDepartAirport() {
+        return deptAirport;
     }
 
-    public void setDestAirport(HashMap<String, String> destAirport) {
+    public void setDepartCity(String deptCity) {
+        this.deptCity = deptCity;
+    }
+
+    public String getDepartCity() {
+        return deptCity;
+    }
+
+    public void setDestCity(String destCity) {
+        this.destCity = destCity;
+    }
+
+    public String getDestCity() {
+        return destCity;
+    }
+
+    public void setDestAirport(String destAirport) {
         this.destAirport = destAirport;
     }
 
-    public HashMap<String, String> getDestAirport() {
+    public String getDestAirport() {
         return destAirport;
-    }
-
-    public void setLayover(boolean layover) {
-        this.layover = layover;
-    }
-
-    public boolean getLayover() {
-        return layover;
     }
 
     public void setFlightDuration(int flightDuration) {
@@ -75,20 +77,20 @@ public class Flight {
         return flightDuration;
     }
 
-    public void setSeatsRemaining(int seatsRemaining) {
-        this.seatsRemaining = seatsRemaining;
-    }
-
-    public int getSeatsRemaining() {
-        return seatsRemaining;
-    }
-
     public void setFlightID() {
         this.flightID = generateID();
     }
 
     public String getFlightID() {
         return flightID;
+    }
+
+    public Boolean getSeatAvailability(String seatNum) {
+        return seats.get(seatNum);
+    }
+
+    public void setSeatAvailability(String seatNum) {
+        seats.put(seatNum, false);
     }
 
     public String generateID() {

@@ -29,14 +29,13 @@ public class DataReader {
                 accounts.add(new MemberAccount (firstName, lastName, acctNum, username, password, dob, passportNum, userEmail, userPhone));
             }
 
-            return accounts;
+            
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-        
+        return accounts;
     }
-    public static ArrayList<Flight> loadFlight(){
+    public static ArrayList<Flight> loadFlights(){
         ArrayList<Flight> flights = new ArrayList<Flight>();
 
         try {
@@ -45,12 +44,12 @@ public class DataReader {
 
             for (int i = 0; i < flightsJSON.size(); i++) {
                 JSONObject flightJSON = (JSONObject) flightsJSON.get(i);
-                String flightDate = (String) flightJSON.get("flightDate"), String arriveTime, String departTime, HashMap<String, String> departAirport,
-                    HashMap<String, String> destAirport, boolean layover, int flightDuration, int seatsRemaining)
+                
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return flights;
     }
     public static ArrayList<Hotel> loadHotel(){
         return null;
