@@ -38,4 +38,6 @@ public class MemberAccount extends Account {
     public void setPassword(String password) {
         this.password = password;
     }
+
+
 }

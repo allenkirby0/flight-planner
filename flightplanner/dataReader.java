@@ -64,7 +64,7 @@ public class DataReader {
                     seats.put((String)seat.get("seatNum"), (Boolean)seat.get("seatEmpty"));
                 }
 
-                flights.add(new Flight(flightID, flightNum, arriveTime, departTime, deptCity, deptAirport, destCity, destAirport, flightDuration, seats));
+                flights.add(new Flight(flightID, flightNum, arriveTime, departTime, deptCity, deptAirport, destCity, destAirport, duration, seats));
                 
             }
         } catch (Exception e) {
