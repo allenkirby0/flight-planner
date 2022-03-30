@@ -6,6 +6,12 @@ public class UI { //move stuff to outside constructor later on
     String accountAns;
     Scanner keyboard = new Scanner(System.in);
     public UI() {
+        Flights flights = Flights.getInstance();
+        Accounts accounts = Accounts.getInstance();
+        
+    }
+
+    public void fullUI(){
         boolean check = true;
         System.out.println("Hello and welcome to the Trip Planner!");
         // Need to think about structure of how things go
