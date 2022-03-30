@@ -4,14 +4,14 @@ import java.util.ArrayList;
 
 public class Accounts {
     
-    private Accounts accounts = null;
-    private ArrayList<MemberAccount> accountList;
+    private static Accounts accounts = null;
+    private static ArrayList<MemberAccount> accountList;
 
     private Accounts() {
-        accountList = dataReader.loadAccounts();
+        accountList = DataReader.loadAccounts();
     }
     
-    public Accounts getInstance() {
+    public static Accounts getInstance() {
 
         if (accounts == null) {
             accounts = new Accounts();
@@ -25,6 +25,14 @@ public class Accounts {
 
     public Account get(int i) {
         return accountList.get(i);
+    }
+
+    public void addAccount(String firstName, String lastName,String acctNum, String username, String password, String dob, String passportNum, String userEmail, String userPhone) {
+        accountList.add(new MemberAccount (firstName, lastName, acctNum, username, password, dob, passportNum, userEmail, userPhone));
+    }
+
+    public void addAccount(MemberAccount account) {
+        accountList.add(account);
     }
 
     public Account get(String acctNum) {

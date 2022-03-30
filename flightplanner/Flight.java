@@ -111,10 +111,18 @@ public class Flight {
         seats.put(seatNum, false);
     }
 
+    public HashMap<String, Boolean> getSeatMap() {
+        return seats;
+    }
+
     public String generateID() {
         UUID uuid = UUID.randomUUID();
         String id = uuid.toString();
 
         return id;
     }
+
+
+
+    
 }
