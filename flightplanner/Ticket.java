@@ -113,6 +113,13 @@ public class Ticket {
         return id;
     }
 
+    /**
+     * 
+     * @param destination
+     * @param departure
+     * @param flightList
+     * @return A list of lists of flightIDs that correspond to a flight
+     */
     public ArrayList<ArrayList<String>> generateFlightPlans (String destination, String departure, ArrayList<Flight> flightList) {
 
         ArrayList<ArrayList<String>> flightPlans = new ArrayList<ArrayList<String>>();
@@ -130,7 +137,7 @@ public class Ticket {
         for (int i = 0; i < hasDeparture.size(); i++) {
 
             ArrayList<String> flightPlan = new ArrayList<String>();
-            flightPlan = generateFlightPlanRec(destination, hasDeparture.get(i).getDepartCity(), LocalDateTime.parse(hasDeparture.get(i).getArriveTime()), flightList, flightPlan);
+            flightPlan = generateFlightPlanRec(destination, departure, LocalDateTime.parse(hasDeparture.get(i).getArriveTime()), flightList, flightPlan);
             
             if (!flightPlan.isEmpty()) {
                 Collections.reverse(flightPlan);
@@ -153,7 +160,7 @@ public class Ticket {
                 flightPlan.add(flightList.get(i).getFlightID());
                 return flightPlan;
             }
-            if (arrivalTime.compareTo(LocalDateTime.parse(flightList.get(i).getDepartTime())) < 0 && flightList.get(i).getDepartCity().equals(departure)) {
+            if (arrivalTime.compareTo(LocalDateTime.parse(flightList.get(i).getDepartTime())) <= 0 && flightList.get(i).getDepartCity().equals(departure)) {
                 hasDeparture.add(flightList.get(i));
             } 
 
