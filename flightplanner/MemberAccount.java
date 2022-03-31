@@ -39,21 +39,4 @@ public class MemberAccount extends Account {
         this.password = password;
     }
 
-    public boolean checkUsername(String username) {
-        if (username.equals(this.username)) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-
-    public boolean checkPassword(String password) {
-        if (password.equals(this.password)) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
 }
