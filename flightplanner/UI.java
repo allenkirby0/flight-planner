@@ -95,12 +95,13 @@ public class UI { //move stuff to outside constructor later on
         System.out.println("Please choose a flight:"); //Possibly use ints for choices
         int flightChoice = keyboard.nextInt();
         //Check for amount of seats, what type of plane it is, and avaliable seats
+        Ticket ticket = new Ticket(ticketNum, flightIDs, passengerID, seatNums, firstName, lastName);
         System.out.println(); // find way to get seats remaining
         if (guestOrMember == 1) { // 1 = guest account stuff grabbed and returned
 
         }
         else if (guestOrMember == 2) { // 2 = member account stuff grabbed and returned
-            
+
 
         }
         //Display ticket
