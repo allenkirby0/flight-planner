@@ -1,7 +1,11 @@
 package flightplanner;
 
 import java.util.UUID;
+import java.util.Map.Entry;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 public class Flight {
     private String flightID;
@@ -104,7 +108,7 @@ public class Flight {
     }
 
     public Boolean getSeatAvailability(String seatNum) {
-        
+
         return seats.get(seatNum);
     }
 
@@ -114,6 +118,18 @@ public class Flight {
 
     public HashMap<String, Boolean> getSeatMap() {
         return seats;
+    }
+
+    public ArrayList<String> availableSeats(){
+        ArrayList<String> availableSeats = new ArrayList<String>();
+        Iterator<Entry<String, Boolean>> iter = seats.entrySet().iterator();
+        while(iter.hasNext()){
+            Map.Entry<String, Boolean> seatMap = (Map.Entry<String, Boolean>)iter.next();
+            if(seatMap.getValue() == true){
+                availableSeats.add(seatMap.getKey());
+            }
+        }
+        return availableSeats;
     }
 
     public String generateID() {
