@@ -25,10 +25,10 @@ public class UI { //move stuff to outside constructor later on
             String Username = keyboard.nextLine();
             System.out.println("Please enter your Password:");
             String Password = keyboard.nextLine();
-            boolean usernameCheck = checkUsername(Username); // move checks from member account?
-            boolean passwordCheck = checkPassword(Password);
+            MemberAccount usernameCheck = getAccountFromUsername(Username); // move checks from member account?
+            boolean passwordCheck = checkPassword(Username, Password);
             // If check works then set acctCheck to true
-            if(usernameCheck == true && passwordCheck == true) {
+            if(usernameCheck != null && passwordCheck == true) {
                 System.out.println("Welcome "); //Include first name from database
                 check = false; // Only way to get out of loop currently (Possibily might change)    
             }
