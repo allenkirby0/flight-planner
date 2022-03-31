@@ -8,8 +8,15 @@ import java.util.Map.Entry;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-
+/**
+ * dataWriter class
+ * 
+ * Writes data to json file database
+ */
 public class dataWriter {
+    /**
+     * Saves users account to json
+     */
     public void saveAccount(){
         ArrayList<MemberAccount> accounts = Accounts.getInstance().getAccountList();
         JSONArray accountsJSON = new JSONArray();
@@ -27,6 +34,9 @@ public class dataWriter {
             e.printStackTrace();
         }
     }
+    /**
+     * Saves flight to json
+     */
     public void saveFlight(){
         ArrayList<Flight> flights = Flights.getInstance().getFlights();
         JSONArray flightsJSON = new JSONArray();
@@ -44,10 +54,18 @@ public class dataWriter {
             e.printStackTrace();
         }
     }
+    /**
+     * Saves hotel to json
+     */
     public void saveHotel(){
         //TODO
     }
 
+    /**
+     * Gets an account from json
+     * @param account a member account
+     * @return an account
+     */
     public static JSONObject getAccountJSON(MemberAccount account) {
         JSONObject accountJSON = new JSONObject();
         accountJSON.put("acctNum", account.getAcctNum());
@@ -63,6 +81,11 @@ public class dataWriter {
         return accountJSON;
     }
 
+    /**
+     * Gets an account from json
+     * @param flight gets a flight
+     * @return a flight
+     */
     public static JSONObject getFlightJSON (Flight flight) {
         JSONObject flightJSON = new JSONObject();
         flightJSON.put("id", flight.getFlightID());

@@ -8,7 +8,16 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
+/**
+ * dataReader class
+ * 
+ * reads data from json files
+ */
 public class dataReader {
+    /**
+     * Loads user accounts from json
+     * @return user accounts
+     */
     public static ArrayList<MemberAccount> loadAccounts(){
         ArrayList<MemberAccount> accounts = new ArrayList<MemberAccount>();
 
@@ -37,6 +46,10 @@ public class dataReader {
         }
         return accounts;
     }
+    /**
+     * Loads flights from json
+     * @return flights
+     */
     public static ArrayList<Flight> loadFlights(){
         ArrayList<Flight> flights = new ArrayList<Flight>();
 
@@ -72,6 +85,10 @@ public class dataReader {
         }
         return flights;
     }
+    /**
+     * Loads hotels from json
+     * @return hotels
+     */
     public static ArrayList<Hotel> loadHotel(){
         return null;
     }
