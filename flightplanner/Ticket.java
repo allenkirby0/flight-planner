@@ -3,6 +3,9 @@ package flightplanner;
 import java.util.ArrayList;
 import java.util.UUID;
 
+/**
+ * Represents the itinerary for a customer- 
+ */
 public class Ticket {
     private int ticketNum;
     private ArrayList<String> flightIDs;
@@ -11,6 +14,22 @@ public class Ticket {
     private String firstName;
     private String lastName;
 
+    /**
+     * Empty constructor to be used for adding in data
+     */
+    public Ticket() {
+        //Empty 
+    }
+
+    /**
+     * Constructor for the Ticket class that instantiates all parameters
+     * @param ticketNum Ticket Number
+     * @param flightIDs flightID's of all flights in itinerary in sequential order
+     * @param passengerID Passenger's accountID (optional)
+     * @param seatNums List of seats on the respective flight
+     * @param firstName Passenger's first name
+     * @param lastName Passenger's last name
+     */
     public Ticket(int ticketNum, ArrayList<String> flightIDs, String passengerID, ArrayList<String> seatNums, String firstName, String lastName) {
         this.ticketNum = ticketNum;
         this.flightIDs = flightIDs;
@@ -21,19 +40,34 @@ public class Ticket {
     }
 
     //Access json file somewhere
-
+    /**
+     * Returns ticket number
+     * @return ticket number
+     */
     public int getTicketNum() {
         return ticketNum;
     }
 
+    /**
+     * Returns a list of flightIDs
+     * @return List of flight IDs
+     */
     public ArrayList<String> getFlights() {
         return flightIDs;
     }
 
+    /**
+     * Returns passenger's account ID
+     * @return Passenger's account ID
+     */
     public String getPassengerID() {
         return passengerID;
     }
 
+    /**
+     * 
+     * @return
+     */
     public ArrayList<String> getSeatNum () {
         return seatNums;
     }

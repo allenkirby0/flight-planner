@@ -46,6 +46,25 @@ public class Accounts {
         return null;
     } 
 
+    public MemberAccount getAccountFromUsername(String username) {
+        for (int i = 0; i < accountList.size(); i++) {
+            if (accountList.get(i).getUsername().equals(username)) {
+                return accountList.get(i);
+            }
+        }
+
+        return null; 
+    }
+
+    public Boolean checkPassword (String username, String password) {
+        
+        if (getAccountFromUsername(username).getPassword().equals(password)) {
+            return true;
+        }
+        return false;
+
+    }
+
     
 
 
