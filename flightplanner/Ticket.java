@@ -110,4 +110,21 @@ public class Ticket {
 
         return id;
     }
+
+    public ArrayList<String> generateFlightPlan (String destination, String departure, ArrayList<Flight> flightList, ArrayList<String> flightPlan) {
+
+        ArrayList<Flight> hasDeparture = new ArrayList<Flight>();
+        for (int i = 0; i < flightList.size(); i++) {
+              
+            if (flightList.get(i).getDestCity().equals(destination)) {
+                return flightList.get(i).getFlightID();
+            }
+            if (flightList.get(i).getDepartCity().equals(departure)) {
+                hasDeparture.add()
+            }
+
+
+        }
+
+    } 
 }
