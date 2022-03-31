@@ -1,6 +1,8 @@
 package flightplanner;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.UUID;
 
 /**
@@ -111,20 +113,65 @@ public class Ticket {
         return id;
     }
 
-    public ArrayList<String> generateFlightPlan (String destination, String departure, ArrayList<Flight> flightList, ArrayList<String> flightPlan) {
+    public ArrayList<ArrayList<String>> generateFlightPlans (String destination, String departure, ArrayList<Flight> flightList) {
+
+        ArrayList<ArrayList<String>> flightPlans = new ArrayList<ArrayList<String>>();
 
         ArrayList<Flight> hasDeparture = new ArrayList<Flight>();
-        for (int i = 0; i < flightList.size(); i++) {
-              
-            if (flightList.get(i).getDestCity().equals(destination)) {
-                return flightList.get(i).getFlightID();
-            }
-            if (flightList.get(i).getDepartCity().equals(departure)) {
-                hasDeparture.add()
-            }
 
+        for (int i = 0; i < flightList.size(); i++) {
+
+            if (flightList.get(i).getDepartCity().equals(departure)) {
+                hasDeparture.add(flightList.get(i));
+            }
 
         }
 
+        for (int i = 0; i < hasDeparture.size(); i++) {
+
+            ArrayList<String> flightPlan = new ArrayList<String>();
+            flightPlan = generateFlightPlanRec(destination, hasDeparture.get(i).getDepartCity(), LocalDateTime.parse(hasDeparture.get(i).getArriveTime()), flightList, flightPlan);
+            
+            if (!flightPlan.isEmpty()) {
+                Collections.reverse(flightPlan);
+                flightPlans.add(flightPlan);
+            }
+
+        }
+        
+        return flightPlans;   
+        
+
     } 
+
+    private ArrayList<String> generateFlightPlanRec (String destination, String departure, LocalDateTime arrivalTime, ArrayList<Flight> flightList, ArrayList<String> flightPlan) {
+
+        ArrayList<Flight> hasDeparture = new ArrayList<Flight>();
+        for (int i = 0; i < flightList.size(); i++) {
+
+            if (flightList.get(i).getDestCity().equals(destination) && flightList.get(i).getDepartCity().equals(departure)) {
+                flightPlan.add(flightList.get(i).getFlightID());
+                return flightPlan;
+            }
+            if (arrivalTime.compareTo(LocalDateTime.parse(flightList.get(i).getDepartTime())) < 0 && flightList.get(i).getDepartCity().equals(departure)) {
+                hasDeparture.add(flightList.get(i));
+            } 
+
+        }
+
+        if (hasDeparture.isEmpty()) {
+            return flightPlan;
+        } 
+
+        int counter = flightPlan.size();
+        for (int i = 0; i < hasDeparture.size(); i++) {
+            ArrayList<String> temp = generateFlightPlanRec(destination, hasDeparture.get(i).getDepartCity(), LocalDateTime.parse(hasDeparture.get(i).getArriveTime()), flightList, flightPlan);
+            if (counter != temp.size()) {
+                flightPlan.add(hasDeparture.get(i).getFlightID());
+                return flightPlan;
+            }
+        }
+
+        return null;
+    }
 }
