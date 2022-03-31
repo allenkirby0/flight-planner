@@ -8,7 +8,6 @@ import java.util.Map.Entry;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
-<<<<<<< HEAD
 /**
  * dataWriter class
  * 
@@ -18,10 +17,6 @@ public class dataWriter {
     /**
      * Saves users account to json
      */
-=======
-
-public class DataWriter {
->>>>>>> 2af90f88c4945ff3d3c9ccd7da4a6f748db5b6ed
     public void saveAccount(){
         ArrayList<MemberAccount> accounts = Accounts.getInstance().getAccountList();
         JSONArray accountsJSON = new JSONArray();

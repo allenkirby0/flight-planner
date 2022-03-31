@@ -13,7 +13,7 @@ public class Flights {
      * Loads list of flights from json
      */
     private Flights() {
-        flightList = DataReader.loadFlights();
+        flightList = dataReader.loadFlights();
     }
     
     /**

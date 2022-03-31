@@ -8,7 +8,6 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-<<<<<<< HEAD
 /**
  * dataReader class
  * 
@@ -19,9 +18,6 @@ public class dataReader {
      * Loads user accounts from json
      * @return user accounts
      */
-=======
-public class DataReader {
->>>>>>> 2af90f88c4945ff3d3c9ccd7da4a6f748db5b6ed
     public static ArrayList<MemberAccount> loadAccounts(){
         ArrayList<MemberAccount> accounts = new ArrayList<MemberAccount>();
 
