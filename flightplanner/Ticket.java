@@ -120,7 +120,7 @@ public class Ticket {
      * @param flightList
      * @return A list of lists of flightIDs that correspond to a flight
      */
-    public ArrayList<ArrayList<String>> generateFlightPlans (String destination, String departure, ArrayList<Flight> flightList) {
+    public static ArrayList<ArrayList<String>> generateFlightPlans (String destination, String departure, ArrayList<Flight> flightList) {
 
         ArrayList<ArrayList<String>> flightPlans = new ArrayList<ArrayList<String>>();
 
@@ -151,7 +151,7 @@ public class Ticket {
 
     } 
 
-    private ArrayList<String> generateFlightPlanRec (String destination, String departure, LocalDateTime arrivalTime, ArrayList<Flight> flightList, ArrayList<String> flightPlan) {
+    private static ArrayList<String> generateFlightPlanRec (String destination, String departure, LocalDateTime arrivalTime, ArrayList<Flight> flightList, ArrayList<String> flightPlan) {
 
         ArrayList<Flight> hasDeparture = new ArrayList<Flight>();
         for (int i = 0; i < flightList.size(); i++) {
