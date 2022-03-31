@@ -120,7 +120,7 @@ public class Flight {
         return seats;
     }
 
-    public ArrayList<String> availableSeats(){
+    public ArrayList<String> getAvailableSeats(){
         ArrayList<String> availableSeats = new ArrayList<String>();
         Iterator<Entry<String, Boolean>> iter = seats.entrySet().iterator();
         while(iter.hasNext()){
