@@ -1,48 +1,109 @@
 [{
     "hotelName": "Hampton Inn",
-    "hotelPrice": 560,
+    "hotelPrice": 330,
     "hotelRating": "4 Stars",
-    "amenities": [{
-        "doubleBed": true,
-        "pool": true,
-        "gym": false,
-        "breakfast": true
-    }]
-
+    "hotelAddress": "500 5th Avenue North",
+    "hotelCity": "Seattle",
+    "hotelState": "WA",
+    "hotelZipCode": "98109",
+    "amenities": [
+        {"doubleBed": true},
+        {"pool": true},
+        {"gym": false},
+        {"breakfast": true}
+    ],
+    "rooms":[
+        {"roomNumber": "100", "isAvailableAfter": "2022-04-02T12:00:00.0000", "beds": 2},
+        {"roomNumber": "101", "isAvailableAfter": "2022-04-10T12:00:00.0000", "beds": 1},
+        {"roomNumber": "102", "isAvailableAfter": "2022-04-01T12:00:00.0000", "beds": 2},
+        {"roomNumber": "103", "isAvailableAfter": "2022-04-02T12:00:00.0000", "beds": 2},
+        {"roomNumber": "104", "isAvailableAfter": "2022-04-08T12:00:00.0000", "beds": 2},
+        {"roomNumber": "105", "isAvailableAfter": "2022-04-02T12:00:00.0000", "beds": 1},
+        {"roomNumber": "106", "isAvailableAfter": "2022-04-02T12:00:00.0000", "beds": 1},
+        {"roomNumber": "107", "isAvailableAfter": "2022-04-03T12:00:00.0000", "beds": 2},
+        {"roomNumber": "109", "isAvailableAfter": "2022-04-03T12:00:00.0000", "beds": 2},
+        {"roomNumber": "109", "isAvailableAfter": "2022-04-02T12:00:00.0000", "beds": 2}
+    ]
 },
 {
     "hotelName": "Quality Inn",
-    "hotelPrice": 430,
+    "hotelPrice": 270,
     "hotelRating": "3 Stars",
-    "amenities": [{
-        "doubleBed": false,
-        "pool": true,
-        "gym": true,
-        "breakfast": true
-    }]
-
+    "hotelAddress": "2900 S 192nd St",
+    "hotelCity": "Seattle",
+    "hotelState": "WA",
+    "hotelZipCode": "98109",
+    "amenities": [
+        {"doubleBed": true},
+        {"pool": true},
+        {"gym": false},
+        {"breakfast": true}
+    ],
+    "rooms":[
+        {"roomNumber": "100", "isAvailableAfter": "2022-04-07T12:00:00.0000", "beds": 1},
+        {"roomNumber": "101", "isAvailableAfter": "2022-04-10T12:00:00.0000", "beds": 2},
+        {"roomNumber": "102", "isAvailableAfter": "2022-04-01T12:00:00.0000", "beds": 2},
+        {"roomNumber": "103", "isAvailableAfter": "2022-04-02T12:00:00.0000", "beds": 1},
+        {"roomNumber": "104", "isAvailableAfter": "2022-04-02T12:00:00.0000", "beds": 2},
+        {"roomNumber": "105", "isAvailableAfter": "2022-04-02T12:00:00.0000", "beds": 2},
+        {"roomNumber": "106", "isAvailableAfter": "2022-04-02T12:00:00.0000", "beds": 2},
+        {"roomNumber": "107", "isAvailableAfter": "2022-04-03T12:00:00.0000", "beds": 1},
+        {"roomNumber": "109", "isAvailableAfter": "2022-04-03T12:00:00.0000", "beds": 2},
+        {"roomNumber": "109", "isAvailableAfter": "2022-04-02T12:00:00.0000", "beds": 2}
+    ]
 },
 {
-    "hotelName": "Fanciest Hotel, Inc.",
-    "hotelPrice": 800,
+    "hotelName": "Four Seasons",
+    "hotelPrice": 500,
     "hotelRating": "5 Stars",
-    "amenities": [{
-        "doubleBed": true,
-        "pool": true,
-        "gym": true,
-        "breakfast": true
-    }]
+    "hotelAddress": "99 Union St",
+    "hotelCity": "Seattle",
+    "hotelState": "WA",
+    "hotelZipCode": "98109",
+    "amenities": [
+        {"doubleBed": true},
+        {"pool": true},
+        {"gym": true},
+        {"breakfast": true}
+    ],
+    "rooms":[
+        {"roomNumber": "100", "isAvailableAfter": "2022-04-03T12:00:00.0000", "beds": 2},
+        {"roomNumber": "101", "isAvailableAfter": "2022-04-10T12:00:00.0000", "beds": 1},
+        {"roomNumber": "102", "isAvailableAfter": "2022-04-07T12:00:00.0000", "beds": 1},
+        {"roomNumber": "103", "isAvailableAfter": "2022-04-02T12:00:00.0000", "beds": 1},
+        {"roomNumber": "104", "isAvailableAfter": "2022-04-08T12:00:00.0000", "beds": 1},
+        {"roomNumber": "105", "isAvailableAfter": "2022-04-02T12:00:00.0000", "beds": 2},
+        {"roomNumber": "106", "isAvailableAfter": "2022-04-07T12:00:00.0000", "beds": 1},
+        {"roomNumber": "107", "isAvailableAfter": "2022-04-01T12:00:00.0000", "beds": 1},
+        {"roomNumber": "109", "isAvailableAfter": "2022-04-03T12:00:00.0000", "beds": 1},
+        {"roomNumber": "109", "isAvailableAfter": "2022-04-05T12:00:00.0000", "beds": 1}
+    ]
 },
 {
-    "hotelName": "Seattle Motel",
-    "hotelPrice": 310,
+    "hotelName": "Motel 6",
+    "hotelPrice": 120,
     "hotelRating": "2 Stars",
-    "amenities": [{
-        "doubleBed": true,
-        "pool": true,
-        "gym": false,
-        "breakfast": false
-    }]
+    "hotelAddress": "16500 Pacific Hwy S",
+    "hotelCity": "Seattle",
+    "hotelState": "WA",
+    "hotelZipCode": "98109",
+    "amenities": [
+        {"doubleBed": false},
+        {"pool": true},
+        {"gym": false},
+        {"breakfast": true}
+    ],
+    "rooms":[
+        {"roomNumber": "100", "isAvailableAfter": "2022-04-02T12:00:00.0000", "beds": 2},
+        {"roomNumber": "101", "isAvailableAfter": "2022-04-02T12:00:00.0000", "beds": 1},
+        {"roomNumber": "102", "isAvailableAfter": "2022-04-02T12:00:00.0000", "beds": 1},
+        {"roomNumber": "103", "isAvailableAfter": "2022-04-02T12:00:00.0000", "beds": 1},
+        {"roomNumber": "104", "isAvailableAfter": "2022-04-08T12:00:00.0000", "beds": 2},
+        {"roomNumber": "105", "isAvailableAfter": "2022-04-02T12:00:00.0000", "beds": 2},
+        {"roomNumber": "106", "isAvailableAfter": "2022-04-02T12:00:00.0000", "beds": 2},
+        {"roomNumber": "107", "isAvailableAfter": "2022-04-03T12:00:00.0000", "beds": 2},
+        {"roomNumber": "109", "isAvailableAfter": "2022-04-03T12:00:00.0000", "beds": 1},
+        {"roomNumber": "109", "isAvailableAfter": "2022-04-02T12:00:00.0000", "beds": 2}
+    ]
+}]
 
-}
-]
