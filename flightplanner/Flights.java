@@ -8,7 +8,7 @@ public class Flights {
     private static ArrayList<Flight> flightList;
 
     private Flights() {
-        flightList = dataReader.loadFlights();
+        flightList = DataReader.loadFlights();
     }
     
     public static Flights getInstance() {

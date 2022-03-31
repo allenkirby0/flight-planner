@@ -9,7 +9,7 @@ import java.util.Map.Entry;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
-public class dataWriter {
+public class DataWriter {
     public void saveAccount(){
         ArrayList<MemberAccount> accounts = Accounts.getInstance().getAccountList();
         JSONArray accountsJSON = new JSONArray();
