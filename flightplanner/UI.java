@@ -10,14 +10,14 @@ public class UI { //move stuff to outside constructor later on
 
     }
 
-    public void fullUI(){
+    public void main(){
         Flights flights = Flights.getInstance();
         Accounts accounts = Accounts.getInstance();
-        boolean check = true;
+        boolean flag = true;
         int guestOrMember = 0;
         System.out.println("Hello and welcome to the Trip Planner!");
         // Need to think about structure of how things go
-        while(check) { //check used to continue loop
+        while(flag) { //check used to continue loop
         System.out.println("Do you already have an Account? [Y] or [N]");
         accountAns = keyboard.nextLine().toLowerCase();
         if(accountAns.equals("y")) {
@@ -32,7 +32,7 @@ public class UI { //move stuff to outside constructor later on
             // If check works then set acctCheck to true
             if(usernameCheck != null && passwordCheck == true) {
                 System.out.println("Welcome "); //Include first name from database
-                check = false; // Only way to get out of loop currently (Possibily might change)    
+                flag = false; // Only way to get out of loop currently (Possibily might change)    
             }
             else {
                 System.out.println("I'm sorry this account doesn't exist");
