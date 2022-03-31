@@ -217,4 +217,10 @@ public class Ticket {
 
         return null;
     }
+
+    public static void displayFlightPlan (ArrayList<ArrayList<String>> listFlightPlan) {
+
+
+
+    }
 }

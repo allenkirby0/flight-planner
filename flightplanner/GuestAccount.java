@@ -26,4 +26,5 @@ public class GuestAccount extends Account{
         super(firstName, lastName, dob, passportNum, userEmail, userPhone);
     }
 
+    
 }

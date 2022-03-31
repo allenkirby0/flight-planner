@@ -148,4 +148,12 @@ public class Account {
         this.userPhone = userPhone;
     }
 
+    /**
+     * Returns null for no username
+     * @return nothing
+     */
+    public String getUsername() {
+        return null;
+    }
+
 }
