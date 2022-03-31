@@ -35,10 +35,6 @@ public class Account {
 
     }
 
-    public void getUserInfo(){
-        //TODO
-    }
-
     public String getFirstName(){
         return firstName;
     }
