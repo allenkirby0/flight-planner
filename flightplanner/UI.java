@@ -8,7 +8,7 @@ public class UI { //move stuff to outside constructor later on
     public UI() {
         Flights flights = Flights.getInstance();
         Accounts accounts = Accounts.getInstance();
-        
+
     }
 
     public void fullUI(){
@@ -25,15 +25,15 @@ public class UI { //move stuff to outside constructor later on
             String Username = keyboard.nextLine();
             System.out.println("Please enter your Password:");
             String Password = keyboard.nextLine();
-            //check with json files
-            boolean acctCheck = false;
+            boolean usernameCheck = checkUsername(Username); // move checks from member account?
+            boolean passwordCheck = checkPassword(Password);
             // If check works then set acctCheck to true
-            if(acctCheck == false) {
-                System.out.println("I'm sorry this account doesn't exist");
+            if(usernameCheck == true && passwordCheck == true) {
+                System.out.println("Welcome "); //Include first name from database
+                check = false; // Only way to get out of loop currently (Possibily might change)    
             }
             else {
-                System.out.println("Welcome "); //Include first name from database
-                check = false; // Only way to get out of loop currently (Possibily might change)
+                System.out.println("I'm sorry this account doesn't exist");
             }
         }
         else if(accountAns.equals("n")) {
@@ -121,4 +121,12 @@ public class UI { //move stuff to outside constructor later on
     }
     return false; // failsafe
     }
+    
+
+
+    public static void main(String[] args) {
+    
+    }
 }
+
+
