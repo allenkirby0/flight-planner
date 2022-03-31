@@ -8,7 +8,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-public class DataReader {
+public class dataReader {
     public static ArrayList<MemberAccount> loadAccounts(){
         ArrayList<MemberAccount> accounts = new ArrayList<MemberAccount>();
 
