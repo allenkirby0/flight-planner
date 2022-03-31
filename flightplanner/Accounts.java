@@ -13,7 +13,7 @@ public class Accounts {
      * Loads a list of accounts from the json file
      */
     private Accounts() {
-        accountList = DataReader.loadAccounts();
+        accountList = dataReader.loadAccounts();
     }
     
     /**
