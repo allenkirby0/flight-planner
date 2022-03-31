@@ -44,8 +44,6 @@ public class Flights {
     public void addFlight (Flight flight) {
         flightList.add(flight);
     }
-
-    
     
 
 }
