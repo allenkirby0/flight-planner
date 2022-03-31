@@ -14,9 +14,6 @@ public class Hotel {
     private Room room;
 
 
-<<<<<<< HEAD
-    public Hotel(String hotelName, String streetAddress, String city, String state, String zip, Room room){
-=======
     /**
      * Hotel object constructor
      * @param hotelName hotels name
@@ -26,8 +23,7 @@ public class Hotel {
      * @param zip hotels zip code
      * @param room hotels room information
      */
-    public Hotel(String hotelName, String streetAddress, String city, String state, String zip, HashMap<String, String> room){
->>>>>>> ab4508bc524c77bdbd82d1a3b5ea1d3996eea9d1
+    public Hotel(String hotelName, String streetAddress, String city, String state, String zip, Room room){
         this.hotelName = hotelName;
         this.streetAddress = streetAddress;
         this.city = city;
@@ -76,15 +72,7 @@ public class Hotel {
         return zip;
     }
 
-<<<<<<< HEAD
     public Room getRoom(){
-=======
-    /**
-     * Gets a hotel room information
-     * @return a hotel room
-     */
-    public HashMap<String, String> getRoom(){
->>>>>>> ab4508bc524c77bdbd82d1a3b5ea1d3996eea9d1
         return room;
     }
 
@@ -128,17 +116,11 @@ public class Hotel {
         this.zip = zip;
     }
 
-<<<<<<< HEAD
+    /**
+     * Sets the hotels room
+     * @param room
+     */
     public void setRoom(Room room){
         this.room = room;
-=======
-    /**
-     * Sets room availability 
-     * @param roomNum the hotels room number
-     * @param isAvaliableAfter when the room is available after
-     */
-    public void setRoom(String roomNum, String isAvaliableAfter){
-        room.put(roomNum, isAvaliableAfter);
->>>>>>> ab4508bc524c77bdbd82d1a3b5ea1d3996eea9d1
     }
 }
