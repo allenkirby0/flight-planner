@@ -55,6 +55,7 @@ public class UI { //move stuff to outside constructor later on
                 String phoneNum = keyboard.nextLine();
                 System.out.println("Please enter your email:");
                 String email = keyboard.nextLine();
+                GuestAccount guestAccount =  new GuestAccount(firstName, lastName, DOB, passportNum, phoneNum, email);
                 
                 // Write all of this into JSON file for guest
             }
@@ -77,8 +78,9 @@ public class UI { //move stuff to outside constructor later on
                 String username = keyboard.nextLine();
                 System.out.println("Please enter a Password:");
                 String password = keyboard.nextLine();
-
-                // Write to JSON file
+                String acctID = MemberAccount.generateID();
+                MemberAccount memberAccount = new MemberAccount(firstName, lastName, acctID, username, password, DOB, passportNum, email, phoneNum);
+                accounts.addAccount(memberAccount);
             }
         }
         else {
