@@ -14,6 +14,7 @@ public class UI { //move stuff to outside constructor later on
         Flights flights = Flights.getInstance();
         Accounts accounts = Accounts.getInstance();
         boolean check = true;
+        int guestOrMember = 0;
         System.out.println("Hello and welcome to the Trip Planner!");
         // Need to think about structure of how things go
         while(check) { //check used to continue loop
@@ -42,7 +43,6 @@ public class UI { //move stuff to outside constructor later on
             String typeAcct = keyboard.nextLine().toLowerCase();
             if(typeAcct.equals("g")) {
                 // Guest Account information that's necessary
-
                 System.out.println("Please enter your first name:");
                 String firstName = keyboard.nextLine();
                 System.out.println("Please enter your last name:");
@@ -56,12 +56,10 @@ public class UI { //move stuff to outside constructor later on
                 System.out.println("Please enter your email:");
                 String email = keyboard.nextLine();
                 GuestAccount guestAccount =  new GuestAccount(firstName, lastName, DOB, passportNum, phoneNum, email);
-                
-                // Write all of this into JSON file for guest
+                guestOrMember = 1;
             }
             else if(typeAcct.equals("m")) {
                 // Similar to guest account but with username and password included
-
                 System.out.println("Please enter your first name:");
                 String firstName = keyboard.nextLine();
                 System.out.println("Please enter your last name:");
@@ -81,12 +79,14 @@ public class UI { //move stuff to outside constructor later on
                 String acctID = MemberAccount.generateID();
                 MemberAccount memberAccount = new MemberAccount(firstName, lastName, acctID, username, password, DOB, passportNum, email, phoneNum);
                 accounts.addAccount(memberAccount);
+                guestOrMember = 2;
             }
         }
         else {
             System.out.println("Error: Please enter a valid option");
         }
     }
+
     boolean tripcheck = bookTrip(); //checks if user wants to book a flight
     if(tripcheck) {
         System.out.println("Where do you wish to travel to?");
@@ -96,10 +96,19 @@ public class UI { //move stuff to outside constructor later on
         int flightChoice = keyboard.nextInt();
         //Check for amount of seats, what type of plane it is, and avaliable seats
         System.out.println(); // find way to get seats remaining
-        //Display ticket and also write it to JSON file
+        if (guestOrMember == 1) { // 1 = guest account stuff grabbed and returned
+
+        }
+        else if (guestOrMember == 2) { // 2 = member account stuff grabbed and returned
+            
+
+        }
+        //Display ticket
+        //Save info to JSON files
         System.exit(0);
     }
     else {
+        //Save info to JSON files
         System.out.println("Have a good day! Goodbye!");
         System.exit(0); //Currently will quit program
     }
