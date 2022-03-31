@@ -97,14 +97,11 @@ public class UI { //move stuff to outside constructor later on
         //Check for amount of seats, what type of plane it is, and avaliable seats
         System.out.println(); // find way to get seats remaining
         //Display ticket and also write it to JSON file
-        //If we get to hotels leave if area & continue to booking hotel
         System.exit(0);
-
     }
     else {
-        //either book hotel or quit program
         System.out.println("Have a good day! Goodbye!");
-        System.exit(0); //Currently will quit program (Subject to change)
+        System.exit(0); //Currently will quit program
     }
     }
 
