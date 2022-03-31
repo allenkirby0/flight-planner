@@ -42,6 +42,7 @@ public class UI { //move stuff to outside constructor later on
             String typeAcct = keyboard.nextLine().toLowerCase();
             if(typeAcct.equals("g")) {
                 // Guest Account information that's necessary
+
                 System.out.println("Please enter your first name:");
                 String firstName = keyboard.nextLine();
                 System.out.println("Please enter your last name:");
@@ -54,10 +55,12 @@ public class UI { //move stuff to outside constructor later on
                 String phoneNum = keyboard.nextLine();
                 System.out.println("Please enter your email:");
                 String email = keyboard.nextLine();
+                
                 // Write all of this into JSON file for guest
             }
             else if(typeAcct.equals("m")) {
                 // Similar to guest account but with username and password included
+
                 System.out.println("Please enter your first name:");
                 String firstName = keyboard.nextLine();
                 System.out.println("Please enter your last name:");
@@ -74,6 +77,7 @@ public class UI { //move stuff to outside constructor later on
                 String username = keyboard.nextLine();
                 System.out.println("Please enter a Password:");
                 String password = keyboard.nextLine();
+
                 // Write to JSON file
             }
         }
