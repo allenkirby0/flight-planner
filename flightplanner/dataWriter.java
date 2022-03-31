@@ -13,7 +13,7 @@ import org.json.simple.JSONObject;
  * 
  * Writes data to json file database
  */
-public class dataWriter {
+public class DataWriter {
     /**
      * Saves users account to json
      */

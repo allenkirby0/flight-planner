@@ -13,7 +13,7 @@ import org.json.simple.parser.JSONParser;
  * 
  * reads data from json files
  */
-public class dataReader {
+public class DataReader {
     /**
      * Loads user accounts from json
      * @return user accounts
