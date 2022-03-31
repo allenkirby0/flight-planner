@@ -1,4 +1,5 @@
 package flightplanner;
+import java.util.UUID;
 
 public class MemberAccount extends Account {
 
@@ -39,4 +40,14 @@ public class MemberAccount extends Account {
         this.password = password;
     }
 
+    /**
+     * Generates a flights unique identification number
+     * @return
+     */
+    public static String generateID() {
+        UUID uuid = UUID.randomUUID();
+        String id = uuid.toString();
+
+        return id;
+    }
 }
