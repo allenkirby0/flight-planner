@@ -121,8 +121,6 @@ public class UI { //move stuff to outside constructor later on
     }
     return false; // failsafe
     }
-    
-
 
     public static void main(String[] args) {
     
