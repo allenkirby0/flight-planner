@@ -67,45 +67,81 @@ public class Ticket {
     }
 
     /**
-     * 
+     * returns seatNums variable
      * @return
      */
     public ArrayList<String> getSeatNum () {
         return seatNums;
     }
 
+    /**
+     * returns firstName variable
+     * @return
+     */
     public String getFirstName() {
         return firstName;
     }
 
+    /**
+     * returns lastName variable
+     * @return
+     */
     public String getLastName() {
         return lastName;
     }
 
+    /**
+     * sets ticketNum variable
+     * @param ticketNum
+     */
     public void setTicketNum(int ticketNum) {
         this.ticketNum = ticketNum;
     }
 
+    /**
+     * sets FlightIDs variable
+     * @param flightIDs
+     */
     public void setFlight(ArrayList<String> flightIDs) {
         this.flightIDs = flightIDs;
     }
 
+    /**
+     * sets passengerID variable
+     * @param passengerID
+     */
     public void setPassenger(String passengerID) {
         this.passengerID = generateID();
     }
 
+    /**
+     * set seatNums variable
+     * @param seatNums
+     */
     public void setSeatNum (ArrayList<String> seatNums) {
         this.seatNums = seatNums;
     }
 
+    /**
+     * set firstName variable
+     * @param firstName
+     */
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
+    /**
+     * set lastName variable
+     * @param lastName
+     */
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
+    /**
+     * Generates a flights unique identification number
+     * @return
+     */
     public String generateID() {
         UUID uuid = UUID.randomUUID();
         String id = uuid.toString();
