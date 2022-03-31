@@ -9,10 +9,10 @@ public class Hotel {
     private String city;
     private String state;
     private String zip;
-    private HashMap<String, String> room;
+    private Room room;
 
 
-    public Hotel(String hotelName, String streetAddress, String city, String state, String zip, HashMap<String, String> room){
+    public Hotel(String hotelName, String streetAddress, String city, String state, String zip, Room room){
         this.hotelName = hotelName;
         this.streetAddress = streetAddress;
         this.city = city;
@@ -41,7 +41,7 @@ public class Hotel {
         return zip;
     }
 
-    public HashMap<String, String> getRoom(){
+    public Room getRoom(){
         return room;
     }
 
@@ -65,7 +65,7 @@ public class Hotel {
         this.zip = zip;
     }
 
-    public void setRoom(String roomNum, String isAvaliableAfter){
-        room.put(roomNum, isAvaliableAfter);
+    public void setRoom(Room room){
+        this.room = room;
     }
 }
