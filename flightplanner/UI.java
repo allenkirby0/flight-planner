@@ -6,12 +6,13 @@ public class UI { //move stuff to outside constructor later on
     String accountAns;
     Scanner keyboard = new Scanner(System.in);
     public UI() {
-        Flights flights = Flights.getInstance();
-        Accounts accounts = Accounts.getInstance();
+        
 
     }
 
     public void fullUI(){
+        Flights flights = Flights.getInstance();
+        Accounts accounts = Accounts.getInstance();
         boolean check = true;
         System.out.println("Hello and welcome to the Trip Planner!");
         // Need to think about structure of how things go
@@ -25,8 +26,8 @@ public class UI { //move stuff to outside constructor later on
             String Username = keyboard.nextLine();
             System.out.println("Please enter your Password:");
             String Password = keyboard.nextLine();
-            boolean usernameCheck = checkUsername(Username); // move checks from member account?
-            boolean passwordCheck = checkPassword(Password);
+            MemberAccount usernameCheck = accounts.getAccountFromUsername(Username); // move checks from member account?
+            boolean passwordCheck = accounts.checkPassword(Username, Password);
             // If check works then set acctCheck to true
             if(usernameCheck == true && passwordCheck == true) {
                 System.out.println("Welcome "); //Include first name from database
