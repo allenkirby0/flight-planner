@@ -199,7 +199,6 @@ public class Flight {
      * @return true/false
      */
     public Boolean getSeatAvailability(String seatNum) {
-
         return seats.get(seatNum);
     }
 
