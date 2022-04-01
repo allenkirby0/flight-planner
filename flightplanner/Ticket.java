@@ -150,6 +150,32 @@ public class Ticket {
     }
 
     /**
+     * Returns a ticket string for user
+     * @param ticketNum
+     * @param flightIDs
+     * @param passengerID
+     * @param seatNums
+     * @param firstName
+     * @param lastName
+     * @param departure
+     * @param destination
+     * @param time
+     * @return
+     */
+    public static String displayTicket(String ticketNum, String passengerID, String seatNum, String firstName, String lastName, String departure, String destination, String time){
+        String ticket = "";
+        ticket += "************************************\n";
+        ticket += ticketNum + "\n";
+        ticket += passengerID + "\n";
+        ticket += firstName + " " + lastName + "\n";
+        ticket += seatNum + "\n";
+        ticket += departure + " to " + destination + "\n";
+        ticket += time + "\n";
+        ticket += "************************************";
+        return ticket;
+    }
+
+    /**
      * 
      * @param destination
      * @param departure
