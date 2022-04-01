@@ -2,6 +2,8 @@ package flightplanner;
 
 import java.util.UUID;
 import java.util.Map.Entry;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -245,7 +247,30 @@ public class Flight {
         return id;
     }
 
+    public String toString() {
 
+        String totalString = "";
+        
 
+        totalString = totalString + "Flight " + flightNum + " from " + deptCity + " to " + destCity + "\n";
+        totalString = totalString + "Departure: " + LocalDateTime.parse(departTime).format(DateTimeFormatter.ISO_LOCAL_DATE) + " at " + LocalDateTime.parse(departTime).format(DateTimeFormatter.ISO_LOCAL_TIME) 
+                            + ", Arrival: " + LocalDateTime.parse(arriveTime).format(DateTimeFormatter.ISO_LOCAL_DATE) + " at " + LocalDateTime.parse(arriveTime).format(DateTimeFormatter.ISO_LOCAL_TIME) + "\n";
+        
+
+        return totalString;
+
+    }
+
+    public void displayAvailableSeats() {
+        ArrayList<String> seats = getAvailableSeats();
+
+        for (int i = 0; i < seats.size(); i++) {
+
+            if (i % 10 == 0) {
+                System.out.print("\n");
+            }
+            System.out.print ("[" + seats.get(i) + "] ");
+        }
+    }
     
 }

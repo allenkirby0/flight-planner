@@ -142,7 +142,7 @@ public class Ticket {
      * Generates a flights unique identification number
      * @return
      */
-    public String generateID() {
+    public static String generateID() {
         UUID uuid = UUID.randomUUID();
         String id = uuid.toString();
 
@@ -218,9 +218,5 @@ public class Ticket {
         return null;
     }
 
-    public static void displayFlightPlan (ArrayList<ArrayList<String>> listFlightPlan) {
 
-
-
-    }
 }

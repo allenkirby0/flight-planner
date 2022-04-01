@@ -156,4 +156,8 @@ public class Account {
         return null;
     }
 
+    public String getAcctNum() {
+        return null;
+    }
+
 }

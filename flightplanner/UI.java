@@ -128,20 +128,44 @@ public class UI { //move stuff to outside constructor later on
         String travelOrigin = keyboard.nextLine();
 
         //Where all flights are loaded and displayed
-        ArrayList<ArrayList<String>> listFlightPlan = Ticket.generateFlightPlans(travelDestination, travelOrigin, flights.getFlights());
+        ArrayList<ArrayList<String>> listFlightPlans = Ticket.generateFlightPlans(travelDestination, travelOrigin, flights.getFlights());
+
+        System.out.println("******LIST FLIGHT PLANS******");
+        flights.displayFlightPlans(listFlightPlans);
+
+        int flightChoice;
+        ArrayList<String> flightPlan;
+        while (true) {
 
         System.out.println("Please choose a flight:"); //Possibly use ints for choices
-        int flightChoice = keyboard.nextInt();
-        //Check for amount of seats, what type of plane it is, and avaliable seats
-        Ticket ticket = new Ticket(ticketNum, flightIDs, passengerID, seatNums, firstName, lastName);
-        System.out.println(); // find way to get seats  remaining
-        if (guestOrMember == 1) { // 1 = guest account stuff grabbed and returned
+        flightChoice = keyboard.nextInt();
 
+        
+            if (flightChoice - 1 < 0 && flightChoice - 1 >= listFlightPlans.size()) {
+                flightPlan = listFlightPlans.get(flightChoice);
+                break;
+            }
+            System.out.println("Choose a valid option");
+        
         }
-        else if (guestOrMember == 2) { // 2 = member account stuff grabbed and returned
+        
+        ArrayList<String> seatList = new ArrayList<String>();
+        for (int i = 0; i < flightPlan.size(); i++) {
+            Flight currentFlight = flights.findFlight(flightPlan.get(i));
+            currentFlight.displayAvailableSeats();
 
-
+            while (true) {
+                System.out.println("Type the requested seat number");
+                String seatChoice = keyboard.nextLine();
+                if (currentFlight.getSeatAvailability(seatChoice)) {
+                    currentFlight.setSeatAvailability(seatChoice);
+                    seatList.add(seatChoice);
+                    break;
+                }
+                System.out.println("Enter an available seat");
+            }
         }
+        
         //Display ticket
         //Save info to JSON files
         System.exit(0);
@@ -229,6 +253,8 @@ public MemberAccount createMemberAccount() {
             
     return new MemberAccount(firstName, lastName, acctID, username, password, DOB, passportNum, email, phoneNum);
 }
+
+
 
     public static void main(String[] args) {
     

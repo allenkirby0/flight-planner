@@ -44,6 +44,34 @@ public class Flights {
     public void addFlight (Flight flight) {
         flightList.add(flight);
     }
+
+    public Flight findFlight(String flightID) {
+        for (int i = 0; i < flightList.size(); i++) {
+            if (flightList.get(i).getFlightID().equals(flightID)) {
+                return flightList.get(i);
+            }
+        }
+        return null;
+    }
     
+    public void displayFlightPlans (ArrayList<ArrayList<String>> listFlightPlan) {
+
+        for (int i = 0; i < listFlightPlan.size(); i++) {
+
+            ArrayList<String> listID = listFlightPlan.get(i);
+
+            System.out.println ("[" + (i + 1) + "] ***");
+            for (int j = 0; j < listID.size(); j++) {
+
+                System.out.println("--------------------------------------------------------------------");
+                System.out.print(findFlight(listID.get(i)));
+                System.out.println("--------------------------------------------------------------------");
+
+            }
+            System.out.println("***");
+
+        }
+
+    }
 
 }
