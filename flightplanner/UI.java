@@ -25,34 +25,35 @@ public class UI { //move stuff to outside constructor later on
         // Need to think about structure of how things go
         while(true) { //check used to continue loop
 
-        System.out.println("Do you already have an Account? [Y] or [N]");
-        accountAns = keyboard.nextLine().toLowerCase();
+            System.out.println("Do you already have an Account? [Y] or [N]");
+            accountAns = keyboard.nextLine().toLowerCase();
 
-        if(accountAns.equals("y")) {
+            if(accountAns.equals("y")) {
             //Maybe move to after while loop?
             //start account implementation
 
-            while (true) {
+                while (true) {
             
-            System.out.println("Please enter your Username:");
+                    System.out.println("Please enter your Username:");
 
-            currentUser = accounts.getAccountFromUsername(keyboard.nextLine()); 
-            if (currentUser != null) {
-                System.out.println("Sorry, that account doesn't exist");
-            }  
-            else {
-                System.out.println("Please enter your Password:");
+                    currentUser = accounts.getAccountFromUsername(keyboard.nextLine()); 
+                    if (currentUser != null) {
+                        System.out.println("Sorry, that account doesn't exist");
+                    }  
+                    else {
+                        System.out.println("Please enter your Password:");
             // move checks from member account?
                 
             // If check works then set acctCheck to true
-                if(accounts.checkPassword(currentUser.getUsername(), keyboard.nextLine())) {
+                    if(accounts.checkPassword(currentUser.getUsername(), keyboard.nextLine())) {
 
-                    System.out.println("Welcome "); //Include first name from database
-                    break; // Only way to get out of loop currently (Possibily might change)
+                        System.out.println("Welcome "); //Include first name from database
+                        break; // Only way to get out of loop currently (Possibily might change)
 
-                }
+                    }
             
-                System.out.println("Wrong Password");
+                    System.out.println("Wrong Password");
+                }
             }         
         }
         else if(accountAns.equals("n")) {
@@ -70,7 +71,11 @@ public class UI { //move stuff to outside constructor later on
                 MemberAccount temp = createMemberAccount();
                 currentUser = temp;
                 accounts.addAccount(temp);
+                break;
 
+            }
+            else {
+                System.our.pringln("Enter a valid option");
             }
         }
         else {
@@ -228,6 +233,8 @@ public class UI { //move stuff to outside constructor later on
                 System.out.println(hotelsInCity.get(i).getStreetAddress() + ", " + hotelsInCity.get(i).getCity() + ", " + hotelsInCity.get(i).getState() + "," + hotelsInCity.get(i).getZip());
             }
 
+            ArrayList<String> availableRooms = new ArrayList<String>();
+            Hotel hotel; 
             while (true) {
 
                 System.out.println("Choose a hotel: ");
@@ -236,8 +243,8 @@ public class UI { //move stuff to outside constructor later on
                 if (hotelChoice >= 0 && hotelChoice < hotelsInCity.size()) {
                 
                     LocalDateTime afterArrivalTime = LocalDateTime.parse(flights.findFlight(userTicket.getFlights().get(userTicket.getFlights().size() - 1)).getArriveTime());
-                    Hotel hotel = hotelsInCity.get(hotelChoice);
-                    ArrayList<String> availableRooms = new ArrayList<String>();
+                    hotel = hotelsInCity.get(hotelChoice);
+                   
 
                     for (int i = 0; i < hotel.getRoom().size(); i++) {
 
@@ -259,21 +266,59 @@ public class UI { //move stuff to outside constructor later on
 
                             for (int i = 0; i < hotel.getRoom().size(); i++) {
                                 if (hotel.getRoom().get(i).getRoomNum().equals(roomNum)) {
-                                    hotel.getRoom().get(i).setAvailability(date + "T" + time);
+                                    hotel.getRoom().get(i).setAvailability(date + "T" + time + ":00");
+                                    availableRooms.remove(roomNum);
                                 }
                             }
-
+                            break;
                         }
+                        System.out.println("Please enter a valid room");
 
                     }
-                    
-
-
-
-
+                    break;
                 }
                 System.out.println("Choose a valid option");
             }
+
+            System.out.println("Would you like to checkout another room? Y/N");
+            
+            while (true) {}
+                String answer = keyboard.nextLine().toLowerCase();
+                if (answer.equals("y")) {
+
+                    while(true) {
+
+                        System.out.println("Please choose a room: ");
+                        String roomNum = keyboard.nextLine();
+                        if (availableRooms.contains(roomNum)) {
+    
+                            System.out.println("What date will you be checking out? yyyy-mm-dd");
+                            String date = keyboard.nextLine();
+                            System.out.println("What time? hh:mm");
+                            String time = keyboard.nextLine();
+
+                            for (int j = 0; j < hotel.getRoom().size(); j++) {
+                                if (hotel.getRoom().get(j).getRoomNum().equals(roomNum)) {
+                                        hotel.getRoom().get(j).setAvailability(date + "T" + time + ":00");
+                                        availableRooms.remove(roomNum);
+                                }
+                            }
+                            break;
+                        }
+                        System.out.println("Please enter a valid room");
+                        
+                    }
+
+                }
+                else if (answer.equals("n")) {
+
+                    break;
+                }
+                else {
+                    System.out.println("Please enter a valid response");
+                }     
+                
+                
         }  
 
 
