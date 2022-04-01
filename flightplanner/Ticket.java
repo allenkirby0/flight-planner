@@ -9,7 +9,7 @@ import java.util.UUID;
  * Represents the itinerary for a customer- 
  */
 public class Ticket {
-    private int ticketNum;
+    private String ticketNum;
     private ArrayList<String> flightIDs;
     private String passengerID;
     private ArrayList<String> seatNums;
@@ -32,7 +32,7 @@ public class Ticket {
      * @param firstName Passenger's first name
      * @param lastName Passenger's last name
      */
-    public Ticket(int ticketNum, ArrayList<String> flightIDs, String passengerID, ArrayList<String> seatNums, String firstName, String lastName) {
+    public Ticket(String ticketNum, ArrayList<String> flightIDs, String passengerID, ArrayList<String> seatNums, String firstName, String lastName) {
         this.ticketNum = ticketNum;
         this.flightIDs = flightIDs;
         this.passengerID = passengerID;
@@ -94,7 +94,7 @@ public class Ticket {
      * sets ticketNum variable
      * @param ticketNum
      */
-    public void setTicketNum(int ticketNum) {
+    public void setTicketNum(String ticketNum) {
         this.ticketNum = ticketNum;
     }
 

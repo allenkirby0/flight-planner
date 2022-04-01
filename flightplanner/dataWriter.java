@@ -17,7 +17,7 @@ public class DataWriter {
     /**
      * Saves users account to json
      */
-    public void saveAccount(){
+    public static void saveAccount(){
         ArrayList<MemberAccount> accounts = Accounts.getInstance().getAccountList();
         JSONArray accountsJSON = new JSONArray();
 
@@ -37,7 +37,7 @@ public class DataWriter {
     /**
      * Saves flight to json
      */
-    public void saveFlight(){
+    public static void saveFlight(){
         ArrayList<Flight> flights = Flights.getInstance().getFlights();
         JSONArray flightsJSON = new JSONArray();
 

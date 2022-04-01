@@ -1,5 +1,6 @@
 package flightplanner;
-import java.util.HashMap;
+import java.util.ArrayList;
+
 
 /**
  * Hotel object class
@@ -11,7 +12,7 @@ public class Hotel {
     private String city;
     private String state;
     private String zip;
-    private Room room;
+    private ArrayList<Room> room;
 
 
     /**
@@ -23,7 +24,7 @@ public class Hotel {
      * @param zip hotels zip code
      * @param room hotels room information
      */
-    public Hotel(String hotelName, String streetAddress, String city, String state, String zip, Room room){
+    public Hotel(String hotelName, String streetAddress, String city, String state, String zip, ArrayList<Room> room){
         this.hotelName = hotelName;
         this.streetAddress = streetAddress;
         this.city = city;
@@ -72,7 +73,7 @@ public class Hotel {
         return zip;
     }
 
-    public Room getRoom(){
+    public ArrayList<Room> getRoom(){
         return room;
     }
 
@@ -120,7 +121,7 @@ public class Hotel {
      * Sets the hotels room
      * @param room
      */
-    public void setRoom(Room room){
+    public void setRoom(ArrayList<Room> room){
         this.room = room;
     }
 }

@@ -1,4 +1,6 @@
 package flightplanner;
+import java.io.FileWriter;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -14,6 +16,7 @@ public class UI { //move stuff to outside constructor later on
     public void main(){
         Flights flights = Flights.getInstance();
         Accounts accounts = Accounts.getInstance();
+        Hotels hotels = Hotels.getInstance();
         ArrayList<Account> partyAccounts = new ArrayList<Account>();
         Account currentUser;
 
@@ -141,7 +144,7 @@ public class UI { //move stuff to outside constructor later on
         flightChoice = keyboard.nextInt();
 
         
-            if (flightChoice - 1 < 0 && flightChoice - 1 >= listFlightPlans.size()) {
+            if (flightChoice - 1 >= 0 && flightChoice - 1 < listFlightPlans.size()) {
                 flightPlan = listFlightPlans.get(flightChoice);
                 break;
             }
@@ -155,7 +158,7 @@ public class UI { //move stuff to outside constructor later on
             currentFlight.displayAvailableSeats();
 
             while (true) {
-                System.out.println("Type the requested seat number");
+                System.out.println("Type the requested seat number for you:");
                 String seatChoice = keyboard.nextLine();
                 if (currentFlight.getSeatAvailability(seatChoice)) {
                     currentFlight.setSeatAvailability(seatChoice);
@@ -164,8 +167,94 @@ public class UI { //move stuff to outside constructor later on
                 }
                 System.out.println("Enter an available seat");
             }
+
         }
+
+        Ticket userTicket = new Ticket(Ticket.generateID(), flightPlan, currentUser.getPassportNum(), seatList, currentUser.getFirstName(), currentUser.getLastName());
+
+        String ticketOutput = userTicket.displayTicket(flights.getFlights());
         
+        try {
+            FileWriter file = new FileWriter(currentUser.getLastName() + "_" + currentUser.getFirstName() + "_ticket.txt");
+            file.write(ticketOutput);
+            file.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        if (partyAccounts.size() > 0) {
+
+            for (int i = 0; i < partyAccounts.size(); i++) {
+
+                for (int j = 0; j < flightPlan.size(); j++) {
+                    Flight currentFlight = flights.findFlight(flightPlan.get(j));
+                    currentFlight.displayAvailableSeats();
+        
+                    while (true) {
+                        System.out.println("Type the requested seat number for " + partyAccounts.get(i).getFirstName());
+                        String seatChoice = keyboard.nextLine();
+                        if (currentFlight.getSeatAvailability(seatChoice)) {
+                            currentFlight.setSeatAvailability(seatChoice);
+                            seatList.add(seatChoice);
+                            break;
+                        }
+                        System.out.println("Enter an available seat");
+                    } 
+        
+                }
+
+                Ticket ticket = new Ticket(Ticket.generateID(), flightPlan, partyAccounts.get(i).getPassportNum(), seatList, partyAccounts.get(i).getFirstName(), partyAccounts.get(i).getLastName());
+                try {
+                    FileWriter file = new FileWriter(partyAccounts.get(i).getLastName() + "_" + partyAccounts.get(i).getFirstName() + "_ticket.txt");
+                    file.write(ticketOutput);
+                    file.close();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+            }
+
+            System.out.println("You must book a hotel!");
+            System.out.println("Displaying hotels at your destination: ");
+
+            ArrayList<Hotel> hotelsInCity = new ArrayList<Hotel>();
+            for (int i = 0; i < hotels.getHotels().size(); i++) {
+                if (hotels.getHotels().get(i).getCity().equals(travelDestination)) {
+                    hotelsInCity.add(hotels.getHotels().get(i));
+                }
+            }
+
+            for (int i = 0; i < hotelsInCity.size(); i++) {
+                System.out.println("[" + (i + 1) + "] " + hotelsInCity.get(i).getHotelName());
+                System.out.println(hotelsInCity.get(i).getStreetAddress() + ", " + hotelsInCity.get(i).getCity() + ", " + hotelsInCity.get(i).getState() + "," + hotelsInCity.get(i).getZip());
+            }
+
+            while (true) {
+
+                System.out.println("Choose a hotel: ");
+                int hotelChoice = keyboard.nextInt() - 1;
+
+                if (hotelChoice >= 0 && hotelChoice < hotelsInCity.size()) {
+                
+                    LocalDateTime afterArrivalTime = LocalDateTime.parse(flights.findFlight(userTicket.getFlights().get(userTicket.getFlights().size() - 1)).getArriveTime());
+                    Hotel hotel = hotelsInCity.get(hotelChoice);
+
+                    for (int i = 0; i < hotel.getRoom().size(); i++) {
+                        if (afterArrivalTime.compareTo(hotel.getRoom().get(i).get))
+                    }
+                    
+                    System.out.println("Please choose a room: ");
+
+
+
+                }
+                System.out.println("Choose a valid option");
+            }
+        }  
+
+
+
+
+        }
         //Display ticket
         //Save info to JSON files
         System.exit(0);

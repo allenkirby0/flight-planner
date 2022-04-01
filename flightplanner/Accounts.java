@@ -115,7 +115,9 @@ public class Accounts {
 
     }
 
-    
+    public void logout () {
+        DataWriter.saveAccount();
+    }
 
 
 

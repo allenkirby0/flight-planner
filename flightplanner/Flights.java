@@ -74,4 +74,8 @@ public class Flights {
 
     }
 
+    public void logout() {
+        DataWriter.saveFlight();
+    }
+
 }
