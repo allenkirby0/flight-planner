@@ -44,4 +44,8 @@ public class Hotels {
     public void addHotel(Hotel hotel) {
         hotelList.add(hotel);
     }
+
+    public static void logout() {
+        DataWriter.saveHotel();
+    }
 }

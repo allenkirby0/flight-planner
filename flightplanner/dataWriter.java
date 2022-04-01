@@ -57,8 +57,9 @@ public class DataWriter {
     /**
      * Saves hotel to json
      */
-    public void saveHotel(){
-        //TODO
+    public static void saveHotel(){
+        ArrayList<Hotel> hotels = Hotels.getInstance();
+        
     }
 
     /**
