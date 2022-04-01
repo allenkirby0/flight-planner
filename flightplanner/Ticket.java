@@ -46,7 +46,7 @@ public class Ticket {
      * Returns ticket number
      * @return ticket number
      */
-    public int getTicketNum() {
+    public String getTicketNum() {
         return ticketNum;
     }
 

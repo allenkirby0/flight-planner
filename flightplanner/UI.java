@@ -237,12 +237,37 @@ public class UI { //move stuff to outside constructor later on
                 
                     LocalDateTime afterArrivalTime = LocalDateTime.parse(flights.findFlight(userTicket.getFlights().get(userTicket.getFlights().size() - 1)).getArriveTime());
                     Hotel hotel = hotelsInCity.get(hotelChoice);
+                    ArrayList<String> availableRooms = new ArrayList<String>();
 
                     for (int i = 0; i < hotel.getRoom().size(); i++) {
-                        if (afterArrivalTime.compareTo(hotel.getRoom().get(i).get))
+
+                        if (afterArrivalTime.compareTo(LocalDateTime.parse(hotel.getRoom().get(i).getAvailability())) > 0 ) {
+                            availableRooms.add(hotel.getRoom().get(i).getRoomNum());
+                            System.out.println("[" + hotel.getRoom().get(i).getRoomNum() + "] " + hotel.getRoom().get(i).getBeds() + " beds");
+                        }
                     }
                     
-                    System.out.println("Please choose a room: ");
+                    while (true) {
+                        System.out.println("Please choose a room: ");
+                        String roomNum = keyboard.nextLine();
+                        if (availableRooms.contains(roomNum)) {
+
+                            System.out.println("What date will you be checking out? yyyy-mm-dd");
+                            String date = keyboard.nextLine();
+                            System.out.println("What time? hh:mm");
+                            String time = keyboard.nextLine();
+
+                            for (int i = 0; i < hotel.getRoom().size(); i++) {
+                                if (hotel.getRoom().get(i).getRoomNum().equals(roomNum)) {
+                                    hotel.getRoom().get(i).setAvailability(date + "T" + time);
+                                }
+                            }
+
+                        }
+
+                    }
+                    
+
 
 
 

@@ -5,18 +5,18 @@ package flightplanner;
  */
 public class Room {
     public String roomNum;
-    public String avalibility;
+    public String availability;
     public int beds;
 
     /**
      * Constructor for room
      * @param roomNum
-     * @param avalibility
+     * @param availability
      * @param beds
      */
-    public Room(String roomNum, String avalibility, int beds){
+    public Room(String roomNum, String availability, int beds){
         this.roomNum = roomNum;
-        this.avalibility = avalibility;
+        this.availability = availability;
         this.beds = beds;
     }
 
@@ -29,11 +29,11 @@ public class Room {
     }
 
     /**
-     * returns avalibility variable
+     * returns availability variable
      * @return
      */
-    public String getAvaliability(){
-        return avalibility;
+    public String getAvailability(){
+        return availability;
     }
 
     /**
@@ -53,11 +53,11 @@ public class Room {
     }
 
     /**
-     * sets avalibility variable
+     * sets availability variable
      * @param avaliability
      */
-    public void setAvaliability(String avaliability){
-        this.avalibility = avaliability;
+    public void setAvailability(String availability){
+        this.availability = availability;
     }
 
     /**
