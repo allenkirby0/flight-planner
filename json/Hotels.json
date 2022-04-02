@@ -1,1 +1,109 @@
-[{"amenities":{"doubleBed":true,"pool":true,"gym":false,"breakfast":true},"hotelPrice":330,"hotelCity":"Seattle","hotelRating":"4 Stars","hotelZipCode":"98109","hotelAddress":"500 5th Avenue North","hotelName":"Hampton Inn","hotelState":"WA"},{"amenities":{"doubleBed":true,"pool":true,"gym":false,"breakfast":true},"hotelPrice":270,"hotelCity":"Seattle","hotelRating":"3 Stars","hotelZipCode":"98109","hotelAddress":"2900 S 192nd St","hotelName":"Quality Inn","hotelState":"WA"},{"amenities":{"doubleBed":true,"pool":true,"gym":true,"breakfast":true},"hotelPrice":500,"hotelCity":"Seattle","hotelRating":"5 Stars","hotelZipCode":"98109","hotelAddress":"99 Union St","hotelName":"Four Seasons","hotelState":"WA"},{"amenities":{"doubleBed":false,"pool":true,"gym":false,"breakfast":true},"hotelPrice":120,"hotelCity":"Seattle","hotelRating":"2 Stars","hotelZipCode":"98109","hotelAddress":"16500 Pacific Hwy S","hotelName":"Motel 6","hotelState":"WA"},{"amenities":{"doubleBed":false,"pool":true,"gym":false,"breakfast":true},"hotelPrice":120,"hotelCity":"Columbia","hotelRating":"2 Stars","hotelZipCode":"98109","hotelAddress":"16500 Pacific Hwy S","hotelName":"Motel 6","hotelState":"SC", "rooms": [{"roomNum": "5", "isAvailableAfter": "2021-03-21Y00:00:00.0000", "beds": 2}]}]
+[{
+    "hotelName": "Hampton Inn",
+    "hotelPrice": 330,
+    "hotelRating": "4 Stars",
+    "hotelAddress": "500 5th Avenue North",
+    "hotelCity": "Seattle",
+    "hotelState": "WA",
+    "hotelZipCode": "98109",
+    "amenities": [
+        {"doubleBed": true},
+        {"pool": true},
+        {"gym": false},
+        {"breakfast": true}
+    ],
+    "rooms":[
+        {"roomNumber": "100", "isAvailableAfter": "2022-04-02T12:00:00.0000", "beds": 2},
+        {"roomNumber": "101", "isAvailableAfter": "2022-04-10T12:00:00.0000", "beds": 1},
+        {"roomNumber": "102", "isAvailableAfter": "2022-04-01T12:00:00.0000", "beds": 2},
+        {"roomNumber": "103", "isAvailableAfter": "2022-04-02T12:00:00.0000", "beds": 2},
+        {"roomNumber": "104", "isAvailableAfter": "2022-04-08T12:00:00.0000", "beds": 2},
+        {"roomNumber": "105", "isAvailableAfter": "2022-04-02T12:00:00.0000", "beds": 1},
+        {"roomNumber": "106", "isAvailableAfter": "2022-04-02T12:00:00.0000", "beds": 1},
+        {"roomNumber": "107", "isAvailableAfter": "2022-04-03T12:00:00.0000", "beds": 2},
+        {"roomNumber": "109", "isAvailableAfter": "2022-04-03T12:00:00.0000", "beds": 2},
+        {"roomNumber": "109", "isAvailableAfter": "2022-04-02T12:00:00.0000", "beds": 2}
+    ]
+},
+{
+    "hotelName": "Quality Inn",
+    "hotelPrice": 270,
+    "hotelRating": "3 Stars",
+    "hotelAddress": "2900 S 192nd St",
+    "hotelCity": "Seattle",
+    "hotelState": "WA",
+    "hotelZipCode": "98109",
+    "amenities": [
+        {"doubleBed": true},
+        {"pool": true},
+        {"gym": false},
+        {"breakfast": true}
+    ],
+    "rooms":[
+        {"roomNumber": "100", "isAvailableAfter": "2022-04-07T12:00:00.0000", "beds": 1},
+        {"roomNumber": "101", "isAvailableAfter": "2022-04-10T12:00:00.0000", "beds": 2},
+        {"roomNumber": "102", "isAvailableAfter": "2022-04-01T12:00:00.0000", "beds": 2},
+        {"roomNumber": "103", "isAvailableAfter": "2022-04-02T12:00:00.0000", "beds": 1},
+        {"roomNumber": "104", "isAvailableAfter": "2022-04-02T12:00:00.0000", "beds": 2},
+        {"roomNumber": "105", "isAvailableAfter": "2022-04-02T12:00:00.0000", "beds": 2},
+        {"roomNumber": "106", "isAvailableAfter": "2022-04-02T12:00:00.0000", "beds": 2},
+        {"roomNumber": "107", "isAvailableAfter": "2022-04-03T12:00:00.0000", "beds": 1},
+        {"roomNumber": "109", "isAvailableAfter": "2022-04-03T12:00:00.0000", "beds": 2},
+        {"roomNumber": "109", "isAvailableAfter": "2022-04-02T12:00:00.0000", "beds": 2}
+    ]
+},
+{
+    "hotelName": "Four Seasons",
+    "hotelPrice": 500,
+    "hotelRating": "5 Stars",
+    "hotelAddress": "99 Union St",
+    "hotelCity": "Seattle",
+    "hotelState": "WA",
+    "hotelZipCode": "98109",
+    "amenities": [
+        {"doubleBed": true},
+        {"pool": false},
+        {"gym": true},
+        {"breakfast": true}
+    ],
+    "rooms":[
+        {"roomNumber": "100", "isAvailableAfter": "2022-04-03T12:00:00.0000", "beds": 2},
+        {"roomNumber": "101", "isAvailableAfter": "2022-04-10T12:00:00.0000", "beds": 1},
+        {"roomNumber": "102", "isAvailableAfter": "2022-04-07T12:00:00.0000", "beds": 1},
+        {"roomNumber": "103", "isAvailableAfter": "2022-04-02T12:00:00.0000", "beds": 1},
+        {"roomNumber": "104", "isAvailableAfter": "2022-04-08T12:00:00.0000", "beds": 1},
+        {"roomNumber": "105", "isAvailableAfter": "2022-04-02T12:00:00.0000", "beds": 2},
+        {"roomNumber": "106", "isAvailableAfter": "2022-04-07T12:00:00.0000", "beds": 1},
+        {"roomNumber": "107", "isAvailableAfter": "2022-04-01T12:00:00.0000", "beds": 1},
+        {"roomNumber": "109", "isAvailableAfter": "2022-04-03T12:00:00.0000", "beds": 1},
+        {"roomNumber": "109", "isAvailableAfter": "2022-04-05T12:00:00.0000", "beds": 1}
+    ]
+},
+{
+    "hotelName": "Motel 6",
+    "hotelPrice": 120,
+    "hotelRating": "2 Stars",
+    "hotelAddress": "16500 Pacific Hwy S",
+    "hotelCity": "Seattle",
+    "hotelState": "WA",
+    "hotelZipCode": "98109",
+    "amenities": [
+        {"doubleBed": false},
+        {"pool": true},
+        {"gym": false},
+        {"breakfast": true}
+    ],
+    "rooms":[
+        {"roomNumber": "100", "isAvailableAfter": "2022-04-02T12:00:00.0000", "beds": 2},
+        {"roomNumber": "101", "isAvailableAfter": "2022-04-02T12:00:00.0000", "beds": 1},
+        {"roomNumber": "102", "isAvailableAfter": "2022-04-02T12:00:00.0000", "beds": 1},
+        {"roomNumber": "103", "isAvailableAfter": "2022-04-02T12:00:00.0000", "beds": 1},
+        {"roomNumber": "104", "isAvailableAfter": "2022-04-08T12:00:00.0000", "beds": 2},
+        {"roomNumber": "105", "isAvailableAfter": "2022-04-02T12:00:00.0000", "beds": 2},
+        {"roomNumber": "106", "isAvailableAfter": "2022-04-02T12:00:00.0000", "beds": 2},
+        {"roomNumber": "107", "isAvailableAfter": "2022-04-03T12:00:00.0000", "beds": 2},
+        {"roomNumber": "109", "isAvailableAfter": "2022-04-03T12:00:00.0000", "beds": 1},
+        {"roomNumber": "109", "isAvailableAfter": "2022-04-02T12:00:00.0000", "beds": 2}
+    ]
+}]
+
