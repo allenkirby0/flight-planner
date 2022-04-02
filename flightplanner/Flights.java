@@ -74,7 +74,7 @@ public class Flights {
 
     }
 
-    public void logout() {
+    public static void logout() {
         DataWriter.saveFlight();
     }
 

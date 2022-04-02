@@ -75,7 +75,7 @@ public class UI { //move stuff to outside constructor later on
 
             }
             else {
-                System.our.pringln("Enter a valid option");
+                System.out.println("Enter a valid option");
             }
         }
         else {
@@ -217,123 +217,122 @@ public class UI { //move stuff to outside constructor later on
                     e.printStackTrace();
                 }
             }
+        }
 
-            System.out.println("You must book a hotel!");
-            System.out.println("Displaying hotels at your destination: ");
+        System.out.println("You must book a hotel!");
+        System.out.println("Displaying hotels at your destination: ");
 
-            ArrayList<Hotel> hotelsInCity = new ArrayList<Hotel>();
-            for (int i = 0; i < hotels.getHotels().size(); i++) {
-                if (hotels.getHotels().get(i).getCity().equals(travelDestination)) {
-                    hotelsInCity.add(hotels.getHotels().get(i));
-                }
+        ArrayList<Hotel> hotelsInCity = new ArrayList<Hotel>();
+            
+        for (int i = 0; i < hotels.getHotels().size(); i++) {
+            if (hotels.getHotels().get(i).getCity().equals(travelDestination)) {
+                hotelsInCity.add(hotels.getHotels().get(i));
             }
+        }
 
-            for (int i = 0; i < hotelsInCity.size(); i++) {
-                System.out.println("[" + (i + 1) + "] " + hotelsInCity.get(i).getHotelName());
-                System.out.println(hotelsInCity.get(i).getStreetAddress() + ", " + hotelsInCity.get(i).getCity() + ", " + hotelsInCity.get(i).getState() + "," + hotelsInCity.get(i).getZip());
-            }
+        for (int i = 0; i < hotelsInCity.size(); i++) {
+            System.out.println("[" + (i + 1) + "] " + hotelsInCity.get(i).getHotelName());
+            System.out.println(hotelsInCity.get(i).getStreetAddress() + ", " + hotelsInCity.get(i).getCity() + ", " + hotelsInCity.get(i).getState() + "," + hotelsInCity.get(i).getZip());
+        }
 
-            ArrayList<String> availableRooms = new ArrayList<String>();
-            Hotel hotel; 
-            while (true) {
+        ArrayList<String> availableRooms = new ArrayList<String>();
+        Hotel hotel; 
+        while (true) {
 
-                System.out.println("Choose a hotel: ");
-                int hotelChoice = keyboard.nextInt() - 1;
+            System.out.println("Choose a hotel: ");
+            int hotelChoice = keyboard.nextInt() - 1;
 
-                if (hotelChoice >= 0 && hotelChoice < hotelsInCity.size()) {
+            if (hotelChoice >= 0 && hotelChoice < hotelsInCity.size()) {
                 
-                    LocalDateTime afterArrivalTime = LocalDateTime.parse(flights.findFlight(userTicket.getFlights().get(userTicket.getFlights().size() - 1)).getArriveTime());
-                    hotel = hotelsInCity.get(hotelChoice);
+                LocalDateTime afterArrivalTime = LocalDateTime.parse(flights.findFlight(userTicket.getFlights().get(userTicket.getFlights().size() - 1)).getArriveTime());
+                hotel = hotelsInCity.get(hotelChoice);
                    
 
-                    for (int i = 0; i < hotel.getRoom().size(); i++) {
+                for (int i = 0; i < hotel.getRoom().size(); i++) {
 
-                        if (afterArrivalTime.compareTo(LocalDateTime.parse(hotel.getRoom().get(i).getAvailability())) > 0 ) {
-                            availableRooms.add(hotel.getRoom().get(i).getRoomNum());
-                            System.out.println("[" + hotel.getRoom().get(i).getRoomNum() + "] " + hotel.getRoom().get(i).getBeds() + " beds");
-                        }
+                    if (afterArrivalTime.compareTo(LocalDateTime.parse(hotel.getRoom().get(i).getAvailability())) > 0 ) {
+                        availableRooms.add(hotel.getRoom().get(i).getRoomNum());
+                        System.out.println("[" + hotel.getRoom().get(i).getRoomNum() + "] " + hotel.getRoom().get(i).getBeds() + " beds");
                     }
+                }
                     
-                    while (true) {
-                        System.out.println("Please choose a room: ");
-                        String roomNum = keyboard.nextLine();
-                        if (availableRooms.contains(roomNum)) {
+                while (true) {
+                    System.out.println("Please choose a room: ");
+                    String roomNum = keyboard.nextLine();
+                    if (availableRooms.contains(roomNum)) {
 
-                            System.out.println("What date will you be checking out? yyyy-mm-dd");
-                            String date = keyboard.nextLine();
-                            System.out.println("What time? hh:mm");
-                            String time = keyboard.nextLine();
+                        System.out.println("What date will you be checking out? yyyy-mm-dd");
+                        String date = keyboard.nextLine();
+                        System.out.println("What time? hh:mm");
+                        String time = keyboard.nextLine();
 
-                            for (int i = 0; i < hotel.getRoom().size(); i++) {
-                                if (hotel.getRoom().get(i).getRoomNum().equals(roomNum)) {
-                                    hotel.getRoom().get(i).setAvailability(date + "T" + time + ":00");
-                                    availableRooms.remove(roomNum);
-                                }
+                        for (int i = 0; i < hotel.getRoom().size(); i++) {
+                            if (hotel.getRoom().get(i).getRoomNum().equals(roomNum)) {
+                                hotel.getRoom().get(i).setAvailability(date + "T" + time + ":00");
+                                availableRooms.remove(roomNum);
                             }
-                            break;
                         }
-                        System.out.println("Please enter a valid room");
-
+                        break;
                     }
-                    break;
+                    System.out.println("Please enter a valid room");
+
                 }
-                System.out.println("Choose a valid option");
+                break;
             }
-
-            System.out.println("Would you like to checkout another room? Y/N");
-            
-            while (true) {}
-                String answer = keyboard.nextLine().toLowerCase();
-                if (answer.equals("y")) {
-
-                    while(true) {
-
-                        System.out.println("Please choose a room: ");
-                        String roomNum = keyboard.nextLine();
-                        if (availableRooms.contains(roomNum)) {
-    
-                            System.out.println("What date will you be checking out? yyyy-mm-dd");
-                            String date = keyboard.nextLine();
-                            System.out.println("What time? hh:mm");
-                            String time = keyboard.nextLine();
-
-                            for (int j = 0; j < hotel.getRoom().size(); j++) {
-                                if (hotel.getRoom().get(j).getRoomNum().equals(roomNum)) {
-                                        hotel.getRoom().get(j).setAvailability(date + "T" + time + ":00");
-                                        availableRooms.remove(roomNum);
-                                }
-                            }
-                            break;
-                        }
-                        System.out.println("Please enter a valid room");
-                        
-                    }
-
-                }
-                else if (answer.equals("n")) {
-
-                    break;
-                }
-                else {
-                    System.out.println("Please enter a valid response");
-                }     
-                
-                
-        }  
-
-
-
-
+            System.out.println("Choose a valid option");
         }
+
+        System.out.println("Would you like to checkout another room? Y/N");
+            
+        while (true) {
+            String answer = keyboard.nextLine().toLowerCase();
+            if (answer.equals("y")) {
+
+                while(true) {
+
+                    System.out.println("Please choose a room: ");
+                    String roomNum = keyboard.nextLine();
+                    if (availableRooms.contains(roomNum)) {
+    
+                        System.out.println("What date will you be checking out? yyyy-mm-dd");
+                        String date = keyboard.nextLine();
+                        System.out.println("What time? hh:mm");
+                        String time = keyboard.nextLine();
+
+                        for (int j = 0; j < hotel.getRoom().size(); j++) {
+                            if (hotel.getRoom().get(j).getRoomNum().equals(roomNum)) {
+                                    hotel.getRoom().get(j).setAvailability(date + "T" + time + ":00");
+                                    availableRooms.remove(roomNum);
+                            }
+                        }
+                        break;
+                    }
+                    System.out.println("Please enter a valid room");
+                        
+                }
+
+            }
+            else if (answer.equals("n")) {
+
+                break;
+            }
+            else {
+                System.out.println("Please enter a valid response");
+            }  
+        }   
+        
+        //send rooms to txt
+
+        System.out.println("Thank you and have a lovely day!!");
+                
+        Flights.logout();
+        Accounts.logout();
+        Hotels.logout();
+         
         //Display ticket
         //Save info to JSON files
         System.exit(0);
-    }
-    else {
-        //Save info to JSON files
-        System.out.println("Have a good day! Goodbye!");
-        System.exit(0); //Currently will quit program
-    }
+    
     }
 
     // use for determining what user wants to do
