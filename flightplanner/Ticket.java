@@ -168,7 +168,7 @@ public class Ticket {
     }
 
     /**
-     * 
+     * Generates a flight plan
      * @param destination
      * @param departure
      * @param flightList
@@ -205,6 +205,15 @@ public class Ticket {
 
     } 
 
+    /**
+     * Generates a flight plan record
+     * @param destination
+     * @param departure
+     * @param arrivalTime
+     * @param flightList
+     * @param flightPlan
+     * @return
+     */
     private static ArrayList<String> generateFlightPlanRec (String destination, String departure, LocalDateTime arrivalTime, ArrayList<Flight> flightList, ArrayList<String> flightPlan) {
 
         ArrayList<Flight> hasDeparture = new ArrayList<Flight>();

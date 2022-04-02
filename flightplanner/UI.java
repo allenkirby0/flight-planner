@@ -5,12 +5,14 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class UI { //move stuff to outside constructor later on
-    // Load information from JSON files
+public class UI {
     private static String accountAns;
     private static Scanner keyboard = new Scanner(System.in);
 
-
+    /**
+     * Main portion of the UI
+     * @param args
+     */
     public static void main(String[] args){
         Flights flights = Flights.getInstance();
         Accounts accounts = Accounts.getInstance();
@@ -27,8 +29,7 @@ public class UI { //move stuff to outside constructor later on
             accountAns = keyboard.nextLine().toLowerCase();
 
             if(accountAns.equals("y")) {
-            //Maybe move to after while loop?
-            //start account implementation
+
 
                 while (true) {
             
@@ -43,8 +44,8 @@ public class UI { //move stuff to outside constructor later on
             
                         if(accounts.checkPassword(username, keyboard.nextLine())) {
 
-                            System.out.println("Welcome "); //Include first name from database
-                            break; // Only way to get out of loop currently (Possibily might change)
+                            System.out.println("Welcome "); 
+                            break; 
 
                         }
             
@@ -345,14 +346,14 @@ public class UI { //move stuff to outside constructor later on
         Flights.logout();
         Accounts.logout();
         Hotels.logout();
-         
-        //Display ticket
-        //Save info to JSON files
         System.exit(0);
     
     }
 
-    // use for determining what user wants to do
+/**
+ * Users as options for user
+ * @return
+ */
 public static Boolean bookTrip() {
     
     while (true) {
@@ -374,6 +375,10 @@ public static Boolean bookTrip() {
 
 }
 
+/**
+ * Used to help create a guest account
+ * @return
+ */
 public static MemberAccount createGuestAccount() {
     GuestAccount currentUser = new GuestAccount();
 
@@ -398,6 +403,10 @@ public static MemberAccount createGuestAccount() {
     return new MemberAccount();
 }
 
+/**
+ * Used to help create a member account
+ * @return
+ */
 public static MemberAccount createMemberAccount() {
 
     System.out.println("Please enter your first name:");
