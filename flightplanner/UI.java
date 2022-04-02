@@ -32,15 +32,15 @@ public class UI { //move stuff to outside constructor later on
                 while (true) {
             
                     System.out.println("Please enter your Username:");
-
-                    currentUser = accounts.getAccountFromUsername(keyboard.nextLine()); 
+                    String username = keyboard.nextLine();
+                    currentUser = accounts.getAccountFromUsername(username); 
                     if (currentUser != null) {
                         System.out.println("Sorry, that account doesn't exist");
                     }  
                     else {
                         System.out.println("Please enter your Password:");
             
-                        if(accounts.checkPassword(currentUser.getUsername(), keyboard.nextLine())) {
+                        if(accounts.checkPassword(username, keyboard.nextLine())) {
 
                             System.out.println("Welcome "); //Include first name from database
                             break; // Only way to get out of loop currently (Possibily might change)

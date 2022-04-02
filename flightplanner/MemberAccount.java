@@ -68,6 +68,7 @@ public class MemberAccount extends Account {
      * returns Password variable
      * @return
      */
+    @Override
     public String getPassword() {
         return password;
     }
