@@ -20,7 +20,7 @@ public class Hotels {
      * Creates a new instance of Hotels if one does not already exist
      * @return Hotels instance
      */
-    private static Hotels getInstance() {
+    public static Hotels getInstance() {
 
         if (hotels == null) {
             hotels = new Hotels();
@@ -43,5 +43,9 @@ public class Hotels {
      */
     public void addHotel(Hotel hotel) {
         hotelList.add(hotel);
+    }
+
+    public static void logout() {
+        DataWriter.saveHotel();
     }
 }

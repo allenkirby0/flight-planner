@@ -22,8 +22,9 @@ public class Flight {
     private String deptAirport;
     private String destCity;
     private String destAirport;
-    private int flightDuration;
+    private long flightDuration;
     private HashMap<String, Boolean> seats;
+    private ArrayList<String> seatsInOrder;
     
     /**
      * Flight class constructor
@@ -38,7 +39,7 @@ public class Flight {
      * @param flightDuration flights duration, in minutes
      * @param seats seats on flight
      */
-    public Flight(String flightID, String flightNum, String arriveTime, String departTime, String deptCity, String deptAirport, String destCity, String destAirport, int flightDuration, HashMap<String, Boolean> seats) {
+    public Flight(String flightID, String flightNum, String arriveTime, String departTime, String deptCity, String deptAirport, String destCity, String destAirport, long flightDuration, HashMap<String, Boolean> seats, ArrayList<String> seatsInOrder) {
         this.flightID = flightID;
         this.flightNum = flightNum;
         this.arriveTime = arriveTime;
@@ -49,6 +50,7 @@ public class Flight {
         this.destAirport = destAirport;
         this.flightDuration = flightDuration;
         this.seats = seats;
+        this.seatsInOrder = seatsInOrder;
     }
 
 
@@ -168,7 +170,7 @@ public class Flight {
      * Sets flights duration time
      * @param flightDuration flights duration time, in minutes
      */
-    public void setFlightDuration(int flightDuration) {
+    public void setFlightDuration(long flightDuration) {
         this.flightDuration = flightDuration;
     }
 
@@ -176,7 +178,7 @@ public class Flight {
      * Gets flight duration
      * @return flights duration time in minutes
      */
-    public int getFlightDuration() {
+    public long getFlightDuration() {
         return flightDuration;
     }
 
@@ -240,7 +242,7 @@ public class Flight {
      * Generates a flights unique identification number
      * @return
      */
-    public String generateID() {
+    public static String generateID() {
         UUID uuid = UUID.randomUUID();
         String id = uuid.toString();
 
@@ -262,14 +264,23 @@ public class Flight {
     }
 
     public void displayAvailableSeats() {
-        ArrayList<String> seats = getAvailableSeats();
+      
 
-        for (int i = 0; i < seats.size(); i++) {
+        for (int i = 0; i < seatsInOrder.size(); i++) {
 
-            if (i % 10 == 0) {
+            if ((i+2) % 5 == 0) {
+                System.out.print("  ");
+            }
+            if (i % 5 == 0) {
                 System.out.print("\n");
             }
-            System.out.print ("[" + seats.get(i) + "] ");
+            if (seats.get(seatsInOrder.get(i)).booleanValue()) {
+                System.out.print ("[" + seatsInOrder.get(i) + "] ");
+            }
+            else {
+                System.out.print("[X] ");
+            }
+                
         }
     }
     

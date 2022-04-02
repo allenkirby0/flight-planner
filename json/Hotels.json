@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [{
     "hotelName": "Hampton Inn",
     "hotelPrice": 330,
@@ -107,3 +108,6 @@
     ]
 }]
 
+=======
+[{"amenities":{"doubleBed":true,"pool":true,"gym":false,"breakfast":true},"hotelPrice":330,"hotelCity":"Seattle","hotelRating":"4 Stars","hotelZipCode":"98109","hotelAddress":"500 5th Avenue North","hotelName":"Hampton Inn","hotelState":"WA"},{"amenities":{"doubleBed":true,"pool":true,"gym":false,"breakfast":true},"hotelPrice":270,"hotelCity":"Seattle","hotelRating":"3 Stars","hotelZipCode":"98109","hotelAddress":"2900 S 192nd St","hotelName":"Quality Inn","hotelState":"WA"},{"amenities":{"doubleBed":true,"pool":true,"gym":true,"breakfast":true},"hotelPrice":500,"hotelCity":"Seattle","hotelRating":"5 Stars","hotelZipCode":"98109","hotelAddress":"99 Union St","hotelName":"Four Seasons","hotelState":"WA"},{"amenities":{"doubleBed":false,"pool":true,"gym":false,"breakfast":true},"hotelPrice":120,"hotelCity":"Seattle","hotelRating":"2 Stars","hotelZipCode":"98109","hotelAddress":"16500 Pacific Hwy S","hotelName":"Motel 6","hotelState":"WA"},{"amenities":{"doubleBed":false,"pool":true,"gym":false,"breakfast":true},"hotelPrice":120,"hotelCity":"Columbia","hotelRating":"2 Stars","hotelZipCode":"98109","hotelAddress":"16500 Pacific Hwy S","hotelName":"Motel 6","hotelState":"SC", "rooms": [{"roomNum": "5", "isAvailableAfter": "2021-03-21Y00:00:00.0000", "beds": 2}]}]
+>>>>>>> 15117337529c3cbbb4d07ba205c01af8494c26bd

@@ -6,12 +6,12 @@ import org.json.simple.JSONObject;
  * Account class
  */
 public class Account {
-    private String firstName;
-    private String lastName;
-    private String DOB;
-    private String passportNum;
-    private String userEmail;
-    private String userPhone;
+    protected String firstName;
+    protected String lastName;
+    protected String DOB;
+    protected String passportNum;
+    protected String userEmail;
+    protected String userPhone;
 
     /**
      * Account class constructor
@@ -153,11 +153,14 @@ public class Account {
      * @return nothing
      */
     public String getUsername() {
-        return null;
+        return "";
     }
 
     public String getAcctNum() {
-        return null;
+        return "";
     }
 
+    public String getPassword () {
+        return "";
+    }
 }

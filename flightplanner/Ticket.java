@@ -9,7 +9,7 @@ import java.util.UUID;
  * Represents the itinerary for a customer- 
  */
 public class Ticket {
-    private int ticketNum;
+    private String ticketNum;
     private ArrayList<String> flightIDs;
     private String passengerID;
     private ArrayList<String> seatNums;
@@ -32,7 +32,7 @@ public class Ticket {
      * @param firstName Passenger's first name
      * @param lastName Passenger's last name
      */
-    public Ticket(int ticketNum, ArrayList<String> flightIDs, String passengerID, ArrayList<String> seatNums, String firstName, String lastName) {
+    public Ticket(String ticketNum, ArrayList<String> flightIDs, String passengerID, ArrayList<String> seatNums, String firstName, String lastName) {
         this.ticketNum = ticketNum;
         this.flightIDs = flightIDs;
         this.passengerID = passengerID;
@@ -46,7 +46,7 @@ public class Ticket {
      * Returns ticket number
      * @return ticket number
      */
-    public int getTicketNum() {
+    public String getTicketNum() {
         return ticketNum;
     }
 
@@ -94,7 +94,7 @@ public class Ticket {
      * sets ticketNum variable
      * @param ticketNum
      */
-    public void setTicketNum(int ticketNum) {
+    public void setTicketNum(String ticketNum) {
         this.ticketNum = ticketNum;
     }
 
@@ -150,6 +150,24 @@ public class Ticket {
     }
 
     /**
+     * Returns a ticket string for user
+     * @param int
+     * @return
+     */
+    public String displayTicket(int i, String departure, String destination, String arriveTime, String departTime){
+        String ticket = "";
+        ticket += "************************************\n";
+        ticket += ticketNum + "\n";
+        ticket += passengerID + "\n";
+        ticket += firstName + " " + lastName + "\n";
+        ticket += seatNums.get(i) + "\n";
+        ticket += departure + " to " + destination + "\n";
+        ticket += departTime + " " + arriveTime + "\n";
+        ticket += "************************************";
+        return ticket;
+    }
+
+    /**
      * 
      * @param destination
      * @param departure
@@ -175,7 +193,7 @@ public class Ticket {
             ArrayList<String> flightPlan = new ArrayList<String>();
             flightPlan = generateFlightPlanRec(destination, departure, LocalDateTime.parse(hasDeparture.get(i).getArriveTime()), flightList, flightPlan);
             
-            if (!flightPlan.isEmpty()) {
+            if (flightPlan.isEmpty() == false) {
                 Collections.reverse(flightPlan);
                 flightPlans.add(flightPlan);
             }
@@ -196,14 +214,14 @@ public class Ticket {
                 flightPlan.add(flightList.get(i).getFlightID());
                 return flightPlan;
             }
-            if (arrivalTime.compareTo(LocalDateTime.parse(flightList.get(i).getDepartTime())) <= 0 && flightList.get(i).getDepartCity().equals(departure)) {
+            if (arrivalTime.compareTo(LocalDateTime.parse(flightList.get(i).getDepartTime())) >= 0 && flightList.get(i).getDepartCity().equals(departure)) {
                 hasDeparture.add(flightList.get(i));
             } 
 
         }
 
-        if (hasDeparture.isEmpty()) {
-            return flightPlan;
+        if (hasDeparture.isEmpty()) {  
+            return flightPlan;  
         } 
 
         int counter = flightPlan.size();

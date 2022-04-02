@@ -4,48 +4,67 @@ package flightplanner;
  * Room class
  */
 public class Room {
-    public int roomNum;
-    public String roomType;
+    public String roomNum;
+    public String availability;
+    public Long beds;
 
     /**
-     * Constructor for Room
+     * Constructor for room
      * @param roomNum
-     * @param roomType
+     * @param availability
+     * @param beds
      */
-    public Room(int roomNum, String roomType){
+    public Room(String roomNum, String availability, Long beds){
         this.roomNum = roomNum;
-        this.roomType = roomType;
+        this.availability = availability;
+        this.beds = beds;
     }
 
     /**
      * returns roomNum variable
      * @return
      */
-    public int getRoomNum(){
+    public String getRoomNum(){
         return roomNum;
     }
 
     /**
-     * returns roomType Variable
+     * returns availability variable
      * @return
      */
-    public String getRoomType(){
-        return roomType;
+    public String getAvailability(){
+        return availability;
+    }
+
+    /**
+     * returns beds variable
+     * @return
+     */
+    public Long getBeds(){
+        return beds;
     }
 
     /**
      * sets roomNum variable
      * @param roomNum
      */
-    public void setRoomNum(int roomNum){
+    public void setRoomNum(String roomNum){
         this.roomNum = roomNum;
     }
 
     /**
-     * sets roomType variable
-     * @param roomType
+     * sets availability variable
+     * @param avaliability
      */
-    public void setRoomType(String roomType){
-        this.roomType = roomType;
+    public void setAvailability(String availability){
+        this.availability = availability;
+    }
+
+    /**
+     * sets bed variable
+     * @param beds
+     */
+    public void setBeds(Long beds){
+        this.beds = beds;
     }
 }

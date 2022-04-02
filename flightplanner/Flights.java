@@ -56,22 +56,31 @@ public class Flights {
     
     public void displayFlightPlans (ArrayList<ArrayList<String>> listFlightPlan) {
 
+        if (listFlightPlan.size() == 0) {
+            System.out.println("Sorry, no flights available");
+        }
         for (int i = 0; i < listFlightPlan.size(); i++) {
 
             ArrayList<String> listID = listFlightPlan.get(i);
-
+            long duration = 0;
             System.out.println ("[" + (i + 1) + "] ***");
             for (int j = 0; j < listID.size(); j++) {
 
+                Flight flight = findFlight(listID.get(i));
                 System.out.println("--------------------------------------------------------------------");
-                System.out.print(findFlight(listID.get(i)));
+                System.out.print(flight);
                 System.out.println("--------------------------------------------------------------------");
-
+                duration += flight.getFlightDuration();
             }
+            System.out.println("Total Duration: " + duration);
             System.out.println("***");
 
         }
 
+    }
+
+    public static void logout() {
+        DataWriter.saveFlight();
     }
 
 }
