@@ -114,13 +114,12 @@ public class DataWriter {
         flightJSON.put("duration", flight.getFlightDuration());
 
         JSONArray seatList = new JSONArray();   
-        Iterator<Entry<String, Boolean>> seatListIterator = flight.getSeatMap().entrySet().iterator();
+        ArrayList<String> seatsInOrder = flight.getSeatsInOrder();
 
-        while (seatListIterator.hasNext()) {
-            Entry<String, Boolean> seatEntry = seatListIterator.next();
+        for (int i = 0; i < seatsInOrder.size(); i++) {
             JSONObject seat = new JSONObject();
-            seat.put("seatNum", seatEntry.getKey());
-            seat.put("seatEmpty", seatEntry.getValue());
+            seat.put("seatNum", seatsInOrder.get(i));
+            seat.put("seatEmpty", flight.getSeatAvailability(seatsInOrder.get(i)));
             seatList.add(seat);
         }
     

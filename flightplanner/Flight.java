@@ -283,5 +283,10 @@ public class Flight {
                 
         }
     }
+
+
+    public ArrayList<String> getSeatsInOrder() {
+        return seatsInOrder;
+    }
     
 }

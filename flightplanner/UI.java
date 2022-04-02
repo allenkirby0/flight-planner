@@ -1,5 +1,6 @@
 package flightplanner;
 import java.io.FileWriter;
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -257,9 +258,10 @@ public class UI { //move stuff to outside constructor later on
 
                 for (int i = 0; i < hotel.getRoom().size(); i++) {
 
-                        availableRooms.add(hotel.getRoom().get(i).getRoomNum());
-                        System.out.println("[" + hotel.getRoom().get(i).getRoomNum() + "] " + hotel.getRoom().get(i).getBeds() + " beds");
-                    
+                
+                    availableRooms.add(hotel.getRoom().get(i).getRoomNum());
+                    System.out.println("[" + hotel.getRoom().get(i).getRoomNum() + "] " + hotel.getRoom().get(i).getBeds() + " beds");
+                     
                 }
                 
                 
@@ -276,6 +278,15 @@ public class UI { //move stuff to outside constructor later on
                         for (int i = 0; i < hotel.getRoom().size(); i++) {
                             if (hotel.getRoom().get(i).getRoomNum().equals(roomNum)) {
                                 hotel.getRoom().get(i).setAvailability(date + "T" + time + ":00");
+                                try {
+                                    FileWriter writer = new FileWriter ("hotel_reservations.txt");
+                                    writer.write ("****\nRoom " + roomNum + "has been checked out by " + currentUser.getFirstName() 
+                                                    + " " + currentUser.getLastName() + "\nCheckout time is at " + date + " " + time 
+                                                    + ".\n Thank you for your stay with us\n****");
+                                    writer.close();
+                                } catch (IOException e) {
+                                    e.printStackTrace();
+                                }
                                 availableRooms.remove(roomNum);
                             }
                         }

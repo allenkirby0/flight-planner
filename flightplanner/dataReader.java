@@ -71,13 +71,15 @@ public class DataReader {
                 long duration = (long)flightJSON.get("duration");
                 HashMap<String, Boolean> seats = new HashMap<String, Boolean>();
                 JSONArray seatList = (JSONArray)flightJSON.get("seats");
+                ArrayList<String> seatsInOrder = new ArrayList<String>();
 
                 for (int j = 0; j < seatList.size(); j++) {
                     JSONObject seat = (JSONObject)seatList.get(j);
+                    seatsInOrder.add((String)seat.get("seatNum"));
                     seats.put((String)seat.get("seatNum"), (Boolean)seat.get("seatEmpty"));
                 }
 
-                flights.add(new Flight(flightID, flightNum, arriveTime, departTime, deptCity, deptAirport, destCity, destAirport, duration, seats));
+                flights.add(new Flight(flightID, flightNum, arriveTime, departTime, deptCity, deptAirport, destCity, destAirport, duration, seats, seatsInOrder));
                 
             }
         } catch (Exception e) {
