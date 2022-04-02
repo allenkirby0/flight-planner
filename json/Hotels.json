@@ -6,12 +6,12 @@
     "hotelCity": "Seattle",
     "hotelState": "WA",
     "hotelZipCode": "98109",
-    "amenities": [
-        {"doubleBed": true},
-        {"pool": true},
-        {"gym": false},
-        {"breakfast": true}
-    ],
+    "amenities": {
+        "doubleBed": true,
+        "pool": true,
+        "gym": false,
+        "breakfast": true
+    },
     "rooms":[
         {"roomNumber": "100", "isAvailableAfter": "2022-04-02T12:00:00.0000", "beds": 2},
         {"roomNumber": "101", "isAvailableAfter": "2022-04-10T12:00:00.0000", "beds": 1},
@@ -33,12 +33,12 @@
     "hotelCity": "Seattle",
     "hotelState": "WA",
     "hotelZipCode": "98109",
-    "amenities": [
-        {"doubleBed": true},
-        {"pool": true},
-        {"gym": false},
-        {"breakfast": true}
-    ],
+    "amenities": {
+        "doubleBed": true,
+        "pool": true,
+        "gym": false,
+        "breakfast": true
+    },
     "rooms":[
         {"roomNumber": "100", "isAvailableAfter": "2022-04-07T12:00:00.0000", "beds": 1},
         {"roomNumber": "101", "isAvailableAfter": "2022-04-10T12:00:00.0000", "beds": 2},
@@ -60,12 +60,12 @@
     "hotelCity": "Seattle",
     "hotelState": "WA",
     "hotelZipCode": "98109",
-    "amenities": [
-        {"doubleBed": true},
-        {"pool": true},
-        {"gym": true},
-        {"breakfast": true}
-    ],
+    "amenities": {
+        "doubleBed": true,
+        "pool": true,
+        "gym": true,
+        "breakfast": true
+    },
     "rooms":[
         {"roomNumber": "100", "isAvailableAfter": "2022-04-03T12:00:00.0000", "beds": 2},
         {"roomNumber": "101", "isAvailableAfter": "2022-04-10T12:00:00.0000", "beds": 1},
@@ -87,12 +87,12 @@
     "hotelCity": "Seattle",
     "hotelState": "WA",
     "hotelZipCode": "98109",
-    "amenities": [
-        {"doubleBed": false},
-        {"pool": true},
-        {"gym": false},
-        {"breakfast": true}
-    ],
+    "amenities": {
+        "doubleBed": false,
+        "pool": true,
+        "gym": false,
+        "breakfast": true
+    },
     "rooms":[
         {"roomNumber": "100", "isAvailableAfter": "2022-04-02T12:00:00.0000", "beds": 2},
         {"roomNumber": "101", "isAvailableAfter": "2022-04-02T12:00:00.0000", "beds": 1},

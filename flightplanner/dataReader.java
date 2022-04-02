@@ -90,7 +90,52 @@ public class DataReader {
      * @return hotels
      */
     public static ArrayList<Hotel> loadHotel(){
-        return null;
+        ArrayList<Hotel> hotels = new ArrayList<Hotel>();
+        
+        
+
+        try {
+            FileReader reader = new FileReader ("Hotels.json");
+            JSONArray hotelsJSON = (JSONArray)new JSONParser().parse(reader);
+
+            for (int i = 0; i < hotelsJSON.size(); i++) {
+
+                JSONObject hotelJSON = (JSONObject) hotelsJSON.get(i);
+                String hotelName = (String)hotelJSON.get("hotelName");
+                int hotelPrice = (int)hotelJSON.get("hotelPrice");
+                String hotelRating = (String)hotelJSON.get("hotelRating");
+                String hotelAddress = (String)hotelJSON.get("hotelAddress");
+                String hotelCity = (String)hotelJSON.get("hotelCity");
+                String hotelState = (String)hotelJSON.get("hotelState");
+                String hotelZipCode = (String)hotelJSON.get("hotelZipCode");
+                
+                HashMap<String, Boolean> amenities = new HashMap<String, Boolean>();
+                JSONObject amenitiesJSON = (JSONObject)hotelJSON.get("amenities");
+
+                amenities.put("doubleBed", (boolean)amenitiesJSON.get("doubleBed"));
+                amenities.put("pool", (boolean)amenitiesJSON.get("pool"));
+                amenities.put("gym", (boolean)amenitiesJSON.get("gym"));
+                amenities.put("breakfast", (boolean)amenitiesJSON.get("breakfast"));
+
+                ArrayList<Room> rooms = new ArrayList<Room>();
+                JSONArray roomsJSON = (JSONArray)hotelJSON.get("rooms");
+
+                for (int j = 0; j < roomsJSON.size(); j++) {
+                    JSONObject roomJSON = roomsJSON.get(i);
+                    String roomNumber = (String)roomJSON.get("roomNumber");
+                    String isAvailableAfter = (String)roomJSON.get("isAvailableAfter");
+                    int beds = (int)roomJSON.get("beds");
+
+                    rooms.add(new Room (roomNumber, isAvailableAfter, beds));
+                }
+
+                hotels.add (new Hotel (hotelName, hotelPrice, hotelRating, hotelAddress, hotelCity, hotelState, hotelZipCode, amenities, rooms));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return hotels;
     }
     
 }

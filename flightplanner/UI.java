@@ -177,7 +177,7 @@ public class UI { //move stuff to outside constructor later on
 
         Ticket userTicket = new Ticket(Ticket.generateID(), flightPlan, currentUser.getPassportNum(), seatList, currentUser.getFirstName(), currentUser.getLastName());
 
-        String ticketOutput = userTicket.displayTicket(flights.getFlights());
+        String ticketOutput = userTicket.displayTicket();
         
         try {
             FileWriter file = new FileWriter(currentUser.getLastName() + "_" + currentUser.getFirstName() + "_ticket.txt");
