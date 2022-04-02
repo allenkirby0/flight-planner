@@ -9,7 +9,7 @@ import java.util.HashMap;
 public class Hotel {
 
     private String hotelName;
-    private int hotelPrice;
+    private Long hotelPrice;
     private String hotelRating;
     private String streetAddress;
     private String city;
@@ -31,7 +31,7 @@ public class Hotel {
      * @param amenities
      * @param room
      */
-    public Hotel(String hotelName, int hotelPrice, String hotelRating, String streetAddress, String city, String state, String zip, HashMap<String, Boolean> amenities, ArrayList<Room> room){
+    public Hotel(String hotelName, Long hotelPrice, String hotelRating, String streetAddress, String city, String state, String zip, HashMap<String, Boolean> amenities, ArrayList<Room> room){
         this.hotelName = hotelName;
         this.hotelPrice = hotelPrice;
         this.hotelRating = hotelRating;
@@ -55,7 +55,7 @@ public class Hotel {
      * returns the hotels price
      * @return
      */
-    public int getHotelPrice() {
+    public Long getHotelPrice() {
         return hotelPrice;
     }
 
@@ -127,7 +127,7 @@ public class Hotel {
      * sets a hotels price
      * @param hotelPrice
      */
-    public void setHotelPrice(int hotelPrice) {
+    public void setHotelPrice(Long hotelPrice) {
         this.hotelPrice = hotelPrice;
     }
 
@@ -180,11 +180,41 @@ public class Hotel {
         amenities.put(amenity, isThere);
     }
 
+    public boolean getAmenities(String amenity) {
+        return amenities.get(amenity);
+    }
+
     /**
      * Sets the hotels room
      * @param room
      */
     public void setRoom(ArrayList<Room> room){
         this.room = room;
+    }
+
+    public HashMap<String, Boolean> getAmenityMap() {
+        return amenities;
+    }
+
+    public String getHotelAddress() {
+        return streetAddress;
+    }
+
+    public String getHotelCity() {
+        return city;
+    }
+
+    public String getHotelState() {
+        return state;
+    }
+
+    public String getHotelZipCode() {
+        return zip;
+    }
+
+    public void displayRooms() {
+        for (int i = 0; i < room.size(); i++) {
+            System.out.println(room.get(i).getRoomNum() + " is available at " + room.get(i).getAvailability());
+        }
     }
 }

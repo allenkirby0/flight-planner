@@ -6,14 +6,11 @@ import java.util.Scanner;
 
 public class UI { //move stuff to outside constructor later on
     // Load information from JSON files
-    String accountAns;
-    Scanner keyboard = new Scanner(System.in);
-    public UI() {
-        
+    private static String accountAns;
+    private static Scanner keyboard = new Scanner(System.in);
 
-    }
 
-    public void main(){
+    public static void main(String[] args){
         Flights flights = Flights.getInstance();
         Accounts accounts = Accounts.getInstance();
         Hotels hotels = Hotels.getInstance();
@@ -42,91 +39,91 @@ public class UI { //move stuff to outside constructor later on
                     }  
                     else {
                         System.out.println("Please enter your Password:");
-            // move checks from member account?
-                
-            // If check works then set acctCheck to true
-                    if(accounts.checkPassword(currentUser.getUsername(), keyboard.nextLine())) {
-
-                        System.out.println("Welcome "); //Include first name from database
-                        break; // Only way to get out of loop currently (Possibily might change)
-
-                    }
             
-                    System.out.println("Wrong Password");
-                }
-            }         
-        }
-        else if(accountAns.equals("n")) {
-            System.out.println("Do you want to create a [G]uest Account or [M]ember Account?");
-            String typeAcct = keyboard.nextLine().toLowerCase();
-            if(typeAcct.equals("g")) {
-                // Guest Account information that's necessary
-                currentUser = createGuestAccount();
+                        if(accounts.checkPassword(currentUser.getUsername(), keyboard.nextLine())) {
 
-            }
-            else if(typeAcct.equals("m")) {
-                // Similar to guest account but with username and password included
-                
-                //Workaround for account typing- next time I'll include overwriteable methods to avoid this in the future
-                MemberAccount temp = createMemberAccount();
-                currentUser = temp;
-                accounts.addAccount(temp);
-                break;
+                            System.out.println("Welcome "); //Include first name from database
+                            break; // Only way to get out of loop currently (Possibily might change)
 
-            }
-            else {
-                System.out.println("Enter a valid option");
-            }
-        }
-        else {
-            System.out.println("Error: Please enter a valid option");
-        }
-    }
-
-    //checks if user wants to book a flight
-
-    if(bookTrip()) {
-
-        while (true) {
-            System.out.println("Would you like to add another passenger? [Y]/[N]\n");
-            String ansGuest = keyboard.nextLine().toLowerCase();
-
-           if (ansGuest.equals("n")) {
-               break;
-           }
-           else if (ansGuest.equals("y")) {
-                System.out.println("[G]uest or [M]ember?\n");
-                String guestMember = keyboard.nextLine().toLowerCase();
-
-                if (guestMember.equals("g")) {
-                    partyAccounts.add(createGuestAccount());
-                }
-
-                else if (guestMember.equals("m")) {
-
-                    System.out.println("[N]ew or [E]xisting?\n");
-                    String newOld = keyboard.nextLine().toLowerCase();
-
-                    if (newOld.equals("n")) {
-                        MemberAccount temp = createMemberAccount();
-                        partyAccounts.add(temp);
-                        accounts.addAccount(temp);
+                        }
+            
+                        System.out.println("Wrong Password");
                     }
-                    else if (newOld.equals("e")) {
-                        System.out.println("Enter username member\n");
+                }
+                break;
+            }
+            else if(accountAns.equals("n")) {
+                while (true) {
+                    System.out.println("Do you want to create a [G]uest Account or [M]ember Account?");
+                    String typeAcct = keyboard.nextLine().toLowerCase();
+                    if(typeAcct.equals("g")) {
+                        // Guest Account information that's necessary
+                        currentUser = createGuestAccount();
+                        break;
+    
+                    }
+                    else if(typeAcct.equals("m")) {
+                    // Similar to guest account but with username and password included
+                    
+                    //Workaround for account typing- next time I'll include overwriteable methods to avoid this in the future
+                        MemberAccount temp = createMemberAccount();
+                        currentUser = temp;
+                        accounts.addAccount(temp);
+                        break;
+    
+                    }
+                
+                    System.out.println("Enter a valid option");
+                }
+                break;
+            }  
+            System.out.println("Error: Please enter a valid option");      
+        }
+        
+     
+        //checks if user wants to book a flight
 
-                        MemberAccount temp = accounts.getAccountFromUsername(keyboard.nextLine());
-                        if (temp != null) {
+        if(bookTrip()) {
+
+            while (true) {
+                System.out.println("Would you like to add another passenger? [Y]/[N]\n");
+                String ansGuest = keyboard.nextLine().toLowerCase();
+
+                if (ansGuest.equals("n")) {
+                    break;
+                }
+                else if (ansGuest.equals("y")) {
+                    System.out.println("[G]uest or [M]ember?\n");
+                    String guestMember = keyboard.nextLine().toLowerCase();
+
+                    if (guestMember.equals("g")) {
+                        partyAccounts.add(createGuestAccount());
+                    }
+                    else if (guestMember.equals("m")) {
+
+                        System.out.println("[N]ew or [E]xisting?\n");
+                        String newOld = keyboard.nextLine().toLowerCase();
+
+                        if (newOld.equals("n")) {
+                            MemberAccount temp = createMemberAccount();
                             partyAccounts.add(temp);
+                            accounts.addAccount(temp);
+                        }
+                        else if (newOld.equals("e")) {
+                            System.out.println("Enter username member\n");
+
+                            MemberAccount temp = accounts.getAccountFromUsername(keyboard.nextLine());
+                            if (temp != null) {
+                                partyAccounts.add(temp);
+                            }   
                         }
                     }
-                    
                 }
+                System.out.println("Enter a valid answer\n");
             }
-            else {
-               System.out.println("Enter a valid answer\n");
-            }
-
+        } else {
+            System.out.println("Goodbye!");
+            System.exit(0);
         }
 
         System.out.println("Where do you wish to travel to?");
@@ -146,10 +143,10 @@ public class UI { //move stuff to outside constructor later on
         while (true) {
 
         System.out.println("Please choose a flight:"); //Possibly use ints for choices
-        flightChoice = keyboard.nextInt();
+        flightChoice = keyboard.nextInt() - 1;
 
         
-            if (flightChoice - 1 >= 0 && flightChoice - 1 < listFlightPlans.size()) {
+            if (flightChoice >= 0 && flightChoice < listFlightPlans.size()) {
                 flightPlan = listFlightPlans.get(flightChoice);
                 break;
             }
@@ -163,9 +160,9 @@ public class UI { //move stuff to outside constructor later on
             currentFlight.displayAvailableSeats();
 
             while (true) {
-                System.out.println("Type the requested seat number for you:");
+                System.out.println("\nType the requested seat number for you:");
                 String seatChoice = keyboard.nextLine();
-                if (currentFlight.getSeatAvailability(seatChoice)) {
+                if (currentFlight.getSeatAvailability(seatChoice) != null) {
                     currentFlight.setSeatAvailability(seatChoice);
                     seatList.add(seatChoice);
                     break;
@@ -176,8 +173,12 @@ public class UI { //move stuff to outside constructor later on
         }
 
         Ticket userTicket = new Ticket(Ticket.generateID(), flightPlan, currentUser.getPassportNum(), seatList, currentUser.getFirstName(), currentUser.getLastName());
+        String ticketOutput = "";
 
-        String ticketOutput = userTicket.displayTicket(flights.getFlights());
+        for (int i = 0; i < userTicket.getFlights().size(); i++) {
+            Flight flight = flights.findFlight(userTicket.getFlights().get(i));
+            ticketOutput += userTicket.displayTicket(i, flight.getDepartCity(), flight.getDestCity(), flight.getArriveTime(), flight.getDepartTime());
+        }
         
         try {
             FileWriter file = new FileWriter(currentUser.getLastName() + "_" + currentUser.getFirstName() + "_ticket.txt");
@@ -207,8 +208,14 @@ public class UI { //move stuff to outside constructor later on
                     } 
         
                 }
-
+                ticketOutput = "";
                 Ticket ticket = new Ticket(Ticket.generateID(), flightPlan, partyAccounts.get(i).getPassportNum(), seatList, partyAccounts.get(i).getFirstName(), partyAccounts.get(i).getLastName());
+
+                for (int j = 0; j < ticket.getFlights().size(); j++) {
+                    Flight flight = flights.findFlight(ticket.getFlights().get(j));
+                    ticketOutput += ticket.displayTicket(j, flight.getDepartCity(), flight.getDestCity(), flight.getArriveTime(), flight.getDepartTime());
+                }
+
                 try {
                     FileWriter file = new FileWriter(partyAccounts.get(i).getLastName() + "_" + partyAccounts.get(i).getFirstName() + "_ticket.txt");
                     file.write(ticketOutput);
@@ -250,12 +257,12 @@ public class UI { //move stuff to outside constructor later on
 
                 for (int i = 0; i < hotel.getRoom().size(); i++) {
 
-                    if (afterArrivalTime.compareTo(LocalDateTime.parse(hotel.getRoom().get(i).getAvailability())) > 0 ) {
                         availableRooms.add(hotel.getRoom().get(i).getRoomNum());
                         System.out.println("[" + hotel.getRoom().get(i).getRoomNum() + "] " + hotel.getRoom().get(i).getBeds() + " beds");
-                    }
-                }
                     
+                }
+                
+                
                 while (true) {
                     System.out.println("Please choose a room: ");
                     String roomNum = keyboard.nextLine();
@@ -301,6 +308,7 @@ public class UI { //move stuff to outside constructor later on
 
                         for (int j = 0; j < hotel.getRoom().size(); j++) {
                             if (hotel.getRoom().get(j).getRoomNum().equals(roomNum)) {
+                                    System.out.println("Room " + roomNum + " has been put in your name");
                                     hotel.getRoom().get(j).setAvailability(date + "T" + time + ":00");
                                     availableRooms.remove(roomNum);
                             }
@@ -321,8 +329,6 @@ public class UI { //move stuff to outside constructor later on
             }  
         }   
         
-        //send rooms to txt
-
         System.out.println("Thank you and have a lovely day!!");
                 
         Flights.logout();
@@ -336,7 +342,7 @@ public class UI { //move stuff to outside constructor later on
     }
 
     // use for determining what user wants to do
-public boolean bookTrip() {
+public static Boolean bookTrip() {
     
     while (true) {
 
@@ -357,7 +363,7 @@ public boolean bookTrip() {
 
 }
 
-public GuestAccount createGuestAccount() {
+public static GuestAccount createGuestAccount() {
     GuestAccount currentUser = new GuestAccount();
 
     System.out.println("Please enter your first name:");
@@ -381,7 +387,7 @@ public GuestAccount createGuestAccount() {
     return currentUser;
 }
 
-public MemberAccount createMemberAccount() {
+public static MemberAccount createMemberAccount() {
 
     System.out.println("Please enter your first name:");
     String firstName = keyboard.nextLine();
@@ -412,11 +418,6 @@ public MemberAccount createMemberAccount() {
     return new MemberAccount(firstName, lastName, acctID, username, password, DOB, passportNum, email, phoneNum);
 }
 
-
-
-    public static void main(String[] args) {
-    
-    }
 }
 
 
