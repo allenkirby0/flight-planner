@@ -62,7 +62,7 @@
     "hotelZipCode": "98109",
     "amenities": [
         {"doubleBed": true},
-        {"pool": true},
+        {"pool": false},
         {"gym": true},
         {"breakfast": true}
     ],
