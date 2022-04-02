@@ -62,12 +62,13 @@ public class Flights {
         for (int i = 0; i < listFlightPlan.size(); i++) {
 
             ArrayList<String> listID = listFlightPlan.get(i);
-
+            long duration = 0;
             System.out.println ("[" + (i + 1) + "] ***");
             for (int j = 0; j < listID.size(); j++) {
 
+                Flight flight = findFlight(listID.get(i));
                 System.out.println("--------------------------------------------------------------------");
-                System.out.print(findFlight(listID.get(i)));
+                System.out.print(flight);
                 System.out.println("--------------------------------------------------------------------");
 
             }

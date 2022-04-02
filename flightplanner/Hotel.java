@@ -9,7 +9,7 @@ import java.util.HashMap;
 public class Hotel {
 
     private String hotelName;
-    private Long hotelPrice;
+    private long hotelPrice;
     private String hotelRating;
     private String streetAddress;
     private String city;
@@ -31,7 +31,7 @@ public class Hotel {
      * @param amenities
      * @param room
      */
-    public Hotel(String hotelName, Long hotelPrice, String hotelRating, String streetAddress, String city, String state, String zip, HashMap<String, Boolean> amenities, ArrayList<Room> room){
+    public Hotel(String hotelName, long hotelPrice, String hotelRating, String streetAddress, String city, String state, String zip, HashMap<String, Boolean> amenities, ArrayList<Room> room){
         this.hotelName = hotelName;
         this.hotelPrice = hotelPrice;
         this.hotelRating = hotelRating;
@@ -55,7 +55,7 @@ public class Hotel {
      * returns the hotels price
      * @return
      */
-    public Long getHotelPrice() {
+    public long getHotelPrice() {
         return hotelPrice;
     }
 
@@ -127,7 +127,7 @@ public class Hotel {
      * sets a hotels price
      * @param hotelPrice
      */
-    public void setHotelPrice(Long hotelPrice) {
+    public void setHotelPrice(long hotelPrice) {
         this.hotelPrice = hotelPrice;
     }
 

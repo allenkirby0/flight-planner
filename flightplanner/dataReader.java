@@ -68,7 +68,7 @@ public class DataReader {
                 String destAirport = (String)flightJSON.get("destCode");
                 String deptCity = (String)flightJSON.get("deptCity");
                 String deptAirport = (String)flightJSON.get("deptCode");
-                Long duration = (Long)flightJSON.get("duration");
+                long duration = (long)flightJSON.get("duration");
                 HashMap<String, Boolean> seats = new HashMap<String, Boolean>();
                 JSONArray seatList = (JSONArray)flightJSON.get("seats");
 
@@ -102,7 +102,7 @@ public class DataReader {
 
                 JSONObject hotelJSON = (JSONObject) hotelsJSON.get(i);
                 String hotelName = (String)hotelJSON.get("hotelName");
-                Long hotelPrice = (Long)hotelJSON.get("hotelPrice");
+                long hotelPrice = (long)hotelJSON.get("hotelPrice");
                 String hotelRating = (String)hotelJSON.get("hotelRating");
                 String hotelAddress = (String)hotelJSON.get("hotelAddress");
                 String hotelCity = (String)hotelJSON.get("hotelCity");
@@ -124,7 +124,7 @@ public class DataReader {
                     JSONObject roomJSON = (JSONObject)roomsJSON.get(i);
                     String roomNumber = (String)roomJSON.get("roomNumber");
                     String isAvailableAfter = (String)roomJSON.get("isAvailableAfter");
-                    Long beds = (Long)roomJSON.get("beds");
+                    long beds = (long)roomJSON.get("beds");
 
                     rooms.add(new Room (roomNumber, isAvailableAfter, beds));
                 }

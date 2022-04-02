@@ -22,7 +22,7 @@ public class Flight {
     private String deptAirport;
     private String destCity;
     private String destAirport;
-    private Long flightDuration;
+    private long flightDuration;
     private HashMap<String, Boolean> seats;
     
     /**
@@ -38,7 +38,7 @@ public class Flight {
      * @param flightDuration flights duration, in minutes
      * @param seats seats on flight
      */
-    public Flight(String flightID, String flightNum, String arriveTime, String departTime, String deptCity, String deptAirport, String destCity, String destAirport, Long flightDuration, HashMap<String, Boolean> seats) {
+    public Flight(String flightID, String flightNum, String arriveTime, String departTime, String deptCity, String deptAirport, String destCity, String destAirport, long flightDuration, HashMap<String, Boolean> seats) {
         this.flightID = flightID;
         this.flightNum = flightNum;
         this.arriveTime = arriveTime;
@@ -168,7 +168,7 @@ public class Flight {
      * Sets flights duration time
      * @param flightDuration flights duration time, in minutes
      */
-    public void setFlightDuration(Long flightDuration) {
+    public void setFlightDuration(long flightDuration) {
         this.flightDuration = flightDuration;
     }
 
@@ -176,7 +176,7 @@ public class Flight {
      * Gets flight duration
      * @return flights duration time in minutes
      */
-    public Long getFlightDuration() {
+    public long getFlightDuration() {
         return flightDuration;
     }
 
