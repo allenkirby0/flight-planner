@@ -1,0 +1,5 @@
+****
+Room 100has been checked out by John Smith
+Checkout time is at 2022-04-03 6:30.
+ Thank you for your stay with us
+****

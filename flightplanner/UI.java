@@ -163,7 +163,7 @@ public class UI { //move stuff to outside constructor later on
             while (true) {
                 System.out.println("\nType the requested seat number for you:");
                 String seatChoice = keyboard.nextLine();
-                if (currentFlight.getSeatAvailability(seatChoice).booleanValue()) {
+                if (currentFlight.getSeatAvailability(seatChoice) != null) {
                     currentFlight.setSeatAvailability(seatChoice);
                     seatList.add(seatChoice);
                     break;

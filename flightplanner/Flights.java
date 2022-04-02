@@ -66,7 +66,7 @@ public class Flights {
             System.out.println ("[" + (i + 1) + "] ***");
             for (int j = 0; j < listID.size(); j++) {
 
-                Flight flight = findFlight(listID.get(i));
+                Flight flight = findFlight(listID.get(j));
                 System.out.println("--------------------------------------------------------------------");
                 System.out.print(flight);
                 System.out.println("--------------------------------------------------------------------");
