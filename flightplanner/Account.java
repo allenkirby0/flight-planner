@@ -153,11 +153,11 @@ public class Account {
      * @return nothing
      */
     public String getUsername() {
-        return null;
+        return "";
     }
 
     public String getAcctNum() {
-        return null;
+        return "";
     }
 
     public String getPassword () {

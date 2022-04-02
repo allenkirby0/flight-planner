@@ -162,7 +162,7 @@ public class UI { //move stuff to outside constructor later on
             while (true) {
                 System.out.println("\nType the requested seat number for you:");
                 String seatChoice = keyboard.nextLine();
-                if (currentFlight.getSeatAvailability(seatChoice) != null) {
+                if (currentFlight.getSeatAvailability(seatChoice).booleanValue()) {
                     currentFlight.setSeatAvailability(seatChoice);
                     seatList.add(seatChoice);
                     break;
@@ -239,7 +239,7 @@ public class UI { //move stuff to outside constructor later on
 
         for (int i = 0; i < hotelsInCity.size(); i++) {
             System.out.println("[" + (i + 1) + "] " + hotelsInCity.get(i).getHotelName());
-            System.out.println(hotelsInCity.get(i).getStreetAddress() + ", " + hotelsInCity.get(i).getCity() + ", " + hotelsInCity.get(i).getState() + "," + hotelsInCity.get(i).getZip());
+            System.out.println(hotelsInCity.get(i));
         }
 
         ArrayList<String> availableRooms = new ArrayList<String>();

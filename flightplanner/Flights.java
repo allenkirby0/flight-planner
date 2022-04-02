@@ -70,8 +70,9 @@ public class Flights {
                 System.out.println("--------------------------------------------------------------------");
                 System.out.print(flight);
                 System.out.println("--------------------------------------------------------------------");
-
+                duration += flight.getFlightDuration();
             }
+            System.out.println("Total Duration: " + duration);
             System.out.println("***");
 
         }

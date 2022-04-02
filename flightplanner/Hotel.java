@@ -217,4 +217,28 @@ public class Hotel {
             System.out.println(room.get(i).getRoomNum() + " is available at " + room.get(i).getAvailability());
         }
     }
+
+    public String toString() {
+        String total = "";
+
+        total += "***\n";
+        total = total + hotelName + " at " + streetAddress + ", " + city + ", " + state + ", " + zip + "\n";
+        total = total + hotelRating;
+        total = total + "Price per day: " + hotelPrice + "\n";
+        total = total + "Amenities: ";
+
+        if (amenities.get("doubleBed").booleanValue()) {
+            total = total + "Double Beds, ";
+        }
+        if (amenities.get("pool").booleanValue()) {
+            total += "Pool, ";
+        }
+        if (amenities.get("gym").booleanValue()) {
+            total += "Gym, ";
+        }
+        if (amenities.get("breakfast").booleanValue()) {
+            total += "Breakfast\n";
+        }
+        return total;
+    }
 }
