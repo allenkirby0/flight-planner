@@ -1,11 +1,1 @@
-[{
-    "acctNum": "uuid",
-    "firstName": "",
-    "lastName": "",
-    "username": "",
-    "password": "",
-    "dob": "",
-    "passportNum": "",
-    "userEmail": "",
-    "userPhone": ""
-}]
+[{"firstName":"","lastName":"","password":"","passportNum":"","acctNum":"uuid","dob":"","userPhone":"","userEmail":"","username":""},{"firstName":"matthew","lastName":"jensen","password":"password","passportNum":"alsdfjk","acctNum":"c4d69b72-90d8-41a2-925f-baf9781d2b43","dob":"alskdfkh","userPhone":"asldfkj","userEmail":"als;dfjk","username":"matthew"}]
