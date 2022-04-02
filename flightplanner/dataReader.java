@@ -22,7 +22,7 @@ public class DataReader {
         ArrayList<MemberAccount> accounts = new ArrayList<MemberAccount>();
 
         try {
-            FileReader reader = new FileReader("Users.json");
+            FileReader reader = new FileReader("json\\Users.json");
             JSONArray accountsJSON = (JSONArray)new JSONParser().parse(reader);
 
             for (int i = 0; i < accountsJSON.size(); i++) {
@@ -54,7 +54,7 @@ public class DataReader {
         ArrayList<Flight> flights = new ArrayList<Flight>();
 
         try {
-            FileReader reader = new FileReader ("Flights.json");
+            FileReader reader = new FileReader ("json\\Flights.json");
             JSONArray flightsJSON = (JSONArray)new JSONParser().parse(reader);
 
             for (int i = 0; i < flightsJSON.size(); i++) {
@@ -68,7 +68,7 @@ public class DataReader {
                 String destAirport = (String)flightJSON.get("destCode");
                 String deptCity = (String)flightJSON.get("deptCity");
                 String deptAirport = (String)flightJSON.get("deptCode");
-                int duration = (int)flightJSON.get("duration");
+                Long duration = (Long)flightJSON.get("duration");
                 HashMap<String, Boolean> seats = new HashMap<String, Boolean>();
                 JSONArray seatList = (JSONArray)flightJSON.get("seats");
 
@@ -95,14 +95,14 @@ public class DataReader {
         
 
         try {
-            FileReader reader = new FileReader ("Hotels.json");
+            FileReader reader = new FileReader ("json\\Hotels.json");
             JSONArray hotelsJSON = (JSONArray)new JSONParser().parse(reader);
 
             for (int i = 0; i < hotelsJSON.size(); i++) {
 
                 JSONObject hotelJSON = (JSONObject) hotelsJSON.get(i);
                 String hotelName = (String)hotelJSON.get("hotelName");
-                int hotelPrice = (int)hotelJSON.get("hotelPrice");
+                Long hotelPrice = (Long)hotelJSON.get("hotelPrice");
                 String hotelRating = (String)hotelJSON.get("hotelRating");
                 String hotelAddress = (String)hotelJSON.get("hotelAddress");
                 String hotelCity = (String)hotelJSON.get("hotelCity");
@@ -121,10 +121,10 @@ public class DataReader {
                 JSONArray roomsJSON = (JSONArray)hotelJSON.get("rooms");
 
                 for (int j = 0; j < roomsJSON.size(); j++) {
-                    JSONObject roomJSON = roomsJSON.get(i);
+                    JSONObject roomJSON = (JSONObject)roomsJSON.get(i);
                     String roomNumber = (String)roomJSON.get("roomNumber");
                     String isAvailableAfter = (String)roomJSON.get("isAvailableAfter");
-                    int beds = (int)roomJSON.get("beds");
+                    Long beds = (Long)roomJSON.get("beds");
 
                     rooms.add(new Room (roomNumber, isAvailableAfter, beds));
                 }

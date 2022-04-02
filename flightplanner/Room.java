@@ -6,7 +6,7 @@ package flightplanner;
 public class Room {
     public String roomNum;
     public String availability;
-    public int beds;
+    public Long beds;
 
     /**
      * Constructor for room
@@ -14,7 +14,7 @@ public class Room {
      * @param availability
      * @param beds
      */
-    public Room(String roomNum, String availability, int beds){
+    public Room(String roomNum, String availability, Long beds){
         this.roomNum = roomNum;
         this.availability = availability;
         this.beds = beds;
@@ -40,7 +40,7 @@ public class Room {
      * returns beds variable
      * @return
      */
-    public int getBeds(){
+    public Long getBeds(){
         return beds;
     }
 
@@ -64,7 +64,7 @@ public class Room {
      * sets bed variable
      * @param beds
      */
-    public void setBeds(int beds){
+    public void setBeds(Long beds){
         this.beds = beds;
     }
 }

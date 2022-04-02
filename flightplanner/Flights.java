@@ -56,6 +56,9 @@ public class Flights {
     
     public void displayFlightPlans (ArrayList<ArrayList<String>> listFlightPlan) {
 
+        if (listFlightPlan.size() == 0) {
+            System.out.println("Sorry, no flights available");
+        }
         for (int i = 0; i < listFlightPlan.size(); i++) {
 
             ArrayList<String> listID = listFlightPlan.get(i);

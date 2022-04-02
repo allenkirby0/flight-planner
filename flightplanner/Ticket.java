@@ -151,26 +151,18 @@ public class Ticket {
 
     /**
      * Returns a ticket string for user
-     * @param ticketNum
-     * @param flightIDs
-     * @param passengerID
-     * @param seatNums
-     * @param firstName
-     * @param lastName
-     * @param departure
-     * @param destination
-     * @param time
+     * @param int
      * @return
      */
-    public static String displayTicket(String ticketNum, String passengerID, String seatNum, String firstName, String lastName, String departure, String destination, String time){
+    public String displayTicket(int i, String departure, String destination, String arriveTime, String departTime){
         String ticket = "";
         ticket += "************************************\n";
         ticket += ticketNum + "\n";
         ticket += passengerID + "\n";
         ticket += firstName + " " + lastName + "\n";
-        ticket += seatNum + "\n";
+        ticket += seatNums.get(i) + "\n";
         ticket += departure + " to " + destination + "\n";
-        ticket += time + "\n";
+        ticket += departTime + " " + arriveTime + "\n";
         ticket += "************************************";
         return ticket;
     }
@@ -201,7 +193,7 @@ public class Ticket {
             ArrayList<String> flightPlan = new ArrayList<String>();
             flightPlan = generateFlightPlanRec(destination, departure, LocalDateTime.parse(hasDeparture.get(i).getArriveTime()), flightList, flightPlan);
             
-            if (!flightPlan.isEmpty()) {
+            if (flightPlan.isEmpty() == false) {
                 Collections.reverse(flightPlan);
                 flightPlans.add(flightPlan);
             }
@@ -222,14 +214,14 @@ public class Ticket {
                 flightPlan.add(flightList.get(i).getFlightID());
                 return flightPlan;
             }
-            if (arrivalTime.compareTo(LocalDateTime.parse(flightList.get(i).getDepartTime())) <= 0 && flightList.get(i).getDepartCity().equals(departure)) {
+            if (arrivalTime.compareTo(LocalDateTime.parse(flightList.get(i).getDepartTime())) >= 0 && flightList.get(i).getDepartCity().equals(departure)) {
                 hasDeparture.add(flightList.get(i));
             } 
 
         }
 
-        if (hasDeparture.isEmpty()) {
-            return flightPlan;
+        if (hasDeparture.isEmpty()) {  
+            return flightPlan;  
         } 
 
         int counter = flightPlan.size();

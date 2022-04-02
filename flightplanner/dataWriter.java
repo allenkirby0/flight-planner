@@ -25,7 +25,7 @@ public class DataWriter {
             accountsJSON.add(getAccountJSON(accounts.get(i)));
         }
         
-        try (FileWriter file = new FileWriter("Users.json")) {
+        try (FileWriter file = new FileWriter("json\\Users.json")) {
             
             file.write(accountsJSON.toJSONString());
             file.flush();
@@ -45,7 +45,7 @@ public class DataWriter {
             flightsJSON.add(getFlightJSON(flights.get(i)));
         }
 
-        try (FileWriter file = new FileWriter("Flights.json")) {
+        try (FileWriter file = new FileWriter("json\\Flights.json")) {
 
             file.write(flightsJSON.toJSONString());
             file.flush();
@@ -58,8 +58,22 @@ public class DataWriter {
      * Saves hotel to json
      */
     public static void saveHotel(){
-        ArrayList<Hotel> hotels = Hotels.getInstance();
-        
+        ArrayList<Hotel> hotels = Hotels.getInstance().getHotels();
+        JSONArray hotelsJSON = new JSONArray();
+
+        for (int i = 0; i < hotels.size(); i++) {
+            hotelsJSON.add(getHotelJSON(hotels.get(i)));
+        }
+
+        try (FileWriter file = new FileWriter("json\\Hotels.json")) {
+
+            file.write(hotelsJSON.toJSONString());
+            file.flush();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 
     /**
@@ -114,4 +128,39 @@ public class DataWriter {
 
         return flightJSON;
     }
+
+    public static JSONObject getHotelJSON(Hotel hotel) {
+
+        JSONObject hotelJSON = new JSONObject();
+        hotelJSON.put ("hotelName", hotel.getHotelName());
+        hotelJSON.put ("hotelPrice", hotel.getHotelPrice());
+        hotelJSON.put ("hotelRating", hotel.getHotelRating());
+        hotelJSON.put ("hotelAddress", hotel.getHotelAddress());
+        hotelJSON.put ("hotelCity", hotel.getHotelCity());
+        hotelJSON.put ("hotelState", hotel.getHotelState());
+        hotelJSON.put ("hotelZipCode", hotel.getHotelZipCode());
+
+        JSONObject amenitiesList = new JSONObject();   
+
+        amenitiesList.put("doubleBed", hotel.getAmenities("doubleBed"));
+        amenitiesList.put("pool", hotel.getAmenities("pool"));
+        amenitiesList.put("gym", hotel.getAmenities("gym"));
+        amenitiesList.put("breakfast", hotel.getAmenities("breakfast"));
+        
+        hotelJSON.put("amenities", amenitiesList);
+
+        ArrayList<Room> rooms = hotel.getRoom();
+        JSONArray roomsJSON = new JSONArray();
+
+        for (int i = 0; i < rooms.size(); i++) {
+            JSONObject roomJSON = new JSONObject();
+            roomJSON.put("roomNumber", rooms.get(i).getRoomNum());
+            roomJSON.put("isAvailableAfter", rooms.get(i).getAvailability());
+            roomJSON.put("beds", rooms.get(i).getBeds());
+            roomsJSON.add(roomJSON);
+        }
+
+        return hotelJSON;
+    }
+
 }
