@@ -106,7 +106,7 @@ public class Accounts {
      * @param password users password
      * @return boolean if login information is valid
      */
-    public Boolean checkPassword (String username, String password) {
+    public boolean checkPassword (String username, String password) {
         
         if (getAccountFromUsername(username).getPassword().equals(password)) {
             return true;

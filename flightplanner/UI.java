@@ -15,7 +15,7 @@ public class UI { //move stuff to outside constructor later on
         Accounts accounts = Accounts.getInstance();
         Hotels hotels = Hotels.getInstance();
         ArrayList<Account> partyAccounts = new ArrayList<Account>();
-        Account currentUser;
+        MemberAccount currentUser;
 
 
         System.out.println("Hello and welcome to the Trip Planner!");
@@ -34,7 +34,7 @@ public class UI { //move stuff to outside constructor later on
                     System.out.println("Please enter your Username:");
                     String username = keyboard.nextLine();
                     currentUser = accounts.getAccountFromUsername(username); 
-                    if (currentUser != null) {
+                    if (currentUser == null) {
                         System.out.println("Sorry, that account doesn't exist");
                     }  
                     else {
@@ -363,7 +363,7 @@ public static Boolean bookTrip() {
 
 }
 
-public static GuestAccount createGuestAccount() {
+public static MemberAccount createGuestAccount() {
     GuestAccount currentUser = new GuestAccount();
 
     System.out.println("Please enter your first name:");
@@ -384,7 +384,7 @@ public static GuestAccount createGuestAccount() {
     System.out.println("Please enter your email:");
     currentUser.setUserPhone(keyboard.nextLine());
 
-    return currentUser;
+    return new MemberAccount();
 }
 
 public static MemberAccount createMemberAccount() {

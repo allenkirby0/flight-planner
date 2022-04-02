@@ -32,6 +32,10 @@ public class MemberAccount extends Account {
 
     }
 
+    public MemberAccount() {
+        
+    }
+
     /**
      * returns AcctNum variable
      * @return acctNum
