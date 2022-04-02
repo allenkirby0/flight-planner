@@ -156,10 +156,18 @@ public class Account {
         return "";
     }
 
+    /**
+     * Returns null for no AcctNum
+     * @return nothing
+     */
     public String getAcctNum() {
         return "";
     }
 
+    /**
+     * Returns null for no password
+     * @return
+     */
     public String getPassword () {
         return "";
     }

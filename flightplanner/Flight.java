@@ -249,6 +249,9 @@ public class Flight {
         return id;
     }
 
+    /**
+     * toString method for class
+     */
     public String toString() {
 
         String totalString = "";
@@ -263,6 +266,9 @@ public class Flight {
 
     }
 
+    /**
+     * Displays all avaliable seats on a flight
+     */
     public void displayAvailableSeats() {
       
 
@@ -285,6 +291,10 @@ public class Flight {
     }
 
 
+    /**
+     * returns seats in proper order
+     * @return
+     */
     public ArrayList<String> getSeatsInOrder() {
         return seatsInOrder;
     }

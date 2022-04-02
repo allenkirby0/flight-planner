@@ -45,6 +45,11 @@ public class Flights {
         flightList.add(flight);
     }
 
+    /**
+     * Finds a specified flight
+     * @param flightID
+     * @return
+     */
     public Flight findFlight(String flightID) {
         for (int i = 0; i < flightList.size(); i++) {
             if (flightList.get(i).getFlightID().equals(flightID)) {
@@ -54,6 +59,10 @@ public class Flights {
         return null;
     }
     
+    /**
+     * Displays a flight plan for a user to see
+     * @param listFlightPlan
+     */
     public void displayFlightPlans (ArrayList<ArrayList<String>> listFlightPlan) {
 
         if (listFlightPlan.size() == 0) {
@@ -79,6 +88,9 @@ public class Flights {
 
     }
 
+    /**
+     * Saves data to JSON file
+     */
     public static void logout() {
         DataWriter.saveFlight();
     }
