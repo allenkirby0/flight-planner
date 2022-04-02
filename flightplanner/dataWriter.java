@@ -160,6 +160,8 @@ public class DataWriter {
             roomsJSON.add(roomJSON);
         }
 
+        hotelJSON.put("rooms", roomsJSON);
+
         return hotelJSON;
     }
 
