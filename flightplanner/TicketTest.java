@@ -11,7 +11,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class TicketTest {
-    private Flights flights = flights.getInstance();
+    private Flights flights = Flights.getInstance();
     private ArrayList<Flight> flightlist = flights.getFlights();
     
     @BeforeClass
