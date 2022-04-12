@@ -23,7 +23,7 @@ class TicketTest {
 	
 	@AfterClass
 	public static void oneTimeTearDown() {
-		
+		flights.logout();
 	}
 	
 	@BeforeEach
@@ -34,5 +34,10 @@ class TicketTest {
 	@AfterEach
 	public static void tearDown() {
 		//runs after each test
+	}
+
+	@Test
+	void testGetTicketReturned() {
+		ticket.displayTicket();
 	}
 }
