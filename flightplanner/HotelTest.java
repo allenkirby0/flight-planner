@@ -4,22 +4,23 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
 
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class HotelTest {
     
-    @BeforeClass
+
+    @BeforeAll
 	public static void oneTimeSetup() {
 		Hotels hotels = Hotels.getInstance();
 	}
 	
-	@AfterClass
+	@AfterAll
 	public static void oneTimeTearDown() {
-		
+		Hotels.logout();
 	}
 	
 	@BeforeEach
@@ -32,4 +33,6 @@ public class HotelTest {
 		//runs after each test
 	}
 
+	@Test
+	public void 
 }

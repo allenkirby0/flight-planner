@@ -7,6 +7,13 @@
         "e:\\DefaultFileLocations\\Downloads\\junit-jupiter-5.8.2.jar",
         "e:\\DefaultFileLocations\\Downloads\\junit-jupiter-api-5.8.2.jar",
         "e:\\DefaultFileLocations\\Downloads\\junit-jupiter-params-5.8.2.jar",
-        "e:\\DefaultFileLocations\\Downloads\\junit-jupiter-engine-5.8.2.jar"
-    ]
+        "e:\\DefaultFileLocations\\Downloads\\junit-jupiter-engine-5.8.2.jar",
+        "c:\\Users\\Matthew Jensen\\Downloads\\junit-jupiter-5.8.2.jar",
+        "c:\\Users\\Matthew Jensen\\Downloads\\junit-jupiter-api-5.8.2.jar"
+    ],
+    "java.test.config": {
+
+        "workingDirectory": "${workspaceFolder}"
+
+    }
 }

@@ -48,4 +48,14 @@ public class Hotels {
     public static void logout() {
         DataWriter.saveHotel();
     }
+
+    public ArrayList<Hotel> getHotelsInCity (String city) {
+        ArrayList<Hotel> hotelsInCity = new ArrayList<Hotel>();
+        for (int i = 0; i < hotels.getHotels().size(); i++) {
+            if (hotels.getHotels().get(i).getCity().equals(city)) {
+                hotelsInCity.add(hotels.getHotels().get(i));
+            }
+        }
+        return hotelsInCity;
+    }
 }
