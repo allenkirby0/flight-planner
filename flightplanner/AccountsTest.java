@@ -16,17 +16,17 @@ public class AccountsTest {
     @BeforeEach
 	public void setup() {
 		accountList.clear();
-		accounts.getInstance().addAccount("Amy", "Jones", "1", "Jones1", "password", "1/1/2000", "123456789", "Aemail@email.com", "111-111-1111");
-		accounts.getInstance().addAccount("Bob", "Jones", "2", "Jones2", "password2", "12/30/1999", "987654321", "Bemail@email.com", "222-222-2222");
+		Accounts.getInstance().addAccount(new MemberAccount("Amy", "Jones", "1", "Jones1", "password", "1/1/2000", "123456789", "Aemail@email.com", "111-111-1111"));
+		Accounts.getInstance().addAccount(new MemberAccount("Bob", "Jones", "2", "Jones2", "password2", "12/30/1999", "987654321", "Bemail@email.com", "222-222-2222"));
 		// accountList.add(new MemberAccount("Amy", "Jones", "1", "Jones1", "password", "1/1/2000", "123456789", "Aemail@email.com", "111-111-1111"));
 		// accountList.add(new MemberAccount("Bob", "Jones", "2", "Jones2", "password2", "12/30/1999", "987654321", "Bemail@email.com", "222-222-2222"));
-		
+
 		DataWriter.saveAccount();
 	}
 	
 	@AfterEach
 	public void tearDown() {
-		accounts.getInstance().getAccountList().clear();
+		Accounts.getInstance().getAccountList().clear();
 		DataWriter.saveAccount();
 	}
 
