@@ -51,7 +51,7 @@ public class AccountsTest {
 	@Test
 	public void testHaveInvalidAcctNum() {
 		boolean hasChris = false;
-		if(accounts.get("3").getFirstName().equals("Chris")) {
+		if(accounts.get("3") != null) {
 			hasChris = true;
 		}
 		assertFalse(hasChris);
@@ -60,7 +60,7 @@ public class AccountsTest {
 	@Test
 	public void testHaveAcctNumEmpty() {
 		boolean hasEmpty = false;
-		if(accounts.get("").getFirstName().equals("")) {
+		if(accounts.get("") != null) {
 			hasEmpty = true;
 		}
 		assertFalse(hasEmpty);
@@ -69,10 +69,10 @@ public class AccountsTest {
 	@Test
 	public void testHaveAcctNumNull() {
 		boolean hasNull = false;
-		if(accounts.get(null).getFirstName().equals(null)) {
+		if(accounts.get(null) == null) {
 			hasNull = true;
 		}
-		assertFalse(hasNull);
+		assertTrue(hasNull);
 	}
 
 	@Test
@@ -96,7 +96,7 @@ public class AccountsTest {
 	@Test
 	public void testHaveInvalidAcctFromUsername() {
 		boolean hasChris = false;
-		if(accounts.getAccountFromUsername("Jones3").getFirstName().equals("Chris")) {
+		if(accounts.getAccountFromUsername("Jones3") != null) {
 			hasChris = true;
 		}
 		assertFalse(hasChris);
@@ -105,7 +105,7 @@ public class AccountsTest {
 	@Test
 	public void testEmptyAcctFromUsername() {
 		boolean hasEmpty = false;
-		if(accounts.getAccountFromUsername("").getFirstName().equals("")) {
+		if(accounts.getAccountFromUsername("") != null) {
 			hasEmpty = true;
 		}
 		assertFalse(hasEmpty);
@@ -114,10 +114,10 @@ public class AccountsTest {
 	@Test
 	public void testNullAcctFromUsername() {
 		boolean hasNull = false;
-		if(accounts.getAccountFromUsername(null).getFirstName().equals(null)) {
+		if(accounts.getAccountFromUsername(null) == null) {
 			hasNull = true;
 		}
-		assertFalse(hasNull);
+		assertTrue(hasNull);
 	}
 
 	@Test
