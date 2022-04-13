@@ -11,19 +11,19 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 class TicketTest {
-    private Flights flights = Flights.getInstance();
-    private ArrayList<Flight> flightlist = flights.getFlights();
+    //private Flights flights = Flights.getInstance();
+    //private ArrayList<Flight> flightlist = flights.getFlights();
     
     @BeforeAll
 	public static void oneTimeSetup() {
         // String ticketID = generateID();
-        flights.getInstance().getFlights().clear();
-		private Ticket ticket = new Ticket("ticketNum", flightIDs, "PassengerID", seatNums, "Bob", "Jones");
+        //flights.getInstance().getFlights().clear();
+		//private Ticket ticket = new Ticket("ticketNum", flightIDs, "PassengerID", seatNums, "Bob", "Jones");
 	}
 	
 	@AfterAll
 	public static void oneTimeTearDown() {
-		flights.logout();
+		//flights.logout();
 	}
 	
 	@BeforeEach
@@ -38,6 +38,6 @@ class TicketTest {
 
 	@Test
 	void testGetTicketReturned() {
-		ticket.displayTicket();
+		//ticket.displayTicket();
 	}
 }
