@@ -60,6 +60,7 @@ public class Room {
         this.availability = availability;
     }
 
+    
     /**
      * sets bed variable
      * @param beds
@@ -68,5 +69,5 @@ public class Room {
         this.beds = beds;
     }
 
-    
+
 }

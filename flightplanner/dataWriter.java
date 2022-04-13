@@ -148,7 +148,7 @@ public class DataWriter {
         
         hotelJSON.put("amenities", amenitiesList);
 
-        ArrayList<Room> rooms = hotel.getRoom();
+        ArrayList<Room> rooms = hotel.getRooms();
         JSONArray roomsJSON = new JSONArray();
 
         for (int i = 0; i < rooms.size(); i++) {

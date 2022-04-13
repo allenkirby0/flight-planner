@@ -15,9 +15,10 @@ public class HotelTest {
     Hotels hotels = Hotels.getInstance();
 	ArrayList<Hotel> hotelList = hotels.getHotels();
 
-    @BeforeAll
+    @BeforeEach
 	public static void oneTimeSetup() {
 
+		Hotels.getInstance().getHotels().clear();
 		ArrayList<Room> rooms = new ArrayList<Room>();
 
 		for (int i = 0; i < 101; i++) {
@@ -39,7 +40,7 @@ public class HotelTest {
 
 	}
 	
-	@AfterAll
+	@AfterEach
 	public static void oneTimeTearDown() {
 		Hotels.logout();
 	}
@@ -63,7 +64,7 @@ public class HotelTest {
 	}
 
 	@Test
-	public void testFindAvailableRooms() {
+	public void testFindNumAvailableRooms() {
 
 		String time = "2022-04-01T06:00:00.0000";
 		ArrayList<Room> availableRooms = hotels.getHotels().get(0).getAvailableRooms(time);
@@ -71,5 +72,12 @@ public class HotelTest {
 
 	}
 
-	
+	@Test
+	public void testCheckRoomUnavailability () {
+		String time = "2021-01-10T00:00:00.000";
+		ArrayList<Room> availableRooms = hotels.getHotels().get(0).getAvailableRooms(time);
+		assertEquals(0, availableRooms.size(), "All rooms unavailable");
+	}
+
+
 }
