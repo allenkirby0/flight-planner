@@ -72,6 +72,51 @@ public class AccountsTest {
 	}
 
 	@Test
+	public void testHaveFirstAcctFromUsername() {
+		boolean hasAmy = false;
+		if(accounts.getAccountFromUsername("Jones1").getFirstName().equals("Amy")) {
+			hasAmy = true;
+		}
+		assertTrue(hasAmy);
+	}
+
+	@Test
+	public void testHaveLastAcctFromUsername() {
+		boolean hasBob = false;
+		if(accounts.getAccountFromUsername("Jones2").getFirstName().equals("Bob")) {
+			hasBob = true;
+		}
+		assertTrue(hasBob);
+	}
+
+	@Test
+	public void testHaveInvalidAcctFromUsername() {
+		boolean hasChris = false;
+		if(accounts.getAccountFromUsername("Jones3").getFirstName().equals("Chris")) {
+			hasChris = true;
+		}
+		assertFalse(hasChris);
+	}
+
+	@Test
+	public void testEmptyAcctFromUsername() {
+		boolean hasEmpty = false;
+		if(accounts.getAccountFromUsername("").getFirstName().equals("")) {
+			hasEmpty = true;
+		}
+		assertFalse(hasEmpty);
+	}
+
+	@Test
+	public void testNullAcctFromUsername() {
+		boolean hasNull = false;
+		if(accounts.getAccountFromUsername(null).getFirstName().equals(null)) {
+			hasNull = true;
+		}
+		assertFalse(hasNull);
+	}
+
+	@Test
 	public void testHaveFirstUsernamePassword() {
 		boolean hasAmy = accounts.checkPassword("Jones1", "password");
 		assertTrue(hasAmy);		
