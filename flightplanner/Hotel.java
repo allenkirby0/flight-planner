@@ -1,4 +1,5 @@
 package flightplanner;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -16,7 +17,7 @@ public class Hotel {
     private String state;
     private String zip;
     private HashMap<String, Boolean> amenities;
-    private ArrayList<Room> room;
+    private ArrayList<Room> rooms;
 
 
     /**
@@ -29,9 +30,9 @@ public class Hotel {
      * @param state
      * @param zip
      * @param amenities
-     * @param room
+     * @param rooms
      */
-    public Hotel(String hotelName, long hotelPrice, String hotelRating, String streetAddress, String city, String state, String zip, HashMap<String, Boolean> amenities, ArrayList<Room> room){
+    public Hotel(String hotelName, long hotelPrice, String hotelRating, String streetAddress, String city, String state, String zip, HashMap<String, Boolean> amenities, ArrayList<Room> rooms){
         this.hotelName = hotelName;
         this.hotelPrice = hotelPrice;
         this.hotelRating = hotelRating;
@@ -40,7 +41,11 @@ public class Hotel {
         this.state = state;
         this.zip = zip;
         this.amenities = amenities;
-        this.room = room;
+        this.rooms = rooms;
+    }
+
+    public Hotel(String string, long l, String string2, String string3, String string4, String string5,
+            HashMap<String, Boolean> amenities2, ArrayList<Room> rooms2) {
     }
 
     /**
@@ -108,11 +113,11 @@ public class Hotel {
     }
 
     /**
-     * returns a hotels room
+     * returns a hotels rooms
      * @return
      */
-    public ArrayList<Room> getRoom(){
-        return room;
+    public ArrayList<Room> getRooms(){
+        return rooms;
     }
 
     /**
@@ -185,11 +190,11 @@ public class Hotel {
     }
 
     /**
-     * Sets the hotels room
-     * @param room
+     * Sets the hotels rooms
+     * @param rooms
      */
-    public void setRoom(ArrayList<Room> room){
-        this.room = room;
+    public void setRooms(ArrayList<Room> rooms){
+        this.rooms = rooms;
     }
 
     public HashMap<String, Boolean> getAmenityMap() {
@@ -213,9 +218,30 @@ public class Hotel {
     }
 
     public void displayRooms() {
-        for (int i = 0; i < room.size(); i++) {
-            System.out.println(room.get(i).getRoomNum() + " is available at " + room.get(i).getAvailability());
+        for (int i = 0; i < rooms.size(); i++) {
+            System.out.println(rooms.get(i).getRoomNum() + " is available at " + rooms.get(i).getAvailability());
         }
+    }
+
+    public Room getRoom(String roomNum) {
+        for (int i = 0; i < rooms.size(); i++) {
+            if (rooms.get(i).getRoomNum().equals(roomNum)) {
+                return rooms.get(i);
+            }
+        }
+        return null;
+    }
+
+    public ArrayList<Room> getAvailableRooms(String time) {
+        ArrayList<Room> availableRooms = new ArrayList<Room>();
+
+        LocalDateTime newTime = LocalDateTime.parse(time);
+        for (int i = 0; i < rooms.size(); i++) {
+            if (newTime.compareTo(LocalDateTime.parse(rooms.get(i).getAvailability())) >= 0) {
+                availableRooms.add(rooms.get(i));
+            }
+        }
+        return availableRooms;
     }
 
     public String toString() {

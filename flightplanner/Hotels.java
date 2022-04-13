@@ -50,6 +50,7 @@ public class Hotels {
     }
 
     public ArrayList<Hotel> getHotelsInCity (String city) {
+
         ArrayList<Hotel> hotelsInCity = new ArrayList<Hotel>();
         for (int i = 0; i < hotels.getHotels().size(); i++) {
             if (hotels.getHotels().get(i).getCity().equals(city)) {
@@ -58,4 +59,6 @@ public class Hotels {
         }
         return hotelsInCity;
     }
+
+    
 }
