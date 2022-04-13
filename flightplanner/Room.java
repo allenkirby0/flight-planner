@@ -67,4 +67,6 @@ public class Room {
     public void setBeds(Long beds){
         this.beds = beds;
     }
+
+    
 }

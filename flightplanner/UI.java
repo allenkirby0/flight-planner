@@ -257,11 +257,11 @@ public class UI {
                 hotel = hotelsInCity.get(hotelChoice);
                    
 
-                for (int i = 0; i < hotel.getRoom().size(); i++) {
+                for (int i = 0; i < hotel.getRooms().size(); i++) {
 
                 
-                    availableRooms.add(hotel.getRoom().get(i).getRoomNum());
-                    System.out.println("[" + hotel.getRoom().get(i).getRoomNum() + "] " + hotel.getRoom().get(i).getBeds() + " beds");
+                    availableRooms.add(hotel.getRooms().get(i).getRoomNum());
+                    System.out.println("[" + hotel.getRooms().get(i).getRoomNum() + "] " + hotel.getRooms().get(i).getBeds() + " beds");
                      
                 }
                 
@@ -276,9 +276,10 @@ public class UI {
                         System.out.println("What time? hh:mm");
                         String time = keyboard.nextLine();
 
-                        for (int i = 0; i < hotel.getRoom().size(); i++) {
-                            if (hotel.getRoom().get(i).getRoomNum().equals(roomNum)) {
-                                hotel.getRoom().get(i).setAvailability(date + "T" + time + ":00");
+                        for (int i = 0; i < hotel.getRooms().size(); i++) {
+                            Room room = hotel.getRoom(roomNum);
+                            if (room != null) {
+                                hotel.getRooms().get(i).setAvailability(date + "T" + time + ":00");
                                 try {
                                     FileWriter writer = new FileWriter ("hotel_reservations.txt");
                                     writer.write ("****\nRoom " + roomNum + "has been checked out by " + currentUser.getFirstName() 
@@ -318,10 +319,10 @@ public class UI {
                         System.out.println("What time? hh:mm");
                         String time = keyboard.nextLine();
 
-                        for (int j = 0; j < hotel.getRoom().size(); j++) {
-                            if (hotel.getRoom().get(j).getRoomNum().equals(roomNum)) {
+                        for (int j = 0; j < hotel.getRooms().size(); j++) {
+                            if (hotel.getRooms().get(j).getRoomNum().equals(roomNum)) {
                                     System.out.println("Room " + roomNum + " has been put in your name");
-                                    hotel.getRoom().get(j).setAvailability(date + "T" + time + ":00");
+                                    hotel.getRooms().get(j).setAvailability(date + "T" + time + ":00");
                                     availableRooms.remove(roomNum);
                             }
                         }
